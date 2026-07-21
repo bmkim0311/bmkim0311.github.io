@@ -17,7 +17,7 @@
 
   <link
     rel="stylesheet"
-    href="./style.css?v=20260721-4"
+    href="./style.css?v=20260721-6"
   >
 </head>
 
@@ -60,10 +60,10 @@
 
         <p class="intro">
           정보보호를 전공하고 있으며, 현재 정보보안 부트캠프에서
-          가상회사 기반 인프라 구축, 웹 보안 실습, CTF와 워게임 제작을
-          경험하고 있습니다. 기술을 구현하는 것에 그치지 않고,
-          문제 해결 과정과 결과를 다른 사람이 빠르게 확인할 수 있도록
-          정리하고 문서화합니다.
+          가상회사 기반 인프라 구축, 웹 보안 실습, CTF 및 웹 워게임
+          제작을 경험하고 있습니다. 기술을 구현하는 데 그치지 않고,
+          문제의 원인과 해결 과정, 결과를 다른 사람이 빠르게 확인할 수
+          있도록 정리하고 문서화합니다.
         </p>
 
         <div class="quick-links">
@@ -120,17 +120,17 @@
 
         <article>
           <strong>2회</strong>
-          <span>자체 제작 대회</span>
+          <span>보안 문제 자체 제작 대회</span>
         </article>
 
         <article>
           <strong>4 / 10</strong>
-          <span>CTF 문제 해결</span>
+          <span>CTF 개인 해결</span>
         </article>
 
         <article>
           <strong>38 / 100</strong>
-          <span>웹 워게임 문제 해결</span>
+          <span>웹 워게임 개인 해결</span>
         </article>
       </section>
 
@@ -148,7 +148,7 @@
           </div>
 
           <p class="section-description">
-            완료한 프로젝트만 정리했습니다.
+            현재까지 완료한 두 차례의 프로젝트입니다.
           </p>
         </div>
 
@@ -162,62 +162,79 @@
                   </span>
 
                   <h3>
-                    가상 금융회사 네트워크 및 웹사이트 구축
+                    Simmit Pay 금융 플랫폼 기반 통합 인프라 및
+                    보안 네트워크 구축
                   </h3>
                 </div>
 
                 <span class="project-date">
-                  2026
+                  2026.04
                 </span>
               </div>
 
               <p class="project-summary">
-                가상의 금융회사를 주제로 Rocky Linux 기반의 서버와
-                네트워크 환경을 구성하고, 회사 웹사이트와 데이터베이스를
-                구축한 프로젝트입니다.
+                가상의 금융회사 Simmit Pay를 주제로 Rocky Linux 기반의
+                서버와 기업 네트워크를 구축하고, 금융 서비스에 필요한
+                네트워크 분리, 접근 통제, 암호화 통신과 로그 관리 환경을
+                구현했습니다.
               </p>
 
               <ul class="key-points">
                 <li>
-                  팀장으로서 프로젝트 일정과 역할을 조율했습니다.
+                  팀장으로서 전체 프로젝트 흐름, 역할과 일정을 관리했습니다.
                 </li>
 
                 <li>
-                  Rocky Linux 기반 웹 서버와 데이터베이스 서버를 구성했습니다.
+                  부서별 VLAN, 라우팅, ACL, VPN과 NAT 정책을 설계하고
+                  전체 구성을 검토했습니다.
                 </li>
 
                 <li>
-                  가상 금융회사 환경에 맞춰 네트워크 구조와 서비스 구성을
-                  설계했습니다.
+                  웹·DB·로그 서버 간 연결 상태를 확인하고 통합 과정의
+                  오류를 분석·수정했습니다.
                 </li>
 
                 <li>
-                  각 서버와 웹사이트, 데이터베이스의 연결 상태를 점검했습니다.
+                  네트워크 시연 영상, 회의록과 프로젝트 보고서 작성에
+                  참여했습니다.
                 </li>
               </ul>
 
               <div class="tags">
                 <span>Rocky Linux</span>
-                <span>Network</span>
-                <span>Web Server</span>
-                <span>Database</span>
+                <span>MariaDB</span>
+                <span>VLAN</span>
+                <span>ACL</span>
+                <span>VPN</span>
+                <span>NAT</span>
                 <span>Team Lead</span>
+              </div>
+
+              <div class="project-actions">
+                <a
+                  href="#"
+                  class="text-link"
+                  aria-disabled="true"
+                >
+                  프로젝트 자료 연결 예정
+                </a>
               </div>
             </div>
 
             <details class="project-detail">
               <summary>
-                상세 내용 펼치기
+                담당 업무와 결과 보기
               </summary>
 
               <div class="detail-content">
                 <div>
-                  <h4>프로젝트 목적</h4>
+                  <h4>구축 내용</h4>
 
                   <p>
-                    가상회사의 네트워크와 서버 환경을 직접 설계하면서
-                    웹 서비스와 데이터베이스가 연결되는 전체 구조를
-                    이해하는 것이 목적이었습니다.
+                    본사와 지사, 재택근무 환경을 가정하고 부서별 VLAN을
+                    구성했습니다. VPN을 통한 암호화 통신, ACL 기반 최소
+                    권한 접근 제어, NAT를 통한 내부 주소 은닉과 로그 수집
+                    환경을 적용했습니다.
                   </p>
                 </div>
 
@@ -225,9 +242,31 @@
                   <h4>담당 역할</h4>
 
                   <p>
-                    팀장으로서 역할과 일정을 조율하고, 팀원별 결과물이
-                    하나의 회사 환경에서 정상적으로 연결되는지 전체 진행
-                    상황을 확인했습니다.
+                    네트워크 설계와 전체 프로젝트 총괄을 맡았습니다.
+                    ACL 정책 구체화, VPN 암호화와 NAT 설정을 점검하고,
+                    DB·로그·웹 서버 연결 및 전체 오류 수정 과정을
+                    관리했습니다.
+                  </p>
+                </div>
+
+                <div>
+                  <h4>검증</h4>
+
+                  <p>
+                    비인가 부서와 외부망에서의 서버 접근을 확인하고,
+                    본사와 지사 간 암호화 통신 및 웹·DB 서비스의
+                    연결 상태와 가용성을 테스트했습니다.
+                  </p>
+                </div>
+
+                <div>
+                  <h4>배운 점</h4>
+
+                  <p>
+                    한 가지 장비나 서버만 정상적으로 동작하는 것보다,
+                    네트워크 정책과 여러 서버가 하나의 서비스 환경에서
+                    일관되게 연결되는지를 확인하는 것이 중요하다는 점을
+                    배웠습니다.
                   </p>
                 </div>
               </div>
@@ -243,71 +282,105 @@
                   </span>
 
                   <h3>
-                    가상회사 인프라 및 보안 환경 확장 구축
+                    Nexan 게임회사 보안관제 및 모의해킹 환경 구축
                   </h3>
                 </div>
 
                 <span class="project-date">
-                  2026
+                  2026.06
                 </span>
               </div>
 
               <p class="project-summary">
-                1차 프로젝트보다 확장된 가상회사 환경을 바탕으로
-                서버와 네트워크, 보안 구성 요소를 추가해 구축한
-                프로젝트입니다.
+                가상의 게임회사 Nexan을 배경으로 네트워크 고가용성,
+                서버 인프라, 보안관제와 모의해킹 환경을 통합 구축하고,
+                공격 발생 시 탐지·분석·대응이 가능한지 검증했습니다.
               </p>
 
               <ul class="key-points">
                 <li>
-                  팀원으로서 맡은 기술과 기능을 구현했습니다.
+                  웹 서비스 공격 시나리오와 모의해킹 절차를 설계했습니다.
                 </li>
 
                 <li>
-                  담당 업무뿐 아니라 전체 구성과 일정도 함께 확인했습니다.
+                  웹 취약점, 관리자 권한 상승과 내부망 이동 가능성을
+                  분석했습니다.
                 </li>
 
                 <li>
-                  서버·네트워크·보안 구성 요소가 연결되는 구조를 학습했습니다.
+                  공격이 개인정보 DB와 내부 시스템에 미칠 수 있는
+                  피해 영향을 정리했습니다.
                 </li>
 
                 <li>
-                  오류 발생 시 설정과 통신 상태를 순서대로 확인했습니다.
+                  공격 재현, DB 반영 결과와 관제 로그를 연결한
+                  모의해킹 보고서를 작성했습니다.
                 </li>
               </ul>
 
               <div class="tags">
-                <span>Infrastructure</span>
-                <span>Network</span>
-                <span>Security</span>
-                <span>Linux</span>
-                <span>Team Project</span>
+                <span>GNS3</span>
+                <span>pfSense HA</span>
+                <span>OpenVPN</span>
+                <span>Wazuh</span>
+                <span>Suricata</span>
+                <span>Web Pentest</span>
+              </div>
+
+              <div class="project-actions">
+                <a
+                  href="#"
+                  class="text-link"
+                  aria-disabled="true"
+                >
+                  프로젝트 자료 연결 예정
+                </a>
               </div>
             </div>
 
             <details class="project-detail">
               <summary>
-                상세 내용 펼치기
+                담당 업무와 결과 보기
               </summary>
 
               <div class="detail-content">
                 <div>
-                  <h4>프로젝트 특징</h4>
+                  <h4>구축 환경</h4>
 
                   <p>
-                    1차 프로젝트보다 구성 범위가 넓어져 개별 기술뿐 아니라
-                    여러 시스템이 서로 영향을 주는 구조를 함께 이해해야
-                    했습니다.
+                    pfSense 이중화, OpenVPN, VLAN과 DMZ를 적용하고
+                    웹·DNS·DB·SFTP 서버 및 Wazuh, Zabbix, PMM,
+                    GoAccess 등의 보안관제 환경을 구성했습니다.
                   </p>
                 </div>
 
                 <div>
-                  <h4>담당 방식</h4>
+                  <h4>담당 역할</h4>
 
                   <p>
-                    팀원으로서 제 업무를 수행하면서도 팀장이 놓치기 쉬운
-                    일정과 작업 상태를 확인하고, 필요한 내용은 미리
-                    공유했습니다.
+                    공격 시나리오 설계와 취약점 분석을 담당했습니다.
+                    웹 서버 관리자 권한 탈취 이후 내부망 이동 가능성과
+                    개인정보·게임 DB에 미치는 영향을 분석했습니다.
+                  </p>
+                </div>
+
+                <div>
+                  <h4>진단 방식</h4>
+
+                  <p>
+                    외부 정보 수집과 웹 애플리케이션 진단을 수행한 뒤,
+                    DMZ 웹 서버 침해를 가정하여 내부 서버망의 주요
+                    서비스 포트로 접근할 수 있는지 확인했습니다.
+                  </p>
+                </div>
+
+                <div>
+                  <h4>결과물</h4>
+
+                  <p>
+                    공격 전 화면, 변조 요청, 성공 결과, DB 반영 내역과
+                    Wazuh·GoAccess 탐지 화면을 하나의 흐름으로 연결한
+                    모의해킹 결과 보고서를 작성했습니다.
                   </p>
                 </div>
               </div>
@@ -330,7 +403,7 @@
           </div>
 
           <p class="section-description">
-            문제 제작과 다른 팀의 문제 풀이를 함께 수행했습니다.
+            문제를 제작하고 다른 팀의 문제를 직접 해결했습니다.
           </p>
         </div>
 
@@ -355,24 +428,27 @@
 
               <p class="project-summary">
                 부트캠프 교육과정에서 팀별로 CTF 문제를 직접 제작하고,
-                다른 팀이 제작한 문제를 제한 시간 안에 분석해 해결했습니다.
+                다른 팀이 제작한 문제를 제한 시간 안에 분석해 해결하는
+                대회에 참여했습니다.
               </p>
 
               <ul class="key-points">
                 <li>
-                  참가자가 단서를 따라 해결할 수 있도록 문제 흐름을 구성했습니다.
+                  팀원들과 CTF 문제를 직접 제작했습니다.
                 </li>
 
                 <li>
-                  다른 팀이 제작한 총 10문제 중 4문제를 해결했습니다.
+                  다른 팀이 제작한 총 10문제 중 4문제를 제가 직접
+                  해결했습니다.
                 </li>
 
                 <li>
-                  제한 시간 안에 가능성이 높은 접근법부터 우선 검증했습니다.
+                  제한 시간 안에 단서와 취약 지점을 확인하고,
+                  성공 가능성이 높은 접근부터 검증했습니다.
                 </li>
 
                 <li>
-                  풀이 과정과 확인 결과를 정리했습니다.
+                  해결 과정과 사용한 접근 방법을 정리했습니다.
                 </li>
               </ul>
 
@@ -386,27 +462,26 @@
 
             <details class="project-detail">
               <summary>
-                상세 내용 펼치기
+                제작 및 개인 풀이 성과 보기
               </summary>
 
               <div class="detail-content">
                 <div>
-                  <h4>제작 경험</h4>
+                  <h4>문제 제작</h4>
 
                   <p>
-                    단순히 어렵게 만드는 데 집중하기보다, 참가자가 단서를
-                    확인하며 의도한 보안 개념에 도달할 수 있도록 문제의
-                    조건과 풀이 순서를 구성했습니다.
+                    참가자가 단서를 확인하며 의도한 보안 개념에 도달할
+                    수 있도록 문제의 조건과 풀이 흐름을 구성했습니다.
                   </p>
                 </div>
 
                 <div>
-                  <h4>풀이 성과</h4>
+                  <h4>개인 풀이 성과</h4>
 
                   <p>
-                    다른 팀이 제작한 총 10문제 중 4문제를 해결하며
-                    제한된 시간에 문제 구조를 분석하고 접근 우선순위를
-                    정하는 경험을 쌓았습니다.
+                    다른 팀에서 제작한 총 10문제 중 4문제를 제가 직접
+                    해결했습니다. 제한된 시간에 여러 가능성을 모두
+                    시도하기보다 근거가 있는 접근부터 우선 확인했습니다.
                   </p>
                 </div>
               </div>
@@ -422,82 +497,108 @@
                   </span>
 
                   <h3>
-                    교육 포털형 웹 워게임 자체 제작 대회
+                    EDU PORTAL 웹 워게임 자체 제작 대회
                   </h3>
                 </div>
 
                 <span class="project-date">
-                  2026
+                  2026.07
                 </span>
               </div>
 
               <p class="project-summary">
-                부트캠프 필수 과정으로 교육 포털 형태의 웹 워게임을
-                직접 제작하고, 다른 팀이 제작한 웹 보안 문제를
-                분석해 해결했습니다.
+                학생·강사·관리자가 사용하는 교육 포털을 배경으로
+                실제 서비스 흐름 안에 10개의 웹 보안 문제를 구현하고,
+                다른 팀이 제작한 워게임 문제를 해결했습니다.
               </p>
 
               <ul class="key-points">
                 <li>
-                  팀장 및 서비스 전체 통합을 담당했습니다.
+                  팀장으로서 전체 서비스 통합과 일정 관리를 담당했습니다.
                 </li>
 
                 <li>
-                  5인 과제를 실질적인 2~3인 가용 인원으로 완성했습니다.
+                  5명이 수행해야 할 과제를 실질적인 2~3명의 가용 인원으로
+                  완성했습니다.
                 </li>
 
                 <li>
-                  웹 기능, 취약점, 데이터베이스와 제출 문서를 통합했습니다.
+                  Flask·MariaDB 기반 기능과 취약점, 데이터베이스 및
+                  제출 문서를 통합했습니다.
                 </li>
 
                 <li>
-                  다른 팀이 제작한 총 100문제 중 38문제를 해결했습니다.
+                  다른 팀이 제작한 총 100문제 중 38문제를 제가 직접
+                  해결했습니다.
                 </li>
               </ul>
 
               <div class="tags">
-                <span>Web Wargame</span>
                 <span>Flask</span>
                 <span>MariaDB</span>
                 <span>Web Security</span>
+                <span>Wargame</span>
                 <span>Team Lead</span>
               </div>
 
               <div class="project-actions">
                 <a
-                  href="4팀_Walkthrough_최종제출본.docx"
+                  href="4팀_Walkthrough_최종제출본%20-%20김보미.docx"
                   target="_blank"
+                  rel="noopener noreferrer"
                   class="text-link"
                 >
-                  풀이 문서 보기
+                  출제 문제 풀이 문서 보기
                 </a>
               </div>
             </div>
 
             <details class="project-detail">
               <summary>
-                상세 내용 펼치기
+                제작 및 개인 풀이 성과 보기
               </summary>
 
               <div class="detail-content">
                 <div>
-                  <h4>담당 역할</h4>
+                  <h4>워게임 구성</h4>
 
                   <p>
-                    팀원별로 제작한 기능과 취약점을 하나의 교육 포털
-                    서비스로 통합하고, 기능 충돌과 데이터베이스 연결,
-                    테스트 결과와 제출 자료를 전체적으로 점검했습니다.
+                    강의 검색, 수강 신청, Q&amp;A, 특강, 환불과 관리자
+                    기능을 포함한 교육 포털 서비스에 정보 노출, HPP,
+                    LFI, Mass Assignment, SQL Injection, Stored XSS,
+                    서명 검증 미흡, 역직렬화, 결제 검증과 Race Condition
+                    문제를 구현했습니다.
                   </p>
                 </div>
 
                 <div>
-                  <h4>성과</h4>
+                  <h4>담당 역할</h4>
 
                   <p>
-                    인원 공백과 환경 오류가 반복되는 상황에서도 역할과
-                    작업 범위를 조정해 서비스를 완성했습니다. 다른 팀이
-                    제작한 100문제 중 38문제를 해결하며 다양한 웹 취약점의
-                    구현 방식과 풀이 접근을 경험했습니다.
+                    팀원별로 제작한 기능과 취약점을 하나의 서비스로
+                    통합하고, 기능 충돌과 DB 연결, 문제 흐름, 테스트와
+                    최종 제출 자료를 전체적으로 점검했습니다.
+                  </p>
+                </div>
+
+                <div>
+                  <h4>협업 성과</h4>
+
+                  <p>
+                    인원 공백과 환경 오류가 반복되는 상황에서 남은
+                    인력과 일정에 맞춰 역할과 범위를 조정했습니다.
+                    그 결과 워게임 서비스와 문제 설명 및 Walkthrough를
+                    기한 안에 완성했습니다.
+                  </p>
+                </div>
+
+                <div>
+                  <h4>개인 풀이 성과</h4>
+
+                  <p>
+                    다른 팀이 제작한 총 100문제 중 38문제를 제가 직접
+                    해결했습니다. 여러 워게임의 구현 방식과 힌트를
+                    분석하며 문제별로 적절한 접근법을 선택했습니다.
                   </p>
                 </div>
               </div>
@@ -544,8 +645,8 @@
               </div>
 
               <p class="project-summary">
-                부트캠프 웹 보안 과제로 OWASP Juice Shop 환경의
-                취약점을 분석하고 문제를 해결했습니다.
+                부트캠프 웹 보안 과제로 OWASP Juice Shop의 기능과
+                요청·응답을 분석하고 다양한 웹 취약점 문제를 해결했습니다.
               </p>
 
               <ul class="key-points">
@@ -554,18 +655,18 @@
                 </li>
 
                 <li>
-                  XSS, SQL Injection, IDOR, SSRF, XXE 등 다양한
-                  웹 취약점을 실습했습니다.
+                  XSS, SQL Injection, IDOR, SSRF, XXE, JWT와
+                  파일 처리 취약점 등을 실습했습니다.
                 </li>
 
                 <li>
-                  요청·응답과 데이터 처리 흐름을 확인해 취약점의
-                  발생 원인을 분석했습니다.
+                  입력값, 요청·응답, 권한 검증과 데이터 흐름을 확인해
+                  취약점 발생 원인을 분석했습니다.
                 </li>
 
                 <li>
-                  주요 취약점은 재현 과정, 영향과 대응 방안을
-                  보고서로 작성했습니다.
+                  주요 취약점의 재현 과정, 영향과 대응 방안을
+                  모의해킹 보고서로 작성했습니다.
                 </li>
               </ul>
 
@@ -580,17 +681,17 @@
 
             <details class="project-detail">
               <summary>
-                상세 내용 펼치기
+                실습 내용 보기
               </summary>
 
               <div class="detail-content">
                 <div>
-                  <h4>실습 방식</h4>
+                  <h4>분석 방식</h4>
 
                   <p>
-                    입력값과 요청·응답, 권한 검증, 데이터 처리 흐름을
-                    확인하며 취약점이 발생하는 지점을 단계적으로
-                    좁혀갔습니다.
+                    화면에서 보이는 기능만 확인하지 않고 브라우저
+                    개발자 도구, Burp Suite와 HTTP 요청을 활용해
+                    서버가 입력값과 권한을 처리하는 방식을 확인했습니다.
                   </p>
                 </div>
 
@@ -598,8 +699,8 @@
                   <h4>보고서 작성</h4>
 
                   <p>
-                    CSP Bypass, SSRF, XXE 등 주요 취약점은 공격 과정과
-                    영향도, 대응 방안을 포함한 모의해킹 보고서로
+                    CSP Bypass, SSRF와 XXE 등 주요 취약점은 공격 과정,
+                    성공 근거, 영향도 및 대응 방안을 포함한 보고서로
                     정리했습니다.
                   </p>
                 </div>
@@ -616,7 +717,7 @@
                   </span>
 
                   <h3>
-                    웹 보안 워게임 및 취약점 실습
+                    웹 워게임 및 취약점 실습
                   </h3>
                 </div>
 
@@ -626,23 +727,24 @@
               </div>
 
               <p class="project-summary">
-                DVWA, WebGoat, Natas와 여러 워게임 환경에서
-                웹 취약점을 분석하고 재현했습니다.
+                DVWA, WebGoat, Natas와 여러 교육용 워게임 환경에서
+                웹 애플리케이션 취약점을 분석하고 재현했습니다.
               </p>
 
               <ul class="key-points">
                 <li>
-                  입력값 처리와 권한 검증 문제를 중심으로 분석했습니다.
+                  XSS, SQL Injection, 인증·인가와 파일 처리 문제를
+                  중심으로 실습했습니다.
                 </li>
 
                 <li>
-                  브라우저 개발자 도구, HTTP 요청과 터미널 명령을
-                  활용했습니다.
+                  브라우저 개발자 도구, Burp Suite, curl과 Linux
+                  명령을 활용했습니다.
                 </li>
 
                 <li>
-                  실패한 시도와 성공한 접근법을 구분해 학습자료로
-                  정리했습니다.
+                  성공한 방법뿐 아니라 실패한 접근도 구분해
+                  학습자료로 정리했습니다.
                 </li>
               </ul>
 
@@ -671,7 +773,7 @@
           </div>
 
           <p class="section-description">
-            프로젝트와 실습에서 직접 사용한 내용을 기준으로 작성했습니다.
+            프로젝트와 실습에서 실제 사용한 내용을 기준으로 작성했습니다.
           </p>
         </div>
 
@@ -680,8 +782,8 @@
             <strong>서버</strong>
 
             <p>
-              Linux, Rocky Linux, Apache, MariaDB, 계정·권한 설정,
-              서비스 및 로그 확인
+              Linux, Rocky Linux, Ubuntu, Apache, MariaDB,
+              계정·권한·서비스 설정 및 로그 확인
             </p>
           </div>
 
@@ -689,8 +791,17 @@
             <strong>네트워크</strong>
 
             <p>
-              TCP/IP, 라우팅, GRE, IPsec VPN, 방화벽,
-              네트워크 통신 점검
+              TCP/IP, VLAN, Routing, ACL, NAT, GRE,
+              IPsec VPN, OpenVPN, pfSense
+            </p>
+          </div>
+
+          <div class="skill-row">
+            <strong>보안관제</strong>
+
+            <p>
+              Wazuh, Suricata, Snort, Syslog, LogAnalyzer,
+              GoAccess, Zabbix, PMM
             </p>
           </div>
 
@@ -699,7 +810,7 @@
 
             <p>
               XSS, SQL Injection, IDOR, LFI, SSRF, XXE,
-              요청·응답 및 권한 검증 분석
+              인증·인가 및 요청·응답 분석
             </p>
           </div>
 
@@ -716,8 +827,8 @@
             <strong>문서화</strong>
 
             <p>
-              프로젝트 설명서, Walkthrough, 취약점 보고서,
-              실습 및 문제 해결 과정 정리
+              프로젝트 보고서, 모의해킹 결과 보고서,
+              Walkthrough, 회의록 및 문제 해결 과정 정리
             </p>
           </div>
         </div>
