@@ -272,7 +272,7 @@
               </div>
             </details>
           </article>
-
+          
           <article class="project-item">
             <div class="project-main">
               <div class="project-title-row">
@@ -293,38 +293,40 @@
 
               <p class="project-summary">
                 가상의 게임회사 Nexan을 배경으로 네트워크 고가용성,
-                서버 인프라, 보안관제와 모의해킹 환경을 통합 구축하고,
-                공격 발생 시 탐지·분석·대응이 가능한지 검증했습니다.
+                서버 인프라, 웹 게임 서비스와 보안관제 환경을 구축하고,
+                직접 모의해킹을 수행해 공격의 탐지와 피해 범위를
+                검증한 프로젝트입니다.
               </p>
 
               <ul class="key-points">
                 <li>
-                  웹 서비스 공격 시나리오와 모의해킹 절차를 설계했습니다.
+                  CatQuest 웹 게임의 기능을 개발하고 웹·DB 서버 구축에
+                  참여했습니다.
                 </li>
 
                 <li>
-                  웹 취약점, 관리자 권한 상승과 내부망 이동 가능성을
-                  분석했습니다.
+                  웹 공격 시나리오를 설계하고 취약점과 관리자 권한 상승
+                  가능성을 분석했습니다.
                 </li>
 
                 <li>
-                  공격이 개인정보 DB와 내부 시스템에 미칠 수 있는
-                  피해 영향을 정리했습니다.
+                  웹 서버 침해 이후 내부 서버망과 DB로 이동할 수 있는지
+                  점검하고 피해 영향을 분석했습니다.
                 </li>
 
                 <li>
                   공격 재현, DB 반영 결과와 관제 로그를 연결한
-                  모의해킹 보고서를 작성했습니다.
+                  모의해킹 결과 보고서를 작성했습니다.
                 </li>
               </ul>
 
               <div class="tags">
-                <span>GNS3</span>
-                <span>pfSense HA</span>
-                <span>OpenVPN</span>
-                <span>Wazuh</span>
-                <span>Suricata</span>
+                <span>Python</span>
+                <span>Flask</span>
+                <span>MariaDB</span>
                 <span>Web Pentest</span>
+                <span>Wazuh</span>
+                <span>Security Report</span>
               </div>
 
               <div class="project-actions">
@@ -345,47 +347,52 @@
 
               <div class="detail-content">
                 <div>
-                  <h4>구축 환경</h4>
+                  <h4>서비스 및 서버 구축</h4>
 
                   <p>
-                    pfSense 이중화, OpenVPN, VLAN과 DMZ를 적용하고
-                    웹·DNS·DB·SFTP 서버 및 Wazuh, Zabbix, PMM,
-                    GoAccess 등의 보안관제 환경을 구성했습니다.
+                    CatQuest 웹 게임의 기능 구현에 참여하고, 웹 서비스와
+                    데이터베이스가 동작할 수 있도록 서버 구축과 연동
+                    작업을 수행했습니다. 회원·관리자 정보, 게임 데이터와
+                    서비스 로그가 각각 저장되는 구조를 확인했습니다.
                   </p>
                 </div>
 
                 <div>
-                  <h4>담당 역할</h4>
+                  <h4>모의해킹</h4>
 
                   <p>
-                    공격 시나리오 설계와 취약점 분석을 담당했습니다.
-                    웹 서버 관리자 권한 탈취 이후 내부망 이동 가능성과
-                    개인정보·게임 DB에 미치는 영향을 분석했습니다.
+                    웹 기능을 분석해 가격 및 데이터 조작, 인증·인가,
+                    저장형 XSS와 파일 업로드 등 공격 시나리오를 구성했습니다.
+                    공격 성공 여부는 화면 응답뿐 아니라 DB에 반영된 값까지
+                    확인해 판단했습니다.
                   </p>
                 </div>
 
                 <div>
-                  <h4>진단 방식</h4>
+                  <h4>내부 이동 및 관제 확인</h4>
 
                   <p>
-                    외부 정보 수집과 웹 애플리케이션 진단을 수행한 뒤,
-                    DMZ 웹 서버 침해를 가정하여 내부 서버망의 주요
-                    서비스 포트로 접근할 수 있는지 확인했습니다.
+                    DMZ의 웹 서버가 침해된 상황을 가정해 SFTP, Wazuh,
+                    모니터링 서버와 내부 DB로 접근할 수 있는지 확인했습니다.
+                    또한 Wazuh와 GoAccess 등에서 공격 요청과 로그가
+                    탐지되는지도 함께 점검했습니다.
                   </p>
                 </div>
 
                 <div>
-                  <h4>결과물</h4>
+                  <h4>문서 작성</h4>
 
                   <p>
-                    공격 전 화면, 변조 요청, 성공 결과, DB 반영 내역과
-                    Wazuh·GoAccess 탐지 화면을 하나의 흐름으로 연결한
-                    모의해킹 결과 보고서를 작성했습니다.
+                    공격 전 화면, 변조 요청, 공격 성공 결과, DB 반영 내역,
+                    로그 및 관제 화면을 하나의 흐름으로 정리한 모의해킹
+                    결과 보고서를 작성했습니다. 취약점별 위험도와 대응
+                    방안도 함께 제시했습니다.
                   </p>
                 </div>
               </div>
             </details>
           </article>
+          
         </div>
       </section>
 
