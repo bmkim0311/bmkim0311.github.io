@@ -10,62 +10,77 @@
 
   <meta
     name="description"
-    content="김보미의 웹 보안·인프라·클라우드 포트폴리오"
+    content="김보미의 정보보안, 네트워크, 웹 보안 포트폴리오"
   >
 
-  <title>김보미 | Security & Cloud Portfolio</title>
+  <title>김보미 | Security Portfolio</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="./style.css?v=20260721-4"
+  >
 </head>
 
 <body>
   <header class="topbar">
-    <a href="#top" class="brand">BOMI KIM</a>
+    <a
+      href="#top"
+      class="brand"
+    >
+      BOMI KIM
+    </a>
 
-    <nav class="topnav" aria-label="주요 메뉴">
+    <nav
+      class="topnav"
+      aria-label="주요 메뉴"
+    >
       <a href="#projects">프로젝트</a>
-      <a href="#experience">경험</a>
+      <a href="#competitions">대회</a>
+      <a href="#practice">실습</a>
       <a href="#skills">기술</a>
-      <a href="#contact">연락처</a>
     </nav>
   </header>
 
-  <main id="top" class="page">
-    <!-- 왼쪽 고정 프로필 -->
+  <main
+    id="top"
+    class="page"
+  >
     <aside class="profile-panel">
       <div>
-        <p class="label">WEB SECURITY · INFRASTRUCTURE · CLOUD</p>
+        <p class="label">
+          SECURITY · NETWORK · WEB
+        </p>
 
         <h1>김보미</h1>
 
         <p class="headline">
-          기술의 개별 기능뿐 아니라<br>
-          전체 구조와 흐름을 이해하려는 지원자
+          서버·네트워크·웹 보안을 직접 구축하고,<br>
+          전체 구조와 진행 흐름을 함께 봅니다.
         </p>
 
         <p class="intro">
           정보보호를 전공하고 있으며, 현재 정보보안 부트캠프에서
-          서버·네트워크·웹 보안 환경을 직접 구축하고 분석하고 있습니다.
-          문제 해결 과정과 결과를 다른 사람이 빠르게 이해할 수 있도록
-          문서화하는 데 강점이 있습니다.
+          가상회사 기반 인프라 구축, 웹 보안 실습, CTF와 워게임 제작을
+          경험하고 있습니다. 기술을 구현하는 것에 그치지 않고,
+          문제 해결 과정과 결과를 다른 사람이 빠르게 확인할 수 있도록
+          정리하고 문서화합니다.
         </p>
 
         <div class="quick-links">
           <a
             class="button primary"
+            href="#projects"
+          >
+            프로젝트 보기
+          </a>
+
+          <a
+            class="button"
             href="https://github.com/bmkim0311"
             target="_blank"
             rel="noopener noreferrer"
           >
             GitHub
-          </a>
-
-          <!-- 실제 PDF 파일을 올린 뒤 경로를 변경 -->
-          <a
-            class="button"
-            href="#projects"
-          >
-            프로젝트 보기
           </a>
         </div>
       </div>
@@ -93,69 +108,355 @@
       </dl>
     </aside>
 
-    <!-- 오른쪽 핵심 정보 -->
     <div class="content-panel">
-      <!-- 첫 화면 요약 -->
-      <section class="summary-grid" aria-label="핵심 요약">
+      <section
+        class="summary-grid"
+        aria-label="핵심 경험 요약"
+      >
         <article>
           <strong>2회</strong>
-          <span>팀장 경험</span>
+          <span>완료 팀 프로젝트</span>
         </article>
 
         <article>
-          <strong>90+</strong>
-          <span>Juice Shop 문제 해결</span>
+          <strong>2회</strong>
+          <span>자체 제작 대회</span>
         </article>
 
         <article>
-          <strong>10</strong>
-          <span>워게임 문제 제작</span>
+          <strong>4 / 10</strong>
+          <span>CTF 문제 해결</span>
         </article>
 
         <article>
-          <strong>5</strong>
-          <span>대표 프로젝트</span>
+          <strong>38 / 100</strong>
+          <span>웹 워게임 문제 해결</span>
         </article>
       </section>
 
-      <!-- 대표 프로젝트 -->
-      <section id="projects" class="section">
+      <section
+        id="projects"
+        class="section"
+      >
         <div class="section-header">
           <div>
-            <p class="section-kicker">SELECTED WORK</p>
-            <h2>대표 프로젝트</h2>
+            <p class="section-kicker">
+              TEAM PROJECTS
+            </p>
+
+            <h2>팀 프로젝트</h2>
           </div>
 
           <p class="section-description">
-            담당 역할과 결과물을 중심으로 정리했습니다.
+            완료한 프로젝트만 정리했습니다.
           </p>
         </div>
 
         <div class="project-list">
-          <!-- 프로젝트 1 -->
           <article class="project-item featured">
             <div class="project-main">
               <div class="project-title-row">
                 <div>
-                  <span class="project-type">TEAM LEAD · WEB SECURITY</span>
-                  <h3>교육 포털형 웹 워게임 자체 제작</h3>
+                  <span class="project-type">
+                    1ST PROJECT · TEAM LEAD
+                  </span>
+
+                  <h3>
+                    가상 금융회사 네트워크 및 웹사이트 구축
+                  </h3>
                 </div>
 
-                <span class="project-date">2026</span>
+                <span class="project-date">
+                  2026
+                </span>
               </div>
 
               <p class="project-summary">
-                Flask와 MariaDB를 기반으로 교육 포털 형태의 웹 서비스를 제작하고,
-                서비스 내에 10개의 웹 취약점 문제를 구현했습니다.
+                가상의 금융회사를 주제로 Rocky Linux 기반의 서버와
+                네트워크 환경을 구성하고, 회사 웹사이트와 데이터베이스를
+                구축한 프로젝트입니다.
               </p>
 
               <ul class="key-points">
-                <li>팀장 및 전체 기능 통합 담당</li>
-                <li>5인 과제를 실질적인 2~3인 가용 인원으로 완성</li>
-                <li>기능 테스트, 오류 수정, 문제 설명서 및 풀이 자료 작성</li>
+                <li>
+                  팀장으로서 프로젝트 일정과 역할을 조율했습니다.
+                </li>
+
+                <li>
+                  Rocky Linux 기반 웹 서버와 데이터베이스 서버를 구성했습니다.
+                </li>
+
+                <li>
+                  가상 금융회사 환경에 맞춰 네트워크 구조와 서비스 구성을
+                  설계했습니다.
+                </li>
+
+                <li>
+                  각 서버와 웹사이트, 데이터베이스의 연결 상태를 점검했습니다.
+                </li>
               </ul>
 
               <div class="tags">
+                <span>Rocky Linux</span>
+                <span>Network</span>
+                <span>Web Server</span>
+                <span>Database</span>
+                <span>Team Lead</span>
+              </div>
+            </div>
+
+            <details class="project-detail">
+              <summary>
+                상세 내용 펼치기
+              </summary>
+
+              <div class="detail-content">
+                <div>
+                  <h4>프로젝트 목적</h4>
+
+                  <p>
+                    가상회사의 네트워크와 서버 환경을 직접 설계하면서
+                    웹 서비스와 데이터베이스가 연결되는 전체 구조를
+                    이해하는 것이 목적이었습니다.
+                  </p>
+                </div>
+
+                <div>
+                  <h4>담당 역할</h4>
+
+                  <p>
+                    팀장으로서 역할과 일정을 조율하고, 팀원별 결과물이
+                    하나의 회사 환경에서 정상적으로 연결되는지 전체 진행
+                    상황을 확인했습니다.
+                  </p>
+                </div>
+              </div>
+            </details>
+          </article>
+
+          <article class="project-item">
+            <div class="project-main">
+              <div class="project-title-row">
+                <div>
+                  <span class="project-type">
+                    2ND PROJECT · TEAM MEMBER
+                  </span>
+
+                  <h3>
+                    가상회사 인프라 및 보안 환경 확장 구축
+                  </h3>
+                </div>
+
+                <span class="project-date">
+                  2026
+                </span>
+              </div>
+
+              <p class="project-summary">
+                1차 프로젝트보다 확장된 가상회사 환경을 바탕으로
+                서버와 네트워크, 보안 구성 요소를 추가해 구축한
+                프로젝트입니다.
+              </p>
+
+              <ul class="key-points">
+                <li>
+                  팀원으로서 맡은 기술과 기능을 구현했습니다.
+                </li>
+
+                <li>
+                  담당 업무뿐 아니라 전체 구성과 일정도 함께 확인했습니다.
+                </li>
+
+                <li>
+                  서버·네트워크·보안 구성 요소가 연결되는 구조를 학습했습니다.
+                </li>
+
+                <li>
+                  오류 발생 시 설정과 통신 상태를 순서대로 확인했습니다.
+                </li>
+              </ul>
+
+              <div class="tags">
+                <span>Infrastructure</span>
+                <span>Network</span>
+                <span>Security</span>
+                <span>Linux</span>
+                <span>Team Project</span>
+              </div>
+            </div>
+
+            <details class="project-detail">
+              <summary>
+                상세 내용 펼치기
+              </summary>
+
+              <div class="detail-content">
+                <div>
+                  <h4>프로젝트 특징</h4>
+
+                  <p>
+                    1차 프로젝트보다 구성 범위가 넓어져 개별 기술뿐 아니라
+                    여러 시스템이 서로 영향을 주는 구조를 함께 이해해야
+                    했습니다.
+                  </p>
+                </div>
+
+                <div>
+                  <h4>담당 방식</h4>
+
+                  <p>
+                    팀원으로서 제 업무를 수행하면서도 팀장이 놓치기 쉬운
+                    일정과 작업 상태를 확인하고, 필요한 내용은 미리
+                    공유했습니다.
+                  </p>
+                </div>
+              </div>
+            </details>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="competitions"
+        class="section"
+      >
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">
+              SECURITY COMPETITIONS
+            </p>
+
+            <h2>자체 제작 대회</h2>
+          </div>
+
+          <p class="section-description">
+            문제 제작과 다른 팀의 문제 풀이를 함께 수행했습니다.
+          </p>
+        </div>
+
+        <div class="project-list">
+          <article class="project-item">
+            <div class="project-main">
+              <div class="project-title-row">
+                <div>
+                  <span class="project-type">
+                    CTF · CREATION &amp; CHALLENGE
+                  </span>
+
+                  <h3>
+                    CTF 자체 제작 대회
+                  </h3>
+                </div>
+
+                <span class="project-date">
+                  2026
+                </span>
+              </div>
+
+              <p class="project-summary">
+                부트캠프 교육과정에서 팀별로 CTF 문제를 직접 제작하고,
+                다른 팀이 제작한 문제를 제한 시간 안에 분석해 해결했습니다.
+              </p>
+
+              <ul class="key-points">
+                <li>
+                  참가자가 단서를 따라 해결할 수 있도록 문제 흐름을 구성했습니다.
+                </li>
+
+                <li>
+                  다른 팀이 제작한 총 10문제 중 4문제를 해결했습니다.
+                </li>
+
+                <li>
+                  제한 시간 안에 가능성이 높은 접근법부터 우선 검증했습니다.
+                </li>
+
+                <li>
+                  풀이 과정과 확인 결과를 정리했습니다.
+                </li>
+              </ul>
+
+              <div class="tags">
+                <span>CTF</span>
+                <span>Challenge Design</span>
+                <span>Security</span>
+                <span>Problem Solving</span>
+              </div>
+            </div>
+
+            <details class="project-detail">
+              <summary>
+                상세 내용 펼치기
+              </summary>
+
+              <div class="detail-content">
+                <div>
+                  <h4>제작 경험</h4>
+
+                  <p>
+                    단순히 어렵게 만드는 데 집중하기보다, 참가자가 단서를
+                    확인하며 의도한 보안 개념에 도달할 수 있도록 문제의
+                    조건과 풀이 순서를 구성했습니다.
+                  </p>
+                </div>
+
+                <div>
+                  <h4>풀이 성과</h4>
+
+                  <p>
+                    다른 팀이 제작한 총 10문제 중 4문제를 해결하며
+                    제한된 시간에 문제 구조를 분석하고 접근 우선순위를
+                    정하는 경험을 쌓았습니다.
+                  </p>
+                </div>
+              </div>
+            </details>
+          </article>
+
+          <article class="project-item featured">
+            <div class="project-main">
+              <div class="project-title-row">
+                <div>
+                  <span class="project-type">
+                    WEB WARGAME · TEAM LEAD
+                  </span>
+
+                  <h3>
+                    교육 포털형 웹 워게임 자체 제작 대회
+                  </h3>
+                </div>
+
+                <span class="project-date">
+                  2026
+                </span>
+              </div>
+
+              <p class="project-summary">
+                부트캠프 필수 과정으로 교육 포털 형태의 웹 워게임을
+                직접 제작하고, 다른 팀이 제작한 웹 보안 문제를
+                분석해 해결했습니다.
+              </p>
+
+              <ul class="key-points">
+                <li>
+                  팀장 및 서비스 전체 통합을 담당했습니다.
+                </li>
+
+                <li>
+                  5인 과제를 실질적인 2~3인 가용 인원으로 완성했습니다.
+                </li>
+
+                <li>
+                  웹 기능, 취약점, 데이터베이스와 제출 문서를 통합했습니다.
+                </li>
+
+                <li>
+                  다른 팀이 제작한 총 100문제 중 38문제를 해결했습니다.
+                </li>
+              </ul>
+
+              <div class="tags">
+                <span>Web Wargame</span>
                 <span>Flask</span>
                 <span>MariaDB</span>
                 <span>Web Security</span>
@@ -163,7 +464,6 @@
               </div>
 
               <div class="project-actions">
-                <!-- 실제 파일명이나 링크에 맞게 수정 -->
                 <a
                   href="4팀_Walkthrough_최종제출본.docx"
                   target="_blank"
@@ -171,266 +471,223 @@
                 >
                   풀이 문서 보기
                 </a>
-
-                <a
-                  href="https://github.com/bmkim0311"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-link"
-                >
-                  GitHub
-                </a>
               </div>
             </div>
 
             <details class="project-detail">
-              <summary>상세 내용 펼치기</summary>
+              <summary>
+                상세 내용 펼치기
+              </summary>
 
               <div class="detail-content">
                 <div>
-                  <h4>담당 업무</h4>
+                  <h4>담당 역할</h4>
+
                   <p>
-                    서비스 전체 구조 설계와 팀원별 기능 통합을 담당했습니다.
-                    문제 간 기능 충돌과 데이터베이스 연결 문제를 점검하고,
-                    최종 서비스의 사용 흐름을 하나의 기준으로 정리했습니다.
+                    팀원별로 제작한 기능과 취약점을 하나의 교육 포털
+                    서비스로 통합하고, 기능 충돌과 데이터베이스 연결,
+                    테스트 결과와 제출 자료를 전체적으로 점검했습니다.
                   </p>
                 </div>
 
                 <div>
-                  <h4>배운 점</h4>
+                  <h4>성과</h4>
+
                   <p>
-                    제한된 인원과 일정에서는 모든 기능을 동일한 비중으로
-                    다루기보다 우선순위를 판단하고, 전체 결과에 영향을 주는
-                    작업부터 처리해야 한다는 점을 배웠습니다.
+                    인원 공백과 환경 오류가 반복되는 상황에서도 역할과
+                    작업 범위를 조정해 서비스를 완성했습니다. 다른 팀이
+                    제작한 100문제 중 38문제를 해결하며 다양한 웹 취약점의
+                    구현 방식과 풀이 접근을 경험했습니다.
                   </p>
                 </div>
               </div>
             </details>
           </article>
+        </div>
+      </section>
 
-          <!-- 프로젝트 2 -->
+      <section
+        id="practice"
+        class="section"
+      >
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">
+              COURSEWORK &amp; PRACTICE
+            </p>
+
+            <h2>과제 및 보안 실습</h2>
+          </div>
+
+          <p class="section-description">
+            부트캠프 수업과 과제로 수행한 실습입니다.
+          </p>
+        </div>
+
+        <div class="project-list">
           <article class="project-item">
             <div class="project-main">
               <div class="project-title-row">
                 <div>
-                  <span class="project-type">WEB SECURITY LAB</span>
-                  <h3>웹 취약점 진단 및 모의해킹 실습</h3>
+                  <span class="project-type">
+                    COURSE ASSIGNMENT · WEB SECURITY
+                  </span>
+
+                  <h3>
+                    OWASP Juice Shop 취약점 분석 과제
+                  </h3>
                 </div>
 
-                <span class="project-date">2026</span>
+                <span class="project-date">
+                  2026
+                </span>
               </div>
 
               <p class="project-summary">
-                OWASP Juice Shop, DVWA, WebGoat, Natas 등 다양한 실습 환경에서
-                웹 취약점을 분석하고 공격 과정과 대응 방안을 정리했습니다.
+                부트캠프 웹 보안 과제로 OWASP Juice Shop 환경의
+                취약점을 분석하고 문제를 해결했습니다.
               </p>
 
               <ul class="key-points">
-                <li>Juice Shop 약 90개 문제 해결</li>
-                <li>XSS, SQL Injection, IDOR, SSRF, XXE 등 실습</li>
-                <li>취약점별 재현 과정과 대응 방안 보고서 작성</li>
+                <li>
+                  총 91개의 문제를 해결했습니다.
+                </li>
+
+                <li>
+                  XSS, SQL Injection, IDOR, SSRF, XXE 등 다양한
+                  웹 취약점을 실습했습니다.
+                </li>
+
+                <li>
+                  요청·응답과 데이터 처리 흐름을 확인해 취약점의
+                  발생 원인을 분석했습니다.
+                </li>
+
+                <li>
+                  주요 취약점은 재현 과정, 영향과 대응 방안을
+                  보고서로 작성했습니다.
+                </li>
               </ul>
 
               <div class="tags">
+                <span>OWASP Juice Shop</span>
                 <span>XSS</span>
                 <span>SQL Injection</span>
                 <span>IDOR</span>
-                <span>SSRF</span>
                 <span>Reporting</span>
               </div>
             </div>
 
             <details class="project-detail">
-              <summary>상세 내용 펼치기</summary>
+              <summary>
+                상세 내용 펼치기
+              </summary>
 
               <div class="detail-content">
                 <div>
-                  <h4>분석 방식</h4>
+                  <h4>실습 방식</h4>
+
                   <p>
-                    요청과 응답, 입력값 처리, 권한 검증과 데이터 흐름을 확인해
-                    취약점 발생 지점을 좁혀갔습니다.
+                    입력값과 요청·응답, 권한 검증, 데이터 처리 흐름을
+                    확인하며 취약점이 발생하는 지점을 단계적으로
+                    좁혀갔습니다.
                   </p>
                 </div>
 
                 <div>
-                  <h4>결과물</h4>
+                  <h4>보고서 작성</h4>
+
                   <p>
-                    CSP Bypass, SSRF, XXE 등 주요 취약점은 공격 과정,
-                    영향도와 대응 방안을 포함한 보고서로 작성했습니다.
+                    CSP Bypass, SSRF, XXE 등 주요 취약점은 공격 과정과
+                    영향도, 대응 방안을 포함한 모의해킹 보고서로
+                    정리했습니다.
                   </p>
                 </div>
               </div>
             </details>
           </article>
 
-          <!-- 프로젝트 3 -->
           <article class="project-item">
             <div class="project-main">
               <div class="project-title-row">
                 <div>
-                  <span class="project-type">INFRASTRUCTURE</span>
-                  <h3>Linux 웹·데이터베이스 서버 구축</h3>
+                  <span class="project-type">
+                    SECURITY PRACTICE
+                  </span>
+
+                  <h3>
+                    웹 보안 워게임 및 취약점 실습
+                  </h3>
                 </div>
 
-                <span class="project-date">2026</span>
+                <span class="project-date">
+                  2026
+                </span>
               </div>
 
               <p class="project-summary">
-                Rocky Linux 환경에 Apache, PHP, MariaDB를 설치하고,
-                웹 서버와 데이터베이스의 연결 구조를 구성했습니다.
+                DVWA, WebGoat, Natas와 여러 워게임 환경에서
+                웹 취약점을 분석하고 재현했습니다.
               </p>
 
               <ul class="key-points">
-                <li>웹·DB 서버 설치 및 연동</li>
-                <li>계정, 권한, 서비스와 방화벽 설정</li>
-                <li>오류 발생 시 로그와 설정값을 기반으로 원인 분석</li>
+                <li>
+                  입력값 처리와 권한 검증 문제를 중심으로 분석했습니다.
+                </li>
+
+                <li>
+                  브라우저 개발자 도구, HTTP 요청과 터미널 명령을
+                  활용했습니다.
+                </li>
+
+                <li>
+                  실패한 시도와 성공한 접근법을 구분해 학습자료로
+                  정리했습니다.
+                </li>
               </ul>
 
               <div class="tags">
-                <span>Rocky Linux</span>
-                <span>Apache</span>
-                <span>PHP</span>
-                <span>MariaDB</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 프로젝트 4 -->
-          <article class="project-item">
-            <div class="project-main">
-              <div class="project-title-row">
-                <div>
-                  <span class="project-type">NETWORK SECURITY</span>
-                  <h3>GRE 터널 및 IPsec VPN 구축</h3>
-                </div>
-
-                <span class="project-date">2026</span>
-              </div>
-
-              <p class="project-summary">
-                서로 다른 네트워크를 연결하는 GRE 터널과 IPsec VPN을 구성하고,
-                통신 구간의 보안 설정과 패킷 흐름을 확인했습니다.
-              </p>
-
-              <ul class="key-points">
-                <li>네트워크 구간 및 라우팅 구성</li>
-                <li>IPsec 암호화 정책 적용</li>
-                <li>통신 오류 발생 시 단계별 연결 상태 점검</li>
-              </ul>
-
-              <div class="tags">
-                <span>GRE</span>
-                <span>IPsec</span>
-                <span>VPN</span>
-                <span>Routing</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 프로젝트 5 -->
-          <article class="project-item">
-            <div class="project-main">
-              <div class="project-title-row">
-                <div>
-                  <span class="project-type">SECURITY MONITORING</span>
-                  <h3>보안 모니터링 환경 구성</h3>
-                </div>
-
-                <span class="project-date">2026</span>
-              </div>
-
-              <p class="project-summary">
-                pfSense, Wazuh, Snort와 로그 서버를 활용해 네트워크와 시스템의
-                보안 이벤트를 수집하고 확인하는 환경을 구성했습니다.
-              </p>
-
-              <ul class="key-points">
-                <li>방화벽 및 탐지 정책 구성</li>
-                <li>보안 이벤트와 시스템 로그 확인</li>
-                <li>탐지 결과를 기반으로 통신 및 설정 상태 점검</li>
-              </ul>
-
-              <div class="tags">
-                <span>pfSense</span>
-                <span>Wazuh</span>
-                <span>Snort</span>
-                <span>Log Analysis</span>
+                <span>DVWA</span>
+                <span>WebGoat</span>
+                <span>Natas</span>
+                <span>Wargame</span>
               </div>
             </div>
           </article>
         </div>
       </section>
 
-      <!-- 경험 -->
-      <section id="experience" class="section compact-section">
+      <section
+        id="skills"
+        class="section compact-section"
+      >
         <div class="section-header">
           <div>
-            <p class="section-kicker">EXPERIENCE</p>
-            <h2>경험과 역할</h2>
-          </div>
-        </div>
+            <p class="section-kicker">
+              SKILLS
+            </p>
 
-        <div class="timeline">
-          <article>
-            <div class="timeline-date">2026.02–현재</div>
-
-            <div>
-              <h3>정보보안 부트캠프</h3>
-              <p>
-                서버·네트워크·웹 보안 실습과 팀 프로젝트를 수행하고 있습니다.
-                1차 프로젝트와 워게임 자체 제작 과정에서 팀장을 맡았으며,
-                팀원으로 참여할 때에도 전체 일정과 진행 상황을 함께 확인했습니다.
-              </p>
-            </div>
-          </article>
-
-          <article>
-            <div class="timeline-date">대학교</div>
-
-            <div>
-              <h3>정보보호 전공 · 동아리 활동</h3>
-              <p>
-                전공 기초를 학습하고 동아리 단원복지부와 홍보부에서 활동했습니다.
-                필요한 업무를 일찍 준비하고 구성원이 편하게 의견을 낼 수 있도록
-                분위기를 조율하려 노력했습니다.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- 기술 -->
-      <section id="skills" class="section compact-section">
-        <div class="section-header">
-          <div>
-            <p class="section-kicker">SKILLS</p>
             <h2>사용 기술</h2>
           </div>
 
           <p class="section-description">
-            프로젝트에서 실제 사용한 기술을 기준으로 작성했습니다.
+            프로젝트와 실습에서 직접 사용한 내용을 기준으로 작성했습니다.
           </p>
         </div>
 
         <div class="skills-table">
           <div class="skill-row">
-            <strong>보안</strong>
-            <p>
-              웹 취약점 분석, 요청·응답 분석, 취약점 재현,
-              모의해킹 보고서 작성
-            </p>
-          </div>
-
-          <div class="skill-row">
             <strong>서버</strong>
+
             <p>
-              Linux, Apache, MariaDB, 서비스·계정·권한 설정,
-              로그 기반 문제 해결
+              Linux, Rocky Linux, Apache, MariaDB, 계정·권한 설정,
+              서비스 및 로그 확인
             </p>
           </div>
 
           <div class="skill-row">
             <strong>네트워크</strong>
+
             <p>
               TCP/IP, 라우팅, GRE, IPsec VPN, 방화벽,
               네트워크 통신 점검
@@ -438,27 +695,43 @@
           </div>
 
           <div class="skill-row">
-            <strong>개발</strong>
+            <strong>웹 보안</strong>
+
             <p>
-              Python, Flask, HTML, CSS, JavaScript, Git, GitHub
+              XSS, SQL Injection, IDOR, LFI, SSRF, XXE,
+              요청·응답 및 권한 검증 분석
+            </p>
+          </div>
+
+          <div class="skill-row">
+            <strong>개발</strong>
+
+            <p>
+              Python, Flask, HTML, CSS, JavaScript,
+              Git, GitHub
             </p>
           </div>
 
           <div class="skill-row">
             <strong>문서화</strong>
+
             <p>
               프로젝트 설명서, Walkthrough, 취약점 보고서,
-              학습 및 문제 해결 과정 정리
+              실습 및 문제 해결 과정 정리
             </p>
           </div>
         </div>
       </section>
 
-      <!-- 연락처 -->
-      <section id="contact" class="contact-box">
+      <section class="contact-box">
         <div>
-          <p class="section-kicker">CONTACT</p>
-          <h2>더 자세한 내용은 결과물에서 확인하실 수 있습니다.</h2>
+          <p class="section-kicker">
+            CONTACT
+          </p>
+
+          <h2>
+            프로젝트와 실습 결과는 지속적으로 업데이트하고 있습니다.
+          </h2>
         </div>
 
         <div class="contact-actions">
@@ -474,8 +747,13 @@
       </section>
 
       <footer>
-        <p>© 2026 Bomi Kim</p>
-        <p>Last updated: 2026.07</p>
+        <p>
+          © 2026 Bomi Kim
+        </p>
+
+        <p>
+          Last updated: 2026.07
+        </p>
       </footer>
     </div>
   </main>
