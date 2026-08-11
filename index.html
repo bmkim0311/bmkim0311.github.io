@@ -17,7 +17,7 @@
 
   <link
     rel="stylesheet"
-    href="./style.css?v=20260721-6"
+    href="./style.css?v=20260811-1"
   >
 </head>
 
@@ -59,11 +59,11 @@
         </p>
 
         <p class="intro">
-          정보보호를 전공하고 있으며, 현재 정보보안 부트캠프에서
-          가상회사 기반 인프라 구축, 웹 보안 실습, CTF 및 웹 워게임
-          제작을 경험하고 있습니다. 기술을 구현하는 데 그치지 않고,
-          문제의 원인과 해결 과정, 결과를 다른 사람이 빠르게 확인할 수
-          있도록 정리하고 문서화합니다.
+          정보보호를 전공하고 있으며, 정보보안 부트캠프에서
+          가상회사 기반 인프라 구축, 웹 보안, 보안관제와 모의해킹,
+          CTF 및 웹 워게임 제작을 경험했습니다. 기술을 구현하는 데
+          그치지 않고, 직접 공격하고 보완한 뒤 재검증하며 문제의 원인과
+          해결 과정을 다른 사람이 빠르게 확인할 수 있도록 문서화합니다.
         </p>
 
         <div class="quick-links">
@@ -102,7 +102,7 @@
         </div>
 
         <div>
-          <dt>수료 예정</dt>
+          <dt>교육 수료</dt>
           <dd>2026.08.07</dd>
         </div>
       </dl>
@@ -114,7 +114,7 @@
         aria-label="핵심 경험 요약"
       >
         <article>
-          <strong>2회</strong>
+          <strong>3회</strong>
           <span>완료 팀 프로젝트</span>
         </article>
 
@@ -148,7 +148,7 @@
           </div>
 
           <p class="section-description">
-            현재까지 완료한 두 차례의 프로젝트입니다.
+            현재까지 완료한 세 차례의 프로젝트입니다.
           </p>
         </div>
 
@@ -387,6 +387,116 @@
                     로그 및 관제 화면을 하나의 흐름으로 정리한 모의해킹
                     결과 보고서를 작성했습니다. 취약점별 위험도와 대응
                     방안도 함께 제시했습니다.
+                  </p>
+                </div>
+              </div>
+            </details>
+          </article>
+
+          <article class="project-item featured">
+            <div class="project-main">
+              <div class="project-title-row">
+                <div>
+                  <span class="project-type">
+                    3RD PROJECT · TEAM LEAD
+                  </span>
+
+                  <h3>
+                    또롱이 공공자전거 서비스 보안 진단·탐지·대응 환경 구축
+                  </h3>
+                </div>
+
+                <span class="project-date">
+                  2026.08
+                </span>
+              </div>
+
+              <p class="project-summary">
+                공공자전거 서비스를 직접 구축한 뒤 실제 공격 시나리오로
+                취약점을 진단하고, WAF·IDS/IPS·SIEM을 연계해 탐지와 차단,
+                보완 및 재검증까지 수행한 보안 중심 프로젝트입니다.
+              </p>
+
+              <ul class="key-points">
+                <li>
+                  팀장으로서 웹·DB·로그·DNS 서버와 보안 장비의 전체 연결 구조를
+                  구성하고 통합 과정의 오류를 점검했습니다.
+                </li>
+
+                <li>
+                  IDOR, QR 토큰 변조, 중복 대여, 비인증 자료 다운로드,
+                  감사로그 미기록 등 5개 공격 시나리오를 진단했습니다.
+                </li>
+
+                <li>
+                  WAF·IDS/IPS·SIEM 탐지와 차단 정책을 적용하고, 보완 후 동일
+                  공격을 다시 수행해 방어 여부를 재검증했습니다.
+                </li>
+
+                <li>
+                  모의해킹, 정보보호 점검, 악성코드 분석과 보안환경 운영 결과를
+                  각각 보고서와 발표 자료로 정리했습니다.
+                </li>
+              </ul>
+
+              <div class="tags">
+                <span>Linux</span>
+                <span>Flask</span>
+                <span>MariaDB</span>
+                <span>Wazuh</span>
+                <span>Snort</span>
+                <span>ModSecurity</span>
+                <span>pfSense</span>
+                <span>Team Lead</span>
+              </div>
+            </div>
+
+            <details class="project-detail">
+              <summary>
+                담당 업무와 결과 보기
+              </summary>
+
+              <div class="detail-content">
+                <div>
+                  <h4>서비스 및 보안 인프라 구축</h4>
+
+                  <p>
+                    사용자·관리자·협력업체용 Flask 서비스와 MariaDB를 연동하고,
+                    pfSense, DNS, WAF, IDS/IPS, Wazuh를 연결해 외부 요청부터
+                    서비스 처리와 로그 수집까지 이어지는 구조를 구성했습니다.
+                  </p>
+                </div>
+
+                <div>
+                  <h4>모의해킹 및 보완</h4>
+
+                  <p>
+                    서비스 기능을 기준으로 5개 공격 시나리오를 설계하고
+                    취약 상태를 재현했습니다. Flask 로직, DB 처리, 접근 통제와
+                    감사로그를 보완한 뒤 같은 공격을 다시 수행해 개선 여부를
+                    확인했습니다.
+                  </p>
+                </div>
+
+                <div>
+                  <h4>탐지 및 대응 검증</h4>
+
+                  <p>
+                    ModSecurity, Snort와 Wazuh에 서비스 특화 탐지 규칙을 적용하고
+                    공격 요청, 차단 결과와 애플리케이션 로그가 서로 연결되는지
+                    확인했습니다. 네트워크 경로와 보안 정책 오류도 함께
+                    트러블슈팅했습니다.
+                  </p>
+                </div>
+
+                <div>
+                  <h4>악성코드 분석 및 문서화</h4>
+
+                  <p>
+                    PyInstaller 기반 교육용 악성코드의 시스템 정보 수집, 데이터
+                    변조, 프로세스 생성과 흔적 삭제 행위를 분석했습니다. 프로젝트
+                    결과는 정보보호 점검·모의해킹·악성코드 분석 보고서로
+                    구분해 정리했습니다.
                   </p>
                 </div>
               </div>
@@ -808,7 +918,7 @@
 
             <p>
               Wazuh, Suricata, Snort, Syslog, LogAnalyzer,
-              GoAccess, Zabbix, PMM
+              GoAccess, Zabbix, PMM, ModSecurity
             </p>
           </div>
 
@@ -817,7 +927,7 @@
 
             <p>
               XSS, SQL Injection, IDOR, LFI, SSRF, XXE,
-              인증·인가 및 요청·응답 분석
+              WAF 정책, 인증·인가 및 요청·응답 분석
             </p>
           </div>
 
@@ -825,8 +935,8 @@
             <strong>개발</strong>
 
             <p>
-              Python, Flask, HTML, CSS, JavaScript,
-              Git, GitHub
+              Python, C, SQL, Bash/Shell, Flask, HTML, CSS,
+              JavaScript, Git, GitHub
             </p>
           </div>
 
@@ -870,7 +980,7 @@
         </p>
 
         <p>
-          Last updated: 2026.07
+          Last updated: 2026.08
         </p>
       </footer>
     </div>
