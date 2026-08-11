@@ -103,6 +103,7 @@ a {
 
 .topnav {
   display: flex;
+
   gap: 26px;
 }
 
@@ -952,11 +953,9 @@ a {
   border-radius:
     var(--radius);
 
-  background:
-    var(--surface);
+  background: var(--surface);
 
-  box-shadow:
-    var(--shadow);
+  box-shadow: var(--shadow);
 }
 
 
