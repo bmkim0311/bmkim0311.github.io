@@ -1,172 +1,1064 @@
-<!-- =================================================
-     2차 프로젝트
-================================================== -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
 
-<article class="project-item">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <div class="project-main">
+  <meta
+    name="description"
+    content="김보미의 정보보안, 네트워크, 웹 보안 포트폴리오"
+  >
 
-    <div class="project-title-row">
+  <title>김보미 | Security Portfolio</title>
 
-      <div>
+  <link
+    rel="stylesheet"
+    href="./style.css?v=20260811-20"
+  >
+</head>
 
-        <span class="project-type">
-          2ND PROJECT · TEAM MEMBER
-        </span>
+<body>
 
-        <h3>
-          Nexan 게임회사 보안관제 및 모의해킹 환경 구축
-        </h3>
+  <!-- =====================================================
+       TOP BAR
+  ====================================================== -->
+
+  <header class="topbar">
+
+    <a
+      href="#top"
+      class="brand"
+    >
+      BOMI KIM
+    </a>
+
+    <nav
+      class="topnav"
+      aria-label="주요 메뉴"
+    >
+      <a href="#projects">프로젝트</a>
+      <a href="#competitions">대회</a>
+      <a href="#practice">실습</a>
+      <a href="#skills">기술</a>
+    </nav>
+
+  </header>
+
+
+  <main
+    id="top"
+    class="page"
+  >
+
+    <!-- =====================================================
+         LEFT PROFILE
+    ====================================================== -->
+
+    <aside class="profile-panel">
+
+      <p class="label">
+        SECURITY · NETWORK · WEB
+      </p>
+
+      <h1>
+        김보미
+      </h1>
+
+      <p class="headline">
+        서비스를 구축하고,<br>
+        직접 공격해 문제를 찾은 뒤<br>
+        보완하고 다시 검증합니다.
+      </p>
+
+
+      <dl class="profile-info">
+
+        <div>
+          <dt>전공</dt>
+          <dd>정보보호</dd>
+        </div>
+
+        <div>
+          <dt>교육</dt>
+          <dd>정보보안 부트캠프</dd>
+        </div>
+
+        <div>
+          <dt>관심 분야</dt>
+          <dd>보안관제 · 인프라 · 웹 보안</dd>
+        </div>
+
+        <div>
+          <dt>수료</dt>
+          <dd>2026.08.07</dd>
+        </div>
+
+      </dl>
+
+
+      <div class="quick-links">
+
+        <a
+          class="button primary"
+          href="#projects"
+        >
+          프로젝트 보기
+        </a>
+
+        <a
+          class="button"
+          href="https://github.com/bmkim0311"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
 
       </div>
 
-      <span class="project-date">
-        2026.06
-      </span>
-
-    </div>
+    </aside>
 
 
-    <p class="project-summary">
-      가상의 게임회사를 배경으로 웹 서비스와 서버 환경을 구축하고,
-      공격자의 관점에서 서비스 취약점과 웹 서버 침해 이후의
-      피해 범위를 분석한 프로젝트입니다.
-    </p>
+    <!-- =====================================================
+         RIGHT CONTENT
+    ====================================================== -->
+
+    <div class="content-panel">
 
 
-    <ul class="key-points">
+      <!-- ===================================================
+           SUMMARY
+      ==================================================== -->
 
-      <li>
-        CatQuest 웹 서비스의 기능을 개발·보완하고
-        관리자 페이지 구성 및 WEB-DB 연동을 수행했습니다.
-      </li>
-
-      <li>
-        FTP·DNS·LOG 서버를 프로젝트 환경에 맞춰 구축해
-        전체 인프라 구성에 활용할 수 있도록 제공했습니다.
-      </li>
-
-      <li>
-        웹 서비스 기능을 분석해 취약점을 발굴하고
-        공격 시나리오를 직접 구성·재현했습니다.
-      </li>
-
-      <li>
-        공격 결과와 DB 반영 값, 관제 로그를 연결해 검증하고
-        모의해킹 결과 보고서를 작성했습니다.
-      </li>
-
-    </ul>
-
-
-    <div class="tags">
-      <span>Python</span>
-      <span>Flask</span>
-      <span>MariaDB</span>
-      <span>Linux</span>
-      <span>DNS</span>
-      <span>FTP</span>
-      <span>Wazuh</span>
-      <span>Web Pentest</span>
-    </div>
-
-
-    <div class="project-actions">
-
-      <a
-        href="YOUR_NOTION_URL"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-link"
+      <section
+        class="summary-grid"
+        aria-label="핵심 경험 요약"
       >
-        문제 해결 기록 보기 →
-      </a>
+
+        <article>
+          <strong>3회</strong>
+          <span>팀 프로젝트 완료</span>
+        </article>
+
+        <article>
+          <strong>5개</strong>
+          <span>3차 공격 시나리오 검증</span>
+        </article>
+
+        <article>
+          <strong>38 / 100</strong>
+          <span>웹 워게임 개인 해결</span>
+        </article>
+
+        <article>
+          <strong>91개</strong>
+          <span>Juice Shop 문제 해결</span>
+        </article>
+
+      </section>
+
+
+      <!-- ===================================================
+           TEAM PROJECTS
+      ==================================================== -->
+
+      <section
+        id="projects"
+        class="section"
+      >
+
+        <div class="section-header">
+
+          <div>
+
+            <p class="section-kicker">
+              TEAM PROJECTS
+            </p>
+
+            <h2>
+              팀 프로젝트
+            </h2>
+
+          </div>
+
+          <p class="section-description">
+            구축에서 공격·탐지·대응·재검증까지 경험 범위를 넓혀왔습니다.
+          </p>
+
+        </div>
+
+
+        <div class="project-list">
+
+
+          <!-- =================================================
+               3차 프로젝트
+          ================================================== -->
+
+          <article class="project-item">
+
+            <div class="project-main">
+
+              <div class="project-title-row">
+
+                <div>
+
+                  <span class="project-type">
+                    3RD PROJECT · TEAM LEAD
+                  </span>
+
+                  <h3>
+                    또롱이 공공자전거 서비스 보안 진단·탐지·대응 환경 구축
+                  </h3>
+
+                </div>
+
+                <span class="project-date">
+                  2026.08
+                </span>
+
+              </div>
+
+
+              <p class="project-summary">
+                공공자전거 서비스를 직접 구축한 뒤 실제 서비스 기능을 기준으로
+                공격 시나리오를 설계하고, 취약점 진단부터 탐지·차단·보완·
+                재검증까지 수행한 보안 중심 프로젝트입니다.
+              </p>
+
+
+              <ul class="key-points">
+
+                <li>
+                  WEB·DB·DNS와 pfSense·WAF·IDS/IPS·Wazuh를 연결한
+                  서비스 및 보안 환경을 구축했습니다.
+                </li>
+
+                <li>
+                  IDOR, QR 토큰 변조, 동일 자전거 중복 대여,
+                  운영자료 비인증 다운로드, 감사로그 누락 등
+                  5개 공격 시나리오를 진단했습니다.
+                </li>
+
+                <li>
+                  Flask·DB·WAF·IDS/IPS 정책을 보완하고
+                  동일 공격을 다시 수행해 차단 여부를 재검증했습니다.
+                </li>
+
+                <li>
+                  애플리케이션·WAF·관제 로그를 연결해 공격 탐지 결과를 확인하고,
+                  모의해킹·정보보호 점검·악성코드 분석 결과를 문서화했습니다.
+                </li>
+
+              </ul>
+
+
+              <div class="tags">
+
+                <span>Linux</span>
+                <span>Flask</span>
+                <span>MariaDB</span>
+                <span>Wazuh</span>
+                <span>Snort</span>
+                <span>ModSecurity</span>
+                <span>pfSense</span>
+                <span>Team Lead</span>
+
+              </div>
+
+
+              <div class="project-actions">
+
+                <a
+                  href="YOUR_NOTION_URL"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-link"
+                >
+                  문제 해결 기록 보기 →
+                </a>
+
+              </div>
+
+            </div>
+
+
+            <details class="project-detail">
+
+              <summary>
+                담당 업무와 결과 보기
+              </summary>
+
+
+              <div class="detail-content">
+
+
+                <div>
+
+                  <h4>
+                    서비스 및 보안 인프라 구축
+                  </h4>
+
+                  <p>
+                    사용자·관리자·협력업체용 Flask 서비스와 MariaDB를 연동하고,
+                    pfSense, DNS, WAF, IDS/IPS, Wazuh를 구성해 외부 요청부터
+                    서비스 처리와 로그 수집까지 이어지는 보안 환경을 구축했습니다.
+                  </p>
+
+                </div>
+
+
+                <div>
+
+                  <h4>
+                    공격 시나리오 설계
+                  </h4>
+
+                  <p>
+                    실제 구현한 대여·반납, QR 인증, 운영자료 다운로드,
+                    자전거 상태 변경 기능을 기준으로 5개 공격 시나리오를
+                    설계하고 취약 상태를 직접 재현했습니다.
+                  </p>
+
+                </div>
+
+
+                <div>
+
+                  <h4>
+                    탐지·대응 및 트러블슈팅
+                  </h4>
+
+                  <p>
+                    ModSecurity, Snort와 Wazuh에 서비스 특화 탐지 규칙을 적용하고,
+                    NAT·인터페이스, WAF 오탐, 로그 권한, IDS/IPS 경로 등
+                    통합 과정에서 발생한 문제를 로그와 패킷을 기반으로 해결했습니다.
+                  </p>
+
+                </div>
+
+
+                <div>
+
+                  <h4>
+                    보완 및 재검증
+                  </h4>
+
+                  <p>
+                    취약점의 원인이 된 애플리케이션 로직과 보안 정책을 보완한 뒤
+                    기존 공격을 다시 수행해 차단 여부를 확인했습니다.
+                    공격 결과와 탐지 로그를 함께 확인해 개선 결과를 검증했습니다.
+                  </p>
+
+                </div>
+
+
+              </div>
+
+            </details>
+
+          </article>
+
+
+
+          <!-- =================================================
+               2차 프로젝트
+          ================================================== -->
+
+          <article class="project-item">
+
+            <div class="project-main">
+
+              <div class="project-title-row">
+
+                <div>
+
+                  <span class="project-type">
+                    2ND PROJECT · TEAM MEMBER
+                  </span>
+
+                  <h3>
+                    Nexan 게임회사 보안관제 및 모의해킹 환경 구축
+                  </h3>
+
+                </div>
+
+                <span class="project-date">
+                  2026.06
+                </span>
+
+              </div>
+
+
+              <p class="project-summary">
+                가상의 게임회사를 배경으로 웹 서비스와 서버 환경을 구축하고,
+                공격자의 관점에서 서비스 취약점을 분석해 웹 서버 침해 이후
+                내부 시스템까지의 피해 범위를 검증한 프로젝트입니다.
+              </p>
+
+
+              <ul class="key-points">
+
+                <li>
+                  CatQuest 웹 서비스의 기능을 개발·보완하고
+                  관리자 페이지 구성 및 WEB-DB 연동을 수행했습니다.
+                </li>
+
+                <li>
+                  FTP·DNS·LOG 서버를 프로젝트 환경에 맞춰 구축해
+                  전체 인프라 통합에 활용할 수 있도록 구성했습니다.
+                </li>
+
+                <li>
+                  웹 기능을 분석해 가격·데이터 조작, 인증·인가,
+                  Stored XSS, 파일 업로드 등 공격 시나리오를 직접 재현했습니다.
+                </li>
+
+                <li>
+                  공격 결과와 DB 반영 값, 관제 로그를 연결해 검증하고
+                  모의해킹 결과 보고서를 작성했습니다.
+                </li>
+
+              </ul>
+
+
+              <div class="tags">
+
+                <span>Python</span>
+                <span>Flask</span>
+                <span>MariaDB</span>
+                <span>Linux</span>
+                <span>DNS</span>
+                <span>FTP</span>
+                <span>Wazuh</span>
+                <span>Web Pentest</span>
+
+              </div>
+
+
+              <div class="project-actions">
+
+                <a
+                  href="YOUR_NOTION_URL"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-link"
+                >
+                  문제 해결 기록 보기 →
+                </a>
+
+              </div>
+
+            </div>
+
+
+            <details class="project-detail">
+
+              <summary>
+                담당 업무와 결과 보기
+              </summary>
+
+
+              <div class="detail-content">
+
+
+                <div>
+
+                  <h4>
+                    서비스 및 서버 구축
+                  </h4>
+
+                  <p>
+                    CatQuest 웹 서비스의 초기 구축과 기능 보완을 수행하고,
+                    관리자 페이지 구성 및 WEB-DB 연동을 담당했습니다.
+                    또한 FTP·DNS·LOG 서버를 프로젝트 환경에 맞춰 구축해
+                    전체 인프라 통합에 활용할 수 있도록 구성했습니다.
+                  </p>
+
+                </div>
+
+
+                <div>
+
+                  <h4>
+                    모의해킹
+                  </h4>
+
+                  <p>
+                    웹 기능을 분석해 가격 및 데이터 조작, 인증·인가,
+                    Stored XSS와 파일 업로드 등 공격 시나리오를 구성했습니다.
+                    공격 성공 여부는 화면 응답뿐 아니라 DB에 반영된 값까지
+                    확인해 판단했습니다.
+                  </p>
+
+                </div>
+
+
+                <div>
+
+                  <h4>
+                    내부 이동 및 관제 확인
+                  </h4>
+
+                  <p>
+                    DMZ의 웹 서버가 침해된 상황을 가정해 SFTP, Wazuh,
+                    모니터링 서버와 내부 DB로 접근할 수 있는지 확인했습니다.
+                    또한 Wazuh와 GoAccess 등에서 공격 요청과 로그가
+                    탐지되는지도 함께 점검했습니다.
+                  </p>
+
+                </div>
+
+
+                <div>
+
+                  <h4>
+                    문서 작성
+                  </h4>
+
+                  <p>
+                    공격 전 화면, 변조 요청, 공격 성공 결과, DB 반영 내역,
+                    로그 및 관제 화면을 하나의 흐름으로 정리한 모의해킹
+                    결과 보고서를 작성했습니다. 취약점별 위험도와
+                    대응 방안도 함께 제시했습니다.
+                  </p>
+
+                </div>
+
+
+              </div>
+
+            </details>
+
+          </article>
+
+
+
+          <!-- =================================================
+               1차 프로젝트
+          ================================================== -->
+
+          <article class="project-item">
+
+            <div class="project-main">
+
+              <div class="project-title-row">
+
+                <div>
+
+                  <span class="project-type">
+                    1ST PROJECT · TEAM LEAD
+                  </span>
+
+                  <h3>
+                    Simmit Pay 금융 플랫폼 기반 통합 인프라 및
+                    보안 네트워크 구축
+                  </h3>
+
+                </div>
+
+                <span class="project-date">
+                  2026.04
+                </span>
+
+              </div>
+
+
+              <p class="project-summary">
+                가상의 금융회사를 기준으로 서버와 기업 네트워크를 구축하고,
+                부서 분리부터 접근 통제·VPN·NAT·로그 수집까지
+                하나의 인프라 환경으로 통합했습니다.
+              </p>
+
+
+              <ul class="key-points">
+
+                <li>
+                  팀장으로 전체 구성과 일정, 역할 분담을 관리했습니다.
+                </li>
+
+                <li>
+                  부서별 VLAN과 라우팅, ACL, VPN, NAT 정책을
+                  설계·적용했습니다.
+                </li>
+
+                <li>
+                  비인가 부서에서 서버 접근이 제한되는지 직접
+                  통신 테스트를 통해 검증했습니다.
+                </li>
+
+                <li>
+                  WEB·DB·LOG 서버의 연결 오류를 분석하고
+                  통합 환경을 정상화했습니다.
+                </li>
+
+              </ul>
+
+
+              <div class="tags">
+
+                <span>Rocky Linux</span>
+                <span>MariaDB</span>
+                <span>VLAN</span>
+                <span>ACL</span>
+                <span>VPN</span>
+                <span>NAT</span>
+                <span>Team Lead</span>
+
+              </div>
+
+
+              <div class="project-actions">
+
+                <a
+                  href="YOUR_NOTION_URL"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-link"
+                >
+                  문제 해결 기록 보기 →
+                </a>
+
+              </div>
+
+            </div>
+
+
+            <details class="project-detail">
+
+              <summary>
+                담당 업무와 결과 보기
+              </summary>
+
+
+              <div class="detail-content">
+
+
+                <div>
+
+                  <h4>
+                    네트워크 설계
+                  </h4>
+
+                  <p>
+                    본사·지사·재택근무 환경을 가정하고
+                    부서별 VLAN과 네트워크 경로를 구성했습니다.
+                  </p>
+
+                </div>
+
+
+                <div>
+
+                  <h4>
+                    접근 통제
+                  </h4>
+
+                  <p>
+                    ACL을 적용해 업무상 필요한 경로만 허용하고
+                    비인가 부서의 서버 접근을 제한했습니다.
+                  </p>
+
+                </div>
+
+
+                <div>
+
+                  <h4>
+                    보안 통신
+                  </h4>
+
+                  <p>
+                    VPN을 통한 암호화 통신과 NAT를 적용하고
+                    실제 통신 여부를 테스트했습니다.
+                  </p>
+
+                </div>
+
+
+                <div>
+
+                  <h4>
+                    통합 및 오류 해결
+                  </h4>
+
+                  <p>
+                    개별 서버 구축 이후 WEB·DB·LOG 서버가
+                    하나의 서비스 환경으로 연결되도록
+                    설정 오류를 확인하고 수정했습니다.
+                  </p>
+
+                </div>
+
+
+              </div>
+
+            </details>
+
+          </article>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           COMPETITIONS
+      ==================================================== -->
+
+      <section
+        id="competitions"
+        class="section"
+      >
+
+        <div class="section-header">
+
+          <div>
+
+            <p class="section-kicker">
+              SECURITY CHALLENGES
+            </p>
+
+            <h2>
+              대회 및 워게임
+            </h2>
+
+          </div>
+
+          <p class="section-description">
+            문제를 직접 제작하고 제한 시간 안에 다른 문제를 분석했습니다.
+          </p>
+
+        </div>
+
+
+        <div class="challenge-grid">
+
+
+          <article class="challenge-card">
+
+            <span class="project-type">
+              CTF
+            </span>
+
+            <strong class="challenge-number">
+              4 / 10
+            </strong>
+
+            <h3>
+              CTF 자체 제작 대회
+            </h3>
+
+            <p>
+              팀별 보안 문제를 제작하고 다른 팀 문제를 분석해
+              총 10문제 중 4문제를 개인 해결했습니다.
+            </p>
+
+          </article>
+
+
+          <article class="challenge-card">
+
+            <span class="project-type">
+              WEB WARGAME
+            </span>
+
+            <strong class="challenge-number">
+              38 / 100
+            </strong>
+
+            <h3>
+              EDU PORTAL 웹 워게임
+            </h3>
+
+            <p>
+              웹 보안 문제 10개를 포함한 서비스를 팀장으로 통합하고,
+              타 팀이 제작한 100문제 중 38문제를 개인 해결했습니다.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           ADDITIONAL PRACTICE
+      ==================================================== -->
+
+      <section
+        id="practice"
+        class="section compact-section"
+      >
+
+        <div class="section-header">
+
+          <div>
+
+            <p class="section-kicker">
+              ADDITIONAL PRACTICE
+            </p>
+
+            <h2>
+              추가 보안 실습
+            </h2>
+
+          </div>
+
+          <p class="section-description">
+            프로젝트 외에 반복적으로 수행한 취약점 분석 실습입니다.
+          </p>
+
+        </div>
+
+
+        <div class="practice-summary">
+
+          <div class="practice-number">
+
+            <strong>
+              91
+            </strong>
+
+            <span>
+              OWASP Juice Shop 해결 문제
+            </span>
+
+          </div>
+
+
+          <p>
+            Juice Shop, DVWA, WebGoat, Natas 환경에서
+            XSS, SQL Injection, IDOR, SSRF, XXE,
+            인증·인가 및 파일 처리 취약점을 분석·재현했습니다.
+            주요 취약점은 공격 과정과 대응 방안을 보고서로 정리했습니다.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           SKILLS
+      ==================================================== -->
+
+      <section
+        id="skills"
+        class="section compact-section"
+      >
+
+        <div class="section-header">
+
+          <div>
+
+            <p class="section-kicker">
+              SKILLS
+            </p>
+
+            <h2>
+              사용 기술
+            </h2>
+
+          </div>
+
+          <p class="section-description">
+            프로젝트에서 실제 구축·분석·트러블슈팅에 사용한 기술입니다.
+          </p>
+
+        </div>
+
+
+        <div class="skills-table">
+
+
+          <div class="skill-row">
+
+            <strong>
+              System
+            </strong>
+
+            <p>
+              Linux, Rocky Linux, Ubuntu, Bash/Shell,
+              Apache, systemd
+            </p>
+
+          </div>
+
+
+          <div class="skill-row">
+
+            <strong>
+              Network
+            </strong>
+
+            <p>
+              TCP/IP, VLAN, Routing, ACL, NAT,
+              VPN, DNS, pfSense
+            </p>
+
+          </div>
+
+
+          <div class="skill-row">
+
+            <strong>
+              Security
+            </strong>
+
+            <p>
+              Wazuh, Snort, Suricata, ModSecurity,
+              IDS/IPS, WAF, SIEM
+            </p>
+
+          </div>
+
+
+          <div class="skill-row">
+
+            <strong>
+              Development
+            </strong>
+
+            <p>
+              Python, C, SQL, Flask,
+              HTML, CSS, JavaScript
+            </p>
+
+          </div>
+
+
+          <div class="skill-row">
+
+            <strong>
+              Database
+            </strong>
+
+            <p>
+              MariaDB, SQL, 권한 관리,
+              서비스 데이터 연동 및 검증
+            </p>
+
+          </div>
+
+
+          <div class="skill-row">
+
+            <strong>
+              Analysis
+            </strong>
+
+            <p>
+              Burp Suite, curl, tcpdump,
+              로그 분석, 웹 취약점 분석
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           TROUBLESHOOTING
+      ==================================================== -->
+
+      <section class="troubleshooting-box">
+
+        <div>
+
+          <p class="section-kicker">
+            TROUBLESHOOTING LOG
+          </p>
+
+          <h2>
+            구축 과정에서 발생한 문제와 해결 과정을 기록하고 있습니다.
+          </h2>
+
+          <p class="troubleshooting-description">
+            문제 현상, 원인 추적, 해결 과정과 최종 검증 결과를
+            별도의 기술 기록으로 정리합니다.
+          </p>
+
+        </div>
+
+
+        <a
+          class="button primary"
+          href="YOUR_NOTION_URL"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          문제 해결 기록 보기
+        </a>
+
+      </section>
+
+
+      <!-- ===================================================
+           CONTACT
+      ==================================================== -->
+
+      <section class="contact-box">
+
+        <div>
+
+          <p class="section-kicker">
+            CONTACT
+          </p>
+
+          <h2>
+            더 자세한 구현 내용과 코드는 GitHub에서 확인할 수 있습니다.
+          </h2>
+
+        </div>
+
+
+        <div class="contact-actions">
+
+          <a
+            class="button primary"
+            href="https://github.com/bmkim0311"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub 보기
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           FOOTER
+      ==================================================== -->
+
+      <footer>
+
+        <p>
+          © 2026 Bomi Kim
+        </p>
+
+        <p>
+          Last updated: 2026.08
+        </p>
+
+      </footer>
+
 
     </div>
 
-  </div>
+  </main>
 
-
-  <details class="project-detail">
-
-    <summary>
-      담당 업무와 결과 보기
-    </summary>
-
-
-    <div class="detail-content">
-
-
-      <!-- 서비스 및 서버 구축 -->
-      <div>
-
-        <h4>
-          서비스 및 서버 구축
-        </h4>
-
-        <p>
-          CatQuest 웹 서비스의 초기 구축과 기능 보완을 수행하고,
-          관리자 페이지 구성 및 WEB-DB 연동을 담당했습니다.
-          또한 FTP·DNS·LOG 서버를 프로젝트 환경에 맞춰 구축해
-          전체 인프라 통합에 활용할 수 있도록 구성했습니다.
-        </p>
-
-      </div>
-
-
-      <!-- 모의해킹 -->
-      <div>
-
-        <h4>
-          모의해킹
-        </h4>
-
-        <p>
-          웹 기능을 분석해 가격 및 데이터 조작, 인증·인가,
-          Stored XSS와 파일 업로드 등 공격 시나리오를 구성했습니다.
-          공격 성공 여부는 화면 응답뿐 아니라 DB에 반영된 값까지
-          확인해 판단했습니다.
-        </p>
-
-      </div>
-
-
-      <!-- 내부 이동 및 관제 확인 -->
-      <div>
-
-        <h4>
-          내부 이동 및 관제 확인
-        </h4>
-
-        <p>
-          DMZ의 웹 서버가 침해된 상황을 가정해 SFTP, Wazuh,
-          모니터링 서버와 내부 DB로 접근할 수 있는지 확인했습니다.
-          또한 Wazuh와 GoAccess 등에서 공격 요청과 로그가
-          탐지되는지도 함께 점검했습니다.
-        </p>
-
-      </div>
-
-
-      <!-- 문서 작성 -->
-      <div>
-
-        <h4>
-          문서 작성
-        </h4>
-
-        <p>
-          공격 전 화면, 변조 요청, 공격 성공 결과, DB 반영 내역,
-          로그 및 관제 화면을 하나의 흐름으로 정리한 모의해킹
-          결과 보고서를 작성했습니다. 취약점별 위험도와
-          대응 방안도 함께 제시했습니다.
-        </p>
-
-      </div>
-
-
-    </div>
-
-  </details>
-
-</article>
+</body>
+</html>
