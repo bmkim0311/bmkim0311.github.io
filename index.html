@@ -17,7 +17,7 @@
 
   <link
     rel="stylesheet"
-    href="./style.css?v=20260811-31"
+    href="./style.css?v=20260811-40"
   >
 </head>
 
@@ -46,10 +46,15 @@
   </header>
 
 
+  <!-- =====================================================
+       PAGE
+  ====================================================== -->
+
   <main
     id="top"
     class="page"
   >
+
 
     <!-- =====================================================
          PROFILE
@@ -225,8 +230,8 @@
               <ul class="key-points">
 
                 <li>
-                  팀장으로 서비스·네트워크·보안 환경의 전체 구성을
-                  설계하고 통합 과정의 문제를 해결했습니다.
+                  팀장으로 전체 일정과 작업을 조율하고,
+                  서비스·네트워크·보안 환경의 통합과 주요 오류 해결을 담당했습니다.
                 </li>
 
                 <li>
@@ -266,15 +271,17 @@
 
               <div class="detail-content">
 
+
                 <div>
 
                   <h4>
-                    구축
+                    프로젝트 리딩·통합
                   </h4>
 
                   <p>
-                    사용자·관리자·협력업체 서비스를 구성하고
-                    WEB·DB·DNS 및 보안 솔루션이 동작하는 환경을 구축했습니다.
+                    전체 일정과 작업 진행을 관리하고
+                    서비스·네트워크·보안 구성을 통합했습니다.
+                    구축 과정의 주요 오류를 해결하고 최종 기능을 검증했습니다.
                   </p>
 
                 </div>
@@ -303,10 +310,11 @@
 
                   <p>
                     취약 로직과 탐지·차단 정책을 수정하고
-                    재공격을 통해 실제 개선 여부를 확인했습니다.
+                    동일 공격을 다시 수행해 실제 개선 여부를 확인했습니다.
                   </p>
 
                 </div>
+
 
               </div>
 
@@ -397,6 +405,7 @@
 
               <div class="detail-content">
 
+
                 <div>
 
                   <h4>
@@ -404,8 +413,8 @@
                   </h4>
 
                   <p>
-                    웹 서비스 기능을 보완하고 관리자 페이지와
-                    WEB-DB 연동을 구성했습니다.
+                    웹 서비스 기능을 보완하고 관리자 페이지 구성과
+                    WEB-DB 연동을 수행했습니다.
                     FTP·DNS·LOG 서버도 프로젝트 환경에 맞춰 구축했습니다.
                   </p>
 
@@ -439,6 +448,7 @@
                   </p>
 
                 </div>
+
 
               </div>
 
@@ -486,7 +496,7 @@
               <ul class="key-points">
 
                 <li>
-                  팀장으로 전체 네트워크 구조와 진행 흐름을 관리했습니다.
+                  팀장으로 전체 네트워크 구조와 프로젝트 진행 흐름을 관리했습니다.
                 </li>
 
                 <li>
@@ -525,6 +535,7 @@
 
               <div class="detail-content">
 
+
                 <div>
 
                   <h4>
@@ -556,7 +567,7 @@
                 <div>
 
                   <h4>
-                    통합
+                    통합 및 문제 해결
                   </h4>
 
                   <p>
@@ -565,6 +576,7 @@
                   </p>
 
                 </div>
+
 
               </div>
 
@@ -687,10 +699,15 @@
 
           </div>
 
+          <p class="section-description">
+            웹 취약점 실습 환경을 통해 공격 원리와 동작을 반복적으로 확인했습니다.
+          </p>
+
         </div>
 
 
         <div class="practice-summary">
+
 
           <div class="practice-number">
 
@@ -705,10 +722,25 @@
           </div>
 
 
-          <p>
-            Juice Shop을 중심으로 DVWA·WebGoat·Natas에서
-            웹 취약점을 직접 분석하고 재현했습니다.
-          </p>
+          <div class="practice-content">
+
+            <p>
+              OWASP Juice Shop에서 91개 문제를 해결하며
+              XSS, SQL Injection, IDOR, SSRF, XXE,
+              인증·인가 등 다양한 웹 취약점을 직접 분석하고 재현했습니다.
+            </p>
+
+
+            <div class="practice-extra">
+
+              <span>DVWA</span>
+              <span>WebGoat</span>
+              <span>Natas</span>
+
+            </div>
+
+          </div>
+
 
         </div>
 
@@ -739,7 +771,7 @@
           </div>
 
           <p class="section-description">
-            프로젝트에서 직접 사용한 기술을 중심으로 정리했습니다.
+            프로젝트와 보안 실습에서 직접 사용한 기술입니다.
           </p>
 
         </div>
@@ -747,44 +779,71 @@
 
         <div class="skills-table">
 
+
           <div class="skill-row">
-            <strong>System</strong>
+
+            <strong>
+              서버·운영체제
+            </strong>
+
             <p>
-              Linux · Rocky Linux · Ubuntu · Apache · Shell
+              Rocky Linux · Ubuntu · Kali Linux · Apache · Shell Script
             </p>
+
           </div>
 
 
           <div class="skill-row">
-            <strong>Network</strong>
+
+            <strong>
+              네트워크
+            </strong>
+
             <p>
               TCP/IP · VLAN · Routing · ACL · NAT · VPN · pfSense
             </p>
+
           </div>
 
 
           <div class="skill-row">
-            <strong>Security</strong>
+
+            <strong>
+              보안
+            </strong>
+
             <p>
               Wazuh · Snort · Suricata · ModSecurity · Web Pentest
             </p>
+
           </div>
 
 
           <div class="skill-row">
-            <strong>Development</strong>
+
+            <strong>
+              개발
+            </strong>
+
             <p>
-              Python · Flask · SQL · C · HTML/CSS · JavaScript
+              Python · Flask · C · HTML/CSS · JavaScript
             </p>
+
           </div>
 
 
           <div class="skill-row">
-            <strong>Database</strong>
+
+            <strong>
+              데이터베이스
+            </strong>
+
             <p>
               MariaDB · SQL
             </p>
+
           </div>
+
 
         </div>
 
