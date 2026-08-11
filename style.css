@@ -65,12 +65,6 @@ a {
 }
 
 
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-
 /* =========================================================
    TOP BAR
 ========================================================= */
@@ -109,7 +103,6 @@ a {
 
 .topnav {
   display: flex;
-
   gap: 26px;
 }
 
@@ -154,7 +147,7 @@ a {
 
 
 /* =========================================================
-   PROFILE PANEL
+   PROFILE
 ========================================================= */
 
 .profile-panel {
@@ -273,7 +266,7 @@ a {
 
 
 /* =========================================================
-   BUTTONS
+   BUTTON
 ========================================================= */
 
 .quick-links {
@@ -316,25 +309,21 @@ a {
 
 
 .button:hover {
-  transform:
-    translateY(-1px);
+  transform: translateY(-1px);
 }
 
 
 .button.primary {
-  border-color:
-    var(--primary);
+  border-color: var(--primary);
 
   color: #ffffff;
 
-  background:
-    var(--primary);
+  background: var(--primary);
 }
 
 
 .button.primary:hover {
-  background:
-    var(--primary-dark);
+  background: var(--primary-dark);
 }
 
 
@@ -350,7 +339,7 @@ a {
 
 
 /* =========================================================
-   RIGHT CONTENT
+   CONTENT
 ========================================================= */
 
 .content-panel {
@@ -366,7 +355,7 @@ a {
   display: grid;
 
   grid-template-columns:
-    repeat(4, 1fr);
+    repeat(3, 1fr);
 
   gap: 12px;
 
@@ -383,7 +372,7 @@ a {
 
   justify-content: center;
 
-  padding: 20px;
+  padding: 20px 22px;
 
   border:
     1px solid
@@ -401,7 +390,7 @@ a {
 
 
 .summary-grid strong {
-  font-size: 28px;
+  font-size: 30px;
 
   line-height: 1;
 
@@ -420,7 +409,7 @@ a {
 
 
 /* =========================================================
-   COMMON SECTION
+   SECTION
 ========================================================= */
 
 .section {
@@ -442,8 +431,8 @@ a {
 
 
 .section + .section,
-.section + .troubleshooting-box,
-.troubleshooting-box + .contact-box {
+.section + .bootcamp-log-box,
+.bootcamp-log-box + .contact-box {
   margin-top: 18px;
 }
 
@@ -457,9 +446,7 @@ a {
   display: flex;
 
   align-items: flex-end;
-
-  justify-content:
-    space-between;
+  justify-content: space-between;
 
   gap: 20px;
 
@@ -490,12 +477,11 @@ a {
 
 
 /* =========================================================
-   PROJECT LIST
+   PROJECT
 ========================================================= */
 
 .project-list {
   display: grid;
-
   gap: 12px;
 }
 
@@ -509,15 +495,8 @@ a {
 
   border-radius: 12px;
 
-  background:
-    var(--surface);
+  background: var(--surface);
 }
-
-
-/*
-  모든 프로젝트는 동일 디자인.
-  featured / strongest 스타일 없음.
-*/
 
 
 .project-main {
@@ -529,11 +508,14 @@ a {
   display: flex;
 
   align-items: flex-start;
-
-  justify-content:
-    space-between;
+  justify-content: space-between;
 
   gap: 18px;
+}
+
+
+.project-title-row > div {
+  min-width: 0;
 }
 
 
@@ -552,6 +534,8 @@ a {
 
 
 .project-title-row h3 {
+  max-width: 760px;
+
   font-size: 19px;
 
   line-height: 1.35;
@@ -565,6 +549,8 @@ a {
 
   padding-top: 2px;
 
+  white-space: nowrap;
+
   font-size: 12px;
   font-weight: 700;
 
@@ -575,7 +561,7 @@ a {
 .project-summary {
   margin-top: 12px;
 
-  max-width: 900px;
+  max-width: 850px;
 
   font-size: 14px;
 
@@ -584,13 +570,12 @@ a {
 
 
 /* =========================================================
-   PROJECT KEY POINTS
+   KEY POINTS
 ========================================================= */
 
 .key-points {
   display: grid;
-
-  gap: 4px;
+  gap: 5px;
 
   margin-top: 16px;
 
@@ -611,7 +596,6 @@ a {
 
 .tags {
   display: flex;
-
   flex-wrap: wrap;
 
   gap: 6px;
@@ -630,36 +614,7 @@ a {
 
   color: #3154bd;
 
-  background:
-    var(--primary-soft);
-}
-
-
-/* =========================================================
-   PROJECT ACTIONS
-========================================================= */
-
-.project-actions {
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 16px;
-
-  margin-top: 16px;
-}
-
-
-.text-link {
-  font-size: 12px;
-  font-weight: 850;
-
-  color: var(--primary);
-}
-
-
-.text-link:hover {
-  text-decoration: underline;
+  background: var(--primary-soft);
 }
 
 
@@ -718,12 +673,12 @@ a {
   display: grid;
 
   grid-template-columns:
-    repeat(2, 1fr);
+    repeat(3, 1fr);
 
   gap: 22px;
 
   padding:
-    2px 24px 22px;
+    3px 24px 22px;
 }
 
 
@@ -742,7 +697,7 @@ a {
 
 
 /* =========================================================
-   CHALLENGES
+   CHALLENGE
 ========================================================= */
 
 .challenge-grid {
@@ -775,7 +730,7 @@ a {
   margin:
     10px 0 7px;
 
-  font-size: 27px;
+  font-size: 29px;
 
   line-height: 1;
 
@@ -798,7 +753,7 @@ a {
 
 
 /* =========================================================
-   ADDITIONAL PRACTICE
+   PRACTICE
 ========================================================= */
 
 .practice-summary {
@@ -828,7 +783,6 @@ a {
 
 .practice-number {
   display: flex;
-
   flex-direction: column;
 }
 
@@ -874,7 +828,7 @@ a {
   display: grid;
 
   grid-template-columns:
-    115px
+    120px
     1fr;
 
   gap: 20px;
@@ -900,18 +854,18 @@ a {
 
 
 /* =========================================================
-   TROUBLESHOOTING
+   BOOTCAMP LOG
 ========================================================= */
 
-.troubleshooting-box {
+.bootcamp-log-box {
   display: flex;
 
   align-items: center;
-
-  justify-content:
-    space-between;
+  justify-content: space-between;
 
   gap: 30px;
+
+  margin-top: 18px;
 
   padding: 28px 30px;
 
@@ -930,13 +884,7 @@ a {
 }
 
 
-/*
-  외곽선을 파란색으로 하지 않음.
-  다른 섹션과 동일한 회색 라인 사용.
-*/
-
-
-.troubleshooting-box h2 {
+.bootcamp-log-box h2 {
   margin-top: 4px;
 
   font-size: 20px;
@@ -945,7 +893,7 @@ a {
 }
 
 
-.troubleshooting-description {
+.bootcamp-log-description {
   margin-top: 7px;
 
   font-size: 12px;
@@ -954,22 +902,20 @@ a {
 }
 
 
-.troubleshooting-box .button {
+.bootcamp-log-box .button {
   flex: none;
 }
 
 
 /* =========================================================
-   CONTACT
+   GITHUB
 ========================================================= */
 
 .contact-box {
   display: flex;
 
   align-items: center;
-
-  justify-content:
-    space-between;
+  justify-content: space-between;
 
   gap: 30px;
 
@@ -1001,7 +947,7 @@ a {
 }
 
 
-.contact-actions {
+.contact-box .button {
   flex: none;
 }
 
@@ -1013,8 +959,7 @@ a {
 footer {
   display: flex;
 
-  justify-content:
-    space-between;
+  justify-content: space-between;
 
   padding:
     20px 4px 0;
@@ -1032,8 +977,7 @@ footer {
 @media (max-width: 1050px) {
 
   .page {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
   }
 
 
@@ -1041,12 +985,6 @@ footer {
     position: static;
 
     width: 100%;
-  }
-
-
-  .summary-grid {
-    grid-template-columns:
-      repeat(4, 1fr);
   }
 
 }
@@ -1059,8 +997,7 @@ footer {
 @media (max-width: 720px) {
 
   .topbar {
-    padding:
-      0 20px;
+    padding: 0 20px;
   }
 
 
@@ -1084,8 +1021,6 @@ footer {
 
 
   .profile-panel {
-    position: static;
-
     padding: 27px;
   }
 
@@ -1100,28 +1035,13 @@ footer {
   }
 
 
-  .profile-info {
-    margin-top: 26px;
-  }
-
-
-  .profile-info div {
-    grid-template-columns:
-      72px
-      minmax(0, 1fr);
-
-    padding: 12px 0;
-  }
-
-
   .summary-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
 
   .summary-grid article {
-    min-height: 90px;
+    min-height: 88px;
   }
 
 
@@ -1160,8 +1080,7 @@ footer {
 
 
   .detail-content {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
     padding-right: 20px;
     padding-left: 20px;
@@ -1169,35 +1088,32 @@ footer {
 
 
   .challenge-grid {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
   }
 
 
   .practice-summary {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
     gap: 15px;
   }
 
 
   .skill-row {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
     gap: 6px;
   }
 
 
-  .troubleshooting-box {
+  .bootcamp-log-box {
     display: block;
 
     padding: 24px;
   }
 
 
-  .troubleshooting-box .button {
+  .bootcamp-log-box .button {
     margin-top: 18px;
   }
 
@@ -1209,7 +1125,7 @@ footer {
   }
 
 
-  .contact-actions {
+  .contact-box .button {
     margin-top: 18px;
   }
 
