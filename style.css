@@ -727,11 +727,38 @@ a {
 }
 
 
+.challenge-top {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 16px;
+}
+
+
+.challenge-top .project-type {
+  margin-bottom: 0;
+}
+
+
+.challenge-date {
+  flex: none;
+
+  white-space: nowrap;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  color: #929aa8;
+}
+
+
 .challenge-number {
   display: block;
 
   margin:
-    10px 0 7px;
+    12px 0 7px;
 
   font-size: 29px;
 
@@ -953,7 +980,8 @@ a {
   border-radius:
     var(--radius);
 
-  background: var(--surface);
+  background:
+    var(--surface);
 
   box-shadow: var(--shadow);
 }
@@ -1164,6 +1192,20 @@ footer {
 
   .challenge-grid {
     grid-template-columns: 1fr;
+  }
+
+
+  .challenge-top {
+    display: block;
+  }
+
+
+  .challenge-date {
+    display: block;
+
+    margin-top: 4px;
+
+    white-space: normal;
   }
 
 
