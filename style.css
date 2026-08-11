@@ -103,7 +103,6 @@ a {
 
 .topnav {
   display: flex;
-
   gap: 26px;
 }
 
@@ -335,7 +334,7 @@ a {
 
 
 /* =========================================================
-   COMMON LABEL
+   COMMON
 ========================================================= */
 
 .section-kicker {
@@ -483,7 +482,6 @@ a {
 
 .project-list {
   display: grid;
-
   gap: 12px;
 }
 
@@ -618,6 +616,119 @@ a {
   color: #3154bd;
 
   background: var(--primary-soft);
+}
+
+
+/* =========================================================
+   MATERIAL CARD
+========================================================= */
+
+.material-card {
+  display: grid;
+
+  grid-template-columns:
+    38px
+    minmax(0, 1fr)
+    24px;
+
+  align-items: center;
+
+  gap: 12px;
+
+  max-width: 430px;
+
+  margin-top: 18px;
+
+  padding: 12px 14px;
+
+  border:
+    1px solid
+    #e2e7f0;
+
+  border-radius: 10px;
+
+  background:
+    #fafbfe;
+
+  transition:
+    border-color 0.15s,
+    background 0.15s,
+    transform 0.15s;
+}
+
+
+.material-card:hover {
+  transform: translateY(-1px);
+
+  border-color:
+    #cbd7ff;
+
+  background:
+    #f5f7ff;
+}
+
+
+.material-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 8px;
+
+  font-size: 9px;
+  font-weight: 900;
+
+  letter-spacing: 0.5px;
+
+  color: var(--primary);
+
+  background: var(--primary-soft);
+}
+
+
+.material-text {
+  display: flex;
+
+  min-width: 0;
+
+  flex-direction: column;
+
+  line-height: 1.4;
+}
+
+
+.material-text strong {
+  font-size: 12px;
+  font-weight: 850;
+
+  color: var(--text);
+}
+
+
+.material-text small {
+  margin-top: 2px;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  color: #8a94a4;
+}
+
+
+.material-arrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  color: var(--primary);
 }
 
 
@@ -811,7 +922,6 @@ a {
 
 .practice-number {
   display: flex;
-
   flex-direction: column;
 }
 
@@ -1034,8 +1144,7 @@ a {
   background:
     var(--navy);
 
-  box-shadow:
-    var(--shadow);
+  box-shadow: var(--shadow);
 }
 
 
@@ -1179,6 +1288,11 @@ footer {
     display: inline-block;
 
     margin-top: 5px;
+  }
+
+
+  .material-card {
+    max-width: 100%;
   }
 
 
