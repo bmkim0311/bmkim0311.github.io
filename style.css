@@ -27,6 +27,7 @@ html {
 
 body {
   min-width: 320px;
+
   font-family:
     Pretendard,
     "Noto Sans KR",
@@ -34,8 +35,10 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+
   color: var(--text);
   background: var(--background);
+
   line-height: 1.65;
   word-break: keep-all;
 }
@@ -51,7 +54,9 @@ a {
 }
 
 
-/* 상단 메뉴 */
+/* =========================================================
+   상단 메뉴
+========================================================= */
 
 .topbar {
   position: sticky;
@@ -66,6 +71,7 @@ a {
   padding: 0 4vw;
 
   border-bottom: 1px solid rgba(220, 225, 232, 0.9);
+
   background: rgba(255, 255, 255, 0.94);
 
   backdrop-filter: blur(14px);
@@ -85,6 +91,7 @@ a {
 .topnav a {
   font-size: 13px;
   font-weight: 700;
+
   color: var(--text-soft);
 }
 
@@ -93,35 +100,41 @@ a {
 }
 
 
-/* 전체 구조 */
+/* =========================================================
+   전체 구조
+========================================================= */
 
 .page {
   display: grid;
-  grid-template-columns: minmax(270px, 330px) minmax(0, 1fr);
+
+  grid-template-columns:
+    minmax(270px, 330px)
+    minmax(0, 1fr);
 
   align-items: start;
 
   gap: 30px;
 
-  width: min(1440px, calc(100% - 7vw));
+  width: min(
+    1440px,
+    calc(100% - 7vw)
+  );
+
   margin: 30px auto 60px;
 }
 
 
-/* 왼쪽 프로필 */
+/* =========================================================
+   왼쪽 프로필
+========================================================= */
 
 .profile-panel {
-  /*
-    중요:
-    sticky 제거
-    화면 높이 고정 제거
-    내용에 맞게 카드가 자연스럽게 늘어나도록 함
-  */
-  position: static;
+  position: sticky;
+  top: 94px;
+
   align-self: start;
 
-  display: flex;
-  flex-direction: column;
+  display: block;
 
   height: auto;
   min-height: 0;
@@ -147,11 +160,17 @@ a {
   box-shadow: var(--shadow);
 }
 
+
+/* =========================================================
+   프로필 제목
+========================================================= */
+
 .label,
 .section-kicker {
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 1.5px;
+
   color: #6d8fff;
 }
 
@@ -172,19 +191,66 @@ a {
 
   font-size: 19px;
   font-weight: 750;
+
   line-height: 1.45;
 }
 
-.intro {
-  margin-top: 20px;
 
-  font-size: 14px;
+/* =========================================================
+   프로필 정보표
+========================================================= */
 
-  color: rgba(255, 255, 255, 0.68);
+.profile-info {
+  margin-top: 30px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.15);
 }
+
+.profile-info div {
+  display: grid;
+
+  grid-template-columns:
+    78px
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 13px 0;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.11);
+}
+
+.profile-info dt {
+  font-size: 12px;
+  font-weight: 500;
+
+  color:
+    rgba(255, 255, 255, 0.48);
+}
+
+.profile-info dd {
+  min-width: 0;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   프로필 버튼
+========================================================= */
 
 .quick-links {
   display: flex;
+  flex-wrap: wrap;
 
   gap: 9px;
 
@@ -193,6 +259,7 @@ a {
 
 .button {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
@@ -207,6 +274,7 @@ a {
   font-weight: 800;
 
   color: var(--text);
+
   background: #ffffff;
 
   transition:
@@ -222,6 +290,7 @@ a {
   border-color: var(--primary);
 
   color: #ffffff;
+
   background: var(--primary);
 }
 
@@ -230,53 +299,34 @@ a {
 }
 
 .profile-panel .button:not(.primary) {
-  border-color: rgba(255, 255, 255, 0.23);
+  border-color:
+    rgba(255, 255, 255, 0.23);
 
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
-}
 
-.profile-info {
-  margin-top: 36px;
-
-  border-top: 1px solid rgba(255, 255, 255, 0.13);
-}
-
-.profile-info div {
-  display: grid;
-  grid-template-columns: 78px 1fr;
-
-  gap: 10px;
-
-  padding: 11px 0;
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.profile-info dt {
-  font-size: 12px;
-
-  color: rgba(255, 255, 255, 0.48);
-}
-
-.profile-info dd {
-  font-size: 12px;
-  font-weight: 700;
+  background:
+    rgba(255, 255, 255, 0.08);
 }
 
 
-/* 오른쪽 */
+/* =========================================================
+   오른쪽 콘텐츠
+========================================================= */
 
 .content-panel {
   min-width: 0;
 }
 
 
-/* 첫 화면 숫자 요약 */
+/* =========================================================
+   첫 화면 숫자 요약
+========================================================= */
 
 .summary-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-columns:
+    repeat(4, 1fr);
 
   gap: 12px;
 
@@ -285,10 +335,11 @@ a {
 
 .summary-grid article {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
 
   min-height: 105px;
+
+  flex-direction: column;
+  justify-content: center;
 
   padding: 20px;
 
@@ -302,6 +353,7 @@ a {
 
 .summary-grid strong {
   font-size: 28px;
+
   line-height: 1;
 
   color: var(--primary);
@@ -317,7 +369,9 @@ a {
 }
 
 
-/* 공통 섹션 */
+/* =========================================================
+   공통 섹션
+========================================================= */
 
 .section {
   padding: 30px;
@@ -341,6 +395,7 @@ a {
 
 .section-header {
   display: flex;
+
   align-items: flex-end;
   justify-content: space-between;
 
@@ -353,6 +408,7 @@ a {
   margin-top: 3px;
 
   font-size: 25px;
+
   line-height: 1.25;
   letter-spacing: -1px;
 }
@@ -361,13 +417,16 @@ a {
   max-width: 340px;
 
   font-size: 12px;
+
   text-align: right;
 
   color: var(--text-soft);
 }
 
 
-/* 프로젝트 목록 */
+/* =========================================================
+   프로젝트 목록
+========================================================= */
 
 .project-list {
   display: grid;
@@ -387,7 +446,9 @@ a {
 .project-item.featured {
   border: 1px solid #b7c6f8;
 
-  box-shadow: 0 8px 24px rgba(49, 94, 233, 0.08);
+  box-shadow:
+    0 8px 24px
+    rgba(49, 94, 233, 0.08);
 }
 
 .project-main {
@@ -396,6 +457,7 @@ a {
 
 .project-title-row {
   display: flex;
+
   align-items: flex-start;
   justify-content: space-between;
 
@@ -416,6 +478,7 @@ a {
 
 .project-title-row h3 {
   font-size: 19px;
+
   line-height: 1.35;
   letter-spacing: -0.5px;
 }
@@ -454,6 +517,11 @@ a {
   color: var(--primary);
 }
 
+
+/* =========================================================
+   프로젝트 태그
+========================================================= */
+
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -472,8 +540,14 @@ a {
   font-weight: 800;
 
   color: #3154bd;
+
   background: var(--primary-soft);
 }
+
+
+/* =========================================================
+   프로젝트 링크
+========================================================= */
 
 .project-actions {
   display: flex;
@@ -496,7 +570,9 @@ a {
 }
 
 
-/* 프로젝트 상세 */
+/* =========================================================
+   프로젝트 상세 보기
+========================================================= */
 
 .project-detail {
   border-top: 1px solid var(--line);
@@ -508,6 +584,7 @@ a {
   padding: 12px 24px;
 
   cursor: pointer;
+
   list-style: none;
 
   font-size: 12px;
@@ -526,6 +603,7 @@ a {
   content: "+";
 
   font-size: 17px;
+
   line-height: 1;
 
   color: var(--primary);
@@ -537,11 +615,16 @@ a {
 
 .detail-content {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+
+  grid-template-columns:
+    repeat(2, 1fr);
 
   gap: 22px;
 
-  padding: 2px 24px 22px;
+  padding:
+    2px
+    24px
+    22px;
 }
 
 .detail-content h4 {
@@ -557,7 +640,9 @@ a {
 }
 
 
-/* 경험 */
+/* =========================================================
+   경험
+========================================================= */
 
 .timeline {
   display: grid;
@@ -565,7 +650,10 @@ a {
 
 .timeline article {
   display: grid;
-  grid-template-columns: 130px 1fr;
+
+  grid-template-columns:
+    130px
+    1fr;
 
   gap: 22px;
 
@@ -598,7 +686,9 @@ a {
 }
 
 
-/* 기술 */
+/* =========================================================
+   기술
+========================================================= */
 
 .skills-table {
   border-top: 1px solid var(--line);
@@ -606,7 +696,10 @@ a {
 
 .skill-row {
   display: grid;
-  grid-template-columns: 115px 1fr;
+
+  grid-template-columns:
+    115px
+    1fr;
 
   gap: 20px;
 
@@ -626,10 +719,13 @@ a {
 }
 
 
-/* 연락처 */
+/* =========================================================
+   연락처
+========================================================= */
 
 .contact-box {
   display: flex;
+
   align-items: center;
   justify-content: space-between;
 
@@ -640,6 +736,7 @@ a {
   border-radius: var(--radius);
 
   color: #ffffff;
+
   background: var(--navy);
 
   box-shadow: var(--shadow);
@@ -651,6 +748,7 @@ a {
   margin-top: 4px;
 
   font-size: 20px;
+
   line-height: 1.45;
 }
 
@@ -659,10 +757,13 @@ a {
 }
 
 
-/* 하단 */
+/* =========================================================
+   하단
+========================================================= */
 
 footer {
   display: flex;
+
   justify-content: space-between;
 
   padding: 20px 4px 0;
@@ -673,7 +774,9 @@ footer {
 }
 
 
-/* 태블릿 */
+/* =========================================================
+   태블릿
+========================================================= */
 
 @media (max-width: 1050px) {
 
@@ -684,28 +787,25 @@ footer {
   .profile-panel {
     position: static;
 
-    display: grid;
-    grid-template-columns: 1.25fr 0.75fr;
+    width: 100%;
 
-    gap: 35px;
-
-    height: auto;
-    min-height: 0;
+    padding: 30px;
   }
 
   .profile-info {
-    margin-top: 0;
-
-    border-top: 0;
+    max-width: 600px;
   }
 
   .summary-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:
+      repeat(4, 1fr);
   }
 }
 
 
-/* 모바일 */
+/* =========================================================
+   모바일
+========================================================= */
 
 @media (max-width: 720px) {
 
@@ -730,10 +830,6 @@ footer {
 
   .profile-panel {
     position: static;
-    display: block;
-
-    height: auto;
-    min-height: 0;
 
     padding: 27px;
   }
@@ -742,14 +838,29 @@ footer {
     font-size: 35px;
   }
 
-  .profile-info {
-    margin-top: 28px;
+  .headline {
+    font-size: 18px;
+  }
 
-    border-top: 1px solid rgba(255, 255, 255, 0.13);
+  .profile-info {
+    margin-top: 26px;
+  }
+
+  .profile-info div {
+    grid-template-columns:
+      72px
+      minmax(0, 1fr);
+
+    padding: 12px 0;
+  }
+
+  .quick-links {
+    margin-top: 24px;
   }
 
   .summary-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, 1fr);
   }
 
   .summary-grid article {
