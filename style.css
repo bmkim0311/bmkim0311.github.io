@@ -103,7 +103,6 @@ a {
 
 .topnav {
   display: flex;
-
   gap: 26px;
 }
 
@@ -157,7 +156,7 @@ a {
 
   align-self: start;
 
-  padding: 34px;
+  padding: 40px 34px 34px;
 
   border-radius: var(--radius);
 
@@ -179,25 +178,7 @@ a {
 }
 
 
-.label,
-.section-kicker {
-  font-size: 11px;
-  font-weight: 900;
-
-  letter-spacing: 1.5px;
-
-  color: #6d8fff;
-}
-
-
-.profile-panel .label {
-  color: #91a9ff;
-}
-
-
 .profile-panel h1 {
-  margin-top: 18px;
-
   font-size: 42px;
 
   line-height: 1.15;
@@ -207,12 +188,12 @@ a {
 
 
 .headline {
-  margin-top: 18px;
+  margin-top: 24px;
 
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 750;
 
-  line-height: 1.5;
+  line-height: 1.65;
 }
 
 
@@ -233,10 +214,10 @@ a {
   display: grid;
 
   grid-template-columns:
-    78px
+    76px
     minmax(0, 1fr);
 
-  align-items: center;
+  align-items: start;
 
   gap: 10px;
 
@@ -249,6 +230,8 @@ a {
 
 
 .profile-info dt {
+  padding-top: 1px;
+
   font-size: 12px;
 
   color:
@@ -261,6 +244,8 @@ a {
 
   font-size: 12px;
   font-weight: 700;
+
+  line-height: 1.6;
 
   color: #ffffff;
 }
@@ -345,6 +330,20 @@ a {
 
 .content-panel {
   min-width: 0;
+}
+
+
+/* =========================================================
+   COMMON LABEL
+========================================================= */
+
+.section-kicker {
+  font-size: 11px;
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+
+  color: #6d8fff;
 }
 
 
@@ -759,7 +758,7 @@ a {
    PRACTICE
 ========================================================= */
 
-.practice-summary {
+.practice-main {
   display: grid;
 
   grid-template-columns:
@@ -808,19 +807,19 @@ a {
 }
 
 
-.practice-content {
+.practice-main-content {
   min-width: 0;
 }
 
 
-.practice-content p {
+.practice-main-content p {
   font-size: 13px;
 
   color: var(--text-soft);
 }
 
 
-.practice-extra {
+.practice-tags {
   display: flex;
   flex-wrap: wrap;
 
@@ -830,21 +829,59 @@ a {
 }
 
 
-.practice-extra span {
+.practice-tags span {
   padding: 5px 10px;
-
-  border:
-    1px solid
-    var(--line);
 
   border-radius: 999px;
 
   font-size: 10px;
   font-weight: 800;
 
-  color: var(--text-soft);
+  color: #3154bd;
 
-  background: #ffffff;
+  background: var(--primary-soft);
+}
+
+
+/* =========================================================
+   ADDITIONAL PRACTICE DETAIL
+========================================================= */
+
+.practice-detail {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 22px;
+
+  margin-top: 12px;
+
+  padding: 20px 24px;
+
+  border:
+    1px solid
+    var(--line);
+
+  border-radius: 11px;
+
+  background: var(--surface);
+}
+
+
+.practice-detail h4 {
+  margin-bottom: 5px;
+
+  font-size: 12px;
+
+  color: var(--text);
+}
+
+
+.practice-detail p {
+  font-size: 12px;
+
+  color: var(--text-soft);
 }
 
 
@@ -915,9 +952,11 @@ a {
   border-radius:
     var(--radius);
 
-  background: var(--surface);
+  background:
+    var(--surface);
 
-  box-shadow: var(--shadow);
+  box-shadow:
+    var(--shadow);
 }
 
 
@@ -965,9 +1004,11 @@ a {
 
   color: #ffffff;
 
-  background: var(--navy);
+  background:
+    var(--navy);
 
-  box-shadow: var(--shadow);
+  box-shadow:
+    var(--shadow);
 }
 
 
@@ -1056,7 +1097,7 @@ footer {
 
 
   .profile-panel {
-    padding: 27px;
+    padding: 28px;
   }
 
 
@@ -1066,7 +1107,7 @@ footer {
 
 
   .headline {
-    font-size: 18px;
+    font-size: 17px;
   }
 
 
@@ -1127,10 +1168,15 @@ footer {
   }
 
 
-  .practice-summary {
+  .practice-main {
     grid-template-columns: 1fr;
 
     gap: 18px;
+  }
+
+
+  .practice-detail {
+    grid-template-columns: 1fr;
   }
 
 
