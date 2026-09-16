@@ -1,1084 +1,2919 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-  <meta
-    name="description"
-    content="김보미의 정보보안 포트폴리오"
-  >
+    <meta
+        name="description"
+        content="김보미의 정보보안 포트폴리오"
+    >
 
-  <title>김보미 | Security Portfolio</title>
+    <title>김보미 | Security Portfolio</title>
 
-  <link
-    rel="stylesheet"
-    href="./style.css?v=20260811-110"
-  >
+    <style>
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                "Noto Sans KR",
+                Arial,
+                sans-serif;
+
+            background: #eef1f5;
+            color: #111827;
+
+            overflow: hidden;
+        }
+
+        button,
+        a {
+            font: inherit;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            border: 0;
+        }
+
+
+        /* =========================
+           VARIABLES
+        ========================= */
+
+        :root {
+            --navy: #111827;
+            --blue: #2563eb;
+            --light-blue: #eff6ff;
+            --gray: #6b7280;
+            --light-gray: #f3f4f6;
+            --border: #e5e7eb;
+            --white: #ffffff;
+        }
+
+
+        /* =========================
+           TOP HEADER
+        ========================= */
+
+        .topbar {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+            right: 0;
+
+            height: 62px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 34px;
+
+            background: rgba(255, 255, 255, 0.92);
+
+            border-bottom: 1px solid var(--border);
+
+            backdrop-filter: blur(12px);
+
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 15px;
+            font-weight: 800;
+
+            letter-spacing: 0.04em;
+
+            cursor: pointer;
+        }
+
+        .top-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            color: var(--gray);
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .top-right a {
+            transition: 0.2s;
+        }
+
+        .top-right a:hover {
+            color: var(--blue);
+        }
+
+
+        /* =========================
+           SLIDER
+        ========================= */
+
+        .viewport {
+            width: 100vw;
+            height: 100vh;
+
+            overflow: hidden;
+        }
+
+        .portfolio-track {
+            height: 100%;
+
+            display: flex;
+
+            transition:
+                transform 0.48s
+                cubic-bezier(0.65, 0, 0.35, 1);
+
+            will-change: transform;
+        }
+
+        .page {
+            min-width: 100vw;
+            width: 100vw;
+            height: 100vh;
+
+            padding:
+                84px 60px
+                90px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        /* =========================
+           PDF-LIKE SHEET
+        ========================= */
+
+        .sheet {
+            width: 100%;
+            max-width: 1180px;
+
+            height: calc(100vh - 174px);
+            min-height: 560px;
+
+            background: var(--white);
+
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            box-shadow:
+                0 18px 50px
+                rgba(17, 24, 39, 0.08);
+
+            padding: 58px 64px;
+
+            overflow-y: auto;
+        }
+
+        .sheet::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sheet::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 20px;
+        }
+
+
+        /* =========================
+           TYPOGRAPHY
+        ========================= */
+
+        .eyebrow {
+            display: inline-block;
+
+            margin-bottom: 18px;
+
+            color: var(--blue);
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 0.15em;
+
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(40px, 5vw, 72px);
+
+            line-height: 1.05;
+
+            letter-spacing: -0.05em;
+        }
+
+        h2 {
+            font-size: clamp(30px, 4vw, 48px);
+
+            line-height: 1.15;
+
+            letter-spacing: -0.04em;
+        }
+
+        h3 {
+            font-size: 18px;
+
+            margin-bottom: 10px;
+
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            line-height: 1.75;
+        }
+
+        .lead {
+            margin-top: 24px;
+
+            max-width: 760px;
+
+            font-size: 17px;
+
+            color: var(--gray);
+        }
+
+        .muted {
+            color: var(--gray);
+        }
+
+
+        /* =========================
+           COVER
+        ========================= */
+
+        .cover-sheet {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    #dbeafe,
+                    transparent 28%
+                ),
+                var(--white);
+        }
+
+        .cover-title {
+            margin-top: 25px;
+        }
+
+        .cover-title strong {
+            display: block;
+
+            margin-top: 18px;
+
+            color: var(--blue);
+
+            font-size: 16px;
+
+            letter-spacing: 0.04em;
+        }
+
+        .cover-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            gap: 40px;
+
+            padding-top: 50px;
+
+            border-top: 1px solid var(--border);
+        }
+
+        .cover-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+
+        /* =========================
+           TAG
+        ========================= */
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+
+            padding: 7px 11px;
+
+            border-radius: 999px;
+
+            background: var(--light-gray);
+
+            color: #374151;
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .tag.blue {
+            background: var(--light-blue);
+            color: var(--blue);
+        }
+
+
+        /* =========================
+           COMMON LAYOUT
+        ========================= */
+
+        .section-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            margin-bottom: 38px;
+
+            padding-bottom: 26px;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .page-index {
+            color: #9ca3af;
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .grid-2 {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 18px;
+        }
+
+        .card {
+            padding: 24px;
+
+            border: 1px solid var(--border);
+            border-radius: 10px;
+
+            background: #fff;
+        }
+
+        .card p {
+            color: var(--gray);
+
+            font-size: 14px;
+        }
+
+        .card-number {
+            display: block;
+
+            margin-bottom: 22px;
+
+            color: var(--blue);
+
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+
+        /* =========================
+           PROFILE
+        ========================= */
+
+        .profile-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1.25fr;
+
+            gap: 70px;
+        }
+
+        .profile-large {
+            font-size: 28px;
+            font-weight: 750;
+
+            line-height: 1.5;
+
+            letter-spacing: -0.035em;
+        }
+
+        .profile-list {
+            display: grid;
+            gap: 0;
+        }
+
+        .profile-row {
+            display: grid;
+
+            grid-template-columns: 120px 1fr;
+
+            padding: 17px 0;
+
+            border-bottom: 1px solid var(--border);
+
+            font-size: 14px;
+        }
+
+        .profile-row strong {
+            color: var(--gray);
+
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.05em;
+        }
+
+
+        /* =========================
+           PROJECT HEADER
+        ========================= */
+
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-top: 18px;
+        }
+
+        .project-summary {
+            display: grid;
+
+            grid-template-columns: 1.35fr 0.65fr;
+
+            gap: 46px;
+        }
+
+        .project-summary .description {
+            color: #4b5563;
+
+            font-size: 16px;
+        }
+
+        .mini-info {
+            border-left: 1px solid var(--border);
+
+            padding-left: 28px;
+        }
+
+        .mini-info-item {
+            margin-bottom: 24px;
+        }
+
+        .mini-info-item span {
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: #9ca3af;
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: 0.08em;
+
+            text-transform: uppercase;
+        }
+
+        .mini-info-item strong {
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           FLOW
+        ========================= */
+
+        .flow {
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 9px;
+
+            margin-top: 38px;
+        }
+
+        .flow-item {
+            min-height: 92px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            padding: 15px;
+
+            text-align: center;
+
+            background: var(--light-gray);
+
+            border-radius: 8px;
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .flow-arrow {
+            color: var(--blue);
+
+            margin-top: 6px;
+        }
+
+
+        /* =========================
+           SECURITY SCENARIO
+        ========================= */
+
+        .scenario {
+            padding: 18px 0;
+
+            display: grid;
+
+            grid-template-columns:
+                70px 1.15fr 1fr;
+
+            gap: 20px;
+
+            border-bottom: 1px solid var(--border);
+
+            align-items: start;
+        }
+
+        .scenario-code {
+            color: var(--blue);
+
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        .scenario strong {
+            display: block;
+
+            margin-bottom: 6px;
+
+            font-size: 14px;
+        }
+
+        .scenario p {
+            color: var(--gray);
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 28px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 42px;
+
+            padding: 0 17px;
+
+            border: 1px solid var(--border);
+            border-radius: 7px;
+
+            background: #fff;
+
+            font-size: 13px;
+            font-weight: 750;
+
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            border-color: var(--blue);
+
+            color: var(--blue);
+
+            transform: translateY(-1px);
+        }
+
+        .btn.primary {
+            background: var(--navy);
+            border-color: var(--navy);
+
+            color: #fff;
+        }
+
+        .btn.primary:hover {
+            background: var(--blue);
+            border-color: var(--blue);
+
+            color: #fff;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skill-group {
+            margin-bottom: 30px;
+        }
+
+        .skill-group h3 {
+            margin-bottom: 13px;
+
+            color: var(--gray);
+
+            font-size: 12px;
+
+            letter-spacing: 0.08em;
+
+            text-transform: uppercase;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-sheet {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contact-title {
+            max-width: 800px;
+        }
+
+        .contact-title p {
+            margin-top: 25px;
+
+            color: var(--gray);
+
+            font-size: 17px;
+        }
+
+        .contact-links {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 14px;
+
+            margin-top: 50px;
+        }
+
+        .contact-link {
+            padding: 22px 24px;
+
+            border: 1px solid var(--border);
+            border-radius: 9px;
+
+            transition: 0.2s;
+        }
+
+        .contact-link:hover {
+            border-color: var(--blue);
+
+            transform: translateY(-2px);
+        }
+
+        .contact-link span {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #9ca3af;
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: 0.08em;
+        }
+
+        .contact-link strong {
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           BOTTOM PAGER
+        ========================= */
+
+        .pager {
+            position: fixed;
+
+            left: 50%;
+            bottom: 18px;
+
+            transform: translateX(-50%);
+
+            display: flex;
+            align-items: center;
+
+            gap: 8px;
+
+            max-width: calc(100vw - 30px);
+
+            padding: 7px;
+
+            background: rgba(255, 255, 255, 0.96);
+
+            border: 1px solid var(--border);
+            border-radius: 999px;
+
+            box-shadow:
+                0 8px 30px
+                rgba(17, 24, 39, 0.1);
+
+            backdrop-filter: blur(10px);
+
+            z-index: 1200;
+        }
+
+        .pager-arrow {
+            width: 36px;
+            height: 36px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: transparent;
+
+            color: #374151;
+
+            cursor: pointer;
+
+            font-size: 19px;
+
+            transition: 0.2s;
+        }
+
+        .pager-arrow:hover:not(:disabled) {
+            background: var(--light-gray);
+        }
+
+        .pager-arrow:disabled {
+            opacity: 0.25;
+
+            cursor: default;
+        }
+
+        #pageButtons {
+            display: flex;
+            align-items: center;
+
+            gap: 3px;
+
+            overflow-x: auto;
+
+            scrollbar-width: none;
+        }
+
+        #pageButtons::-webkit-scrollbar {
+            display: none;
+        }
+
+        .page-number {
+            width: 34px;
+            height: 34px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: transparent;
+
+            color: #9ca3af;
+
+            cursor: pointer;
+
+            font-size: 12px;
+            font-weight: 750;
+
+            transition: 0.2s;
+        }
+
+        .page-number:hover {
+            background: var(--light-gray);
+
+            color: var(--navy);
+        }
+
+        .page-number.active {
+            background: var(--navy);
+
+            color: #fff;
+        }
+
+
+        /* =========================
+           SIDE PAGE COUNT
+        ========================= */
+
+        .page-count {
+            position: fixed;
+
+            right: 26px;
+            bottom: 27px;
+
+            color: #9ca3af;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            z-index: 1000;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .page {
+                padding:
+                    76px 18px
+                    84px;
+            }
+
+            .sheet {
+                height:
+                    calc(100vh - 150px);
+
+                padding: 38px 28px;
+            }
+
+            .topbar {
+                height: 58px;
+
+                padding: 0 18px;
+            }
+
+            .top-right {
+                gap: 12px;
+            }
+
+            .profile-grid,
+            .project-summary {
+                grid-template-columns: 1fr;
+
+                gap: 32px;
+            }
+
+            .mini-info {
+                border-left: 0;
+
+                border-top:
+                    1px solid
+                    var(--border);
+
+                padding-left: 0;
+                padding-top: 24px;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .flow {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .scenario {
+                grid-template-columns:
+                    55px 1fr;
+            }
+
+            .scenario > div:last-child {
+                grid-column: 2;
+            }
+
+            .contact-links {
+                grid-template-columns: 1fr;
+            }
+
+            .page-count {
+                display: none;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .top-right .hide-mobile {
+                display: none;
+            }
+
+            .sheet {
+                padding: 30px 22px;
+
+                border-radius: 8px;
+            }
+
+            .section-header {
+                align-items: flex-start;
+                flex-direction: column;
+
+                gap: 10px;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-row {
+                grid-template-columns:
+                    90px 1fr;
+            }
+
+            .flow {
+                grid-template-columns: 1fr;
+            }
+
+            .cover-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .pager {
+                bottom: 12px;
+            }
+
+            .page-number {
+                width: 30px;
+                height: 30px;
+            }
+
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-  <header class="topbar">
 
-    <a href="#top" class="brand">
-      BOMI KIM
-    </a>
+    <!-- =========================
+         TOP BAR
+    ========================== -->
 
-    <nav class="topnav" aria-label="주요 메뉴">
-      <a href="#projects">프로젝트</a>
-      <a href="#competitions">대회</a>
-      <a href="#practice">실습</a>
-      <a href="#skills">기술</a>
-    </nav>
+    <header class="topbar">
 
-  </header>
-
-
-  <main id="top" class="page">
-
-
-    <!-- =====================================================
-         PROFILE
-    ====================================================== -->
-
-    <aside class="profile-panel">
-
-      <h1>
-        김보미
-      </h1>
-
-      <p class="headline">
-        인프라와 웹을 이해하고,<br>
-        직접 구축하고 검증할 수 있는<br>
-        정보보안 전공자입니다.
-      </p>
-
-
-      <dl class="profile-info">
-
-        <div>
-          <dt>전공</dt>
-          <dd>정보보호</dd>
-        </div>
-
-        <div>
-          <dt>교육</dt>
-          <dd>정보보안 부트캠프</dd>
-        </div>
-
-        <div>
-          <dt>관심 분야</dt>
-          <dd>클라우드 보안 · 인프라 · 백엔드 개발</dd>
-        </div>
-
-        <div>
-          <dt>수료</dt>
-          <dd>2026.08.07</dd>
-        </div>
-
-      </dl>
-
-
-      <div class="quick-links">
-
-        <a
-          class="button primary"
-          href="#projects"
+        <button
+            class="logo"
+            id="homeButton"
+            type="button"
         >
-          프로젝트 보기
-        </a>
+            BOMI KIM
+        </button>
 
-        <a
-          class="button"
-          href="https://github.com/bmkim0311"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
 
-      </div>
+        <div class="top-right">
 
-    </aside>
-
-
-    <!-- =====================================================
-         CONTENT
-    ====================================================== -->
-
-    <div class="content-panel">
-
-
-      <!-- ===================================================
-           SUMMARY
-      ==================================================== -->
-
-      <section
-        class="summary-grid"
-        aria-label="핵심 경험 요약"
-      >
-
-        <article>
-          <strong>3회</strong>
-          <span>팀 프로젝트 수행</span>
-        </article>
-
-        <article>
-          <strong>2회</strong>
-          <span>팀장 경험</span>
-        </article>
-
-        <article>
-          <strong>2회</strong>
-          <span>보안 문제 제작 대회</span>
-        </article>
-
-      </section>
-
-
-      <!-- ===================================================
-           PROJECTS
-      ==================================================== -->
-
-      <section
-        id="projects"
-        class="section"
-      >
-
-        <div class="section-header">
-
-          <div>
-
-            <p class="section-kicker">
-              TEAM PROJECTS
-            </p>
-
-            <h2>
-              팀 프로젝트
-            </h2>
-
-          </div>
-
-          <p class="section-description">
-            인프라 구축에서 모의해킹과 보안 검증까지 경험했습니다.
-          </p>
-
-        </div>
-
-
-        <div class="project-list">
-
-
-          <!-- =================================================
-               3차 프로젝트
-          ================================================== -->
-
-          <article class="project-item">
-
-            <div class="project-main">
-
-              <div class="project-title-row">
-
-                <div>
-
-                  <span class="project-type">
-                    3RD PROJECT · TEAM LEAD
-                  </span>
-
-                  <h3>
-                    또롱이 공공자전거 서비스 보안 진단·탐지·대응 환경 구축
-                  </h3>
-
-                </div>
-
-                <span class="project-date">
-                  2026.07.23 – 08.04
-                </span>
-
-              </div>
-
-
-              <p class="project-summary">
-                공공자전거 서비스를 구축하고 실제 서비스 기능을 기준으로
-                공격·탐지·보완·재검증까지 수행한 보안 프로젝트입니다.
-              </p>
-
-
-              <ul class="key-points">
-
-                <li>
-                  팀장으로 전체 일정과 작업을 조율하고,
-                  서비스·네트워크·보안 환경의 통합과 주요 오류 해결을 담당했습니다.
-                </li>
-
-                <li>
-                  실제 서비스 로직을 기반으로 5개 공격 시나리오를
-                  설계하고 취약점을 재현했습니다.
-                </li>
-
-                <li>
-                  WAF·IDS/IPS·Wazuh와 애플리케이션을 보완한 뒤
-                  동일 공격을 다시 수행해 개선 결과를 검증했습니다.
-                </li>
-
-              </ul>
-
-
-              <div class="tags">
-
-                <span>Linux</span>
-                <span>Flask</span>
-                <span>MariaDB</span>
-                <span>pfSense</span>
-                <span>ModSecurity</span>
-                <span>Snort</span>
-                <span>Wazuh</span>
-
-              </div>
-
-
-              <!-- 3차 결과보고서 -->
-
-              <a
-                class="material-card"
-                href="./assets/reports/project3-report.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-
-                <span class="material-icon">
-                  PDF
-                </span>
-
-                <span class="material-text">
-
-                  <strong>
-                    프로젝트 결과보고서
-                  </strong>
-
-                  <small>
-                    프로젝트 전체 구축·보안 검증 결과
-                  </small>
-
-                </span>
-
-                <span
-                  class="material-arrow"
-                  aria-hidden="true"
-                >
-                  ↗
-                </span>
-
-              </a>
-
-            </div>
-
-
-            <details class="project-detail">
-
-              <summary>
-                담당 업무와 결과 보기
-              </summary>
-
-
-              <div class="detail-content">
-
-                <div>
-
-                  <h4>
-                    프로젝트 리딩·통합
-                  </h4>
-
-                  <p>
-                    전체 일정과 작업 진행을 관리하고
-                    서비스·네트워크·보안 구성을 통합했습니다.
-                    구축 과정의 주요 오류를 해결하고 최종 기능을 검증했습니다.
-                  </p>
-
-                </div>
-
-
-                <div>
-
-                  <h4>
-                    보안 검증
-                  </h4>
-
-                  <p>
-                    IDOR, QR 토큰 변조, 중복 대여,
-                    비인증 자료 접근, 감사로그 누락을
-                    공격 시나리오로 구성해 검증했습니다.
-                  </p>
-
-                </div>
-
-
-                <div>
-
-                  <h4>
-                    보완 및 재검증
-                  </h4>
-
-                  <p>
-                    취약 로직과 탐지·차단 정책을 수정하고
-                    동일 공격을 다시 수행해 실제 개선 여부를 확인했습니다.
-                  </p>
-
-                </div>
-
-              </div>
-
-            </details>
-
-          </article>
-
-
-
-          <!-- =================================================
-               2차 프로젝트
-          ================================================== -->
-
-          <article class="project-item">
-
-            <div class="project-main">
-
-              <div class="project-title-row">
-
-                <div>
-
-                  <span class="project-type">
-                    2ND PROJECT · TEAM MEMBER
-                  </span>
-
-                  <h3>
-                    Nexan 게임회사 보안관제 및 모의해킹 환경 구축
-                  </h3>
-
-                </div>
-
-                <span class="project-date">
-                  2026.06.01 – 06.19
-                </span>
-
-              </div>
-
-
-              <p class="project-summary">
-                게임회사 환경의 웹 서비스와 서버를 구축하고,
-                웹 취약점과 서버 침해 이후의 피해 범위를
-                공격자의 관점에서 검증한 프로젝트입니다.
-              </p>
-
-
-              <ul class="key-points">
-
-                <li>
-                  CatQuest 웹 서비스의 초기 구축과 기능 보완,
-                  관리자 페이지 구성 및 WEB-DB 연동을 수행했습니다.
-                </li>
-
-                <li>
-                  FTP·DNS·LOG 서버를 프로젝트 환경에 맞춰 구축해
-                  전체 인프라 구성에 활용할 수 있도록 제공했습니다.
-                </li>
-
-                <li>
-                  웹 취약점과 내부 이동 가능성을 검증하고
-                  공격 결과·DB·관제 로그를 기반으로 보고서를 작성했습니다.
-                </li>
-
-              </ul>
-
-
-              <div class="tags">
-
-                <span>Python</span>
-                <span>Flask</span>
-                <span>MariaDB</span>
-                <span>Linux</span>
-                <span>DNS</span>
-                <span>FTP</span>
-                <span>Wazuh</span>
-                <span>웹 취약점 분석</span>
-
-              </div>
-
-
-              <!-- 2차 모의해킹 보고서 -->
-
-              <a
-                class="material-card"
-                href="./assets/reports/project2-pentest-report.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-
-                <span class="material-icon">
-                  PDF
-                </span>
-
-                <span class="material-text">
-
-                  <strong>
-                    모의해킹 결과보고서
-                  </strong>
-
-                  <small>
-                    공격 재현·DB 반영·관제 로그 분석
-                  </small>
-
-                </span>
-
-                <span
-                  class="material-arrow"
-                  aria-hidden="true"
-                >
-                  ↗
-                </span>
-
-              </a>
-
-            </div>
-
-
-            <details class="project-detail">
-
-              <summary>
-                담당 업무와 결과 보기
-              </summary>
-
-
-              <div class="detail-content">
-
-                <div>
-
-                  <h4>
-                    서비스·서버 구축
-                  </h4>
-
-                  <p>
-                    웹 서비스 기능을 보완하고 관리자 페이지 구성과
-                    WEB-DB 연동을 수행했습니다.
-                    FTP·DNS·LOG 서버도 프로젝트 환경에 맞춰 구축했습니다.
-                  </p>
-
-                </div>
-
-
-                <div>
-
-                  <h4>
-                    모의해킹
-                  </h4>
-
-                  <p>
-                    가격·데이터 조작, 인증·인가, Stored XSS,
-                    파일 업로드 등 웹 취약점을 재현하고
-                    실제 데이터 반영 여부까지 확인했습니다.
-                  </p>
-
-                </div>
-
-
-                <div>
-
-                  <h4>
-                    침해 범위 검증
-                  </h4>
-
-                  <p>
-                    웹 서버 침해 이후 내부 시스템 접근 가능성과
-                    보안관제 로그를 확인하고 결과를 문서화했습니다.
-                  </p>
-
-                </div>
-
-              </div>
-
-            </details>
-
-          </article>
-
-
-
-          <!-- =================================================
-               1차 프로젝트
-          ================================================== -->
-
-          <article class="project-item">
-
-            <div class="project-main">
-
-              <div class="project-title-row">
-
-                <div>
-
-                  <span class="project-type">
-                    1ST PROJECT · TEAM LEAD
-                  </span>
-
-                  <h3>
-                    Simmit Pay 금융 플랫폼 기반 통합 인프라 및 보안 네트워크 구축
-                  </h3>
-
-                </div>
-
-                <span class="project-date">
-                  2026.04.13 – 04.24
-                </span>
-
-              </div>
-
-
-              <p class="project-summary">
-                가상의 금융회사를 기준으로 서버와 기업 네트워크를 구축하고,
-                부서별 접근 통제와 안전한 통신 환경을 구성한 프로젝트입니다.
-              </p>
-
-
-              <ul class="key-points">
-
-                <li>
-                  팀장으로 역할과 일정을 조율하고,
-                  네트워크 구성부터 서버 통합·최종 점검까지 전체 진행을 관리했습니다.
-                </li>
-
-                <li>
-                  VLAN·라우팅·ACL·VPN·NAT를 설계·적용해
-                  부서 및 업무 환경별 통신 정책을 구성했습니다.
-                </li>
-
-                <li>
-                  WEB·DB·LOG 서버 간 통신과 접근 정책을 직접 검증하고,
-                  통합 과정에서 발생한 연결 문제를 해결했습니다.
-                </li>
-
-              </ul>
-
-
-              <div class="tags">
-
-                <span>Rocky Linux</span>
-                <span>MariaDB</span>
-                <span>VLAN</span>
-                <span>ACL</span>
-                <span>VPN</span>
-                <span>NAT</span>
-
-              </div>
-
-
-              <!-- 1차 결과보고서 -->
-
-              <a
-                class="material-card"
-                href="./assets/reports/project1-report.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-
-                <span class="material-icon">
-                  PDF
-                </span>
-
-                <span class="material-text">
-
-                  <strong>
-                    프로젝트 결과보고서
-                  </strong>
-
-                  <small>
-                    인프라·네트워크 구축 및 검증 결과
-                  </small>
-
-                </span>
-
-                <span
-                  class="material-arrow"
-                  aria-hidden="true"
-                >
-                  ↗
-                </span>
-
-              </a>
-
-            </div>
-
-
-            <details class="project-detail">
-
-              <summary>
-                담당 업무와 결과 보기
-              </summary>
-
-
-              <div class="detail-content">
-
-                <div>
-
-                  <h4>
-                    프로젝트 리딩·통합
-                  </h4>
-
-                  <p>
-                    팀장으로 역할과 일정을 조율하고 각 파트의 진행 상황을 확인했습니다.
-                    개별 구축 결과가 하나의 환경에서 동작하도록 서버와 네트워크를
-                    점검하고 최종 결과물을 통합했습니다.
-                  </p>
-
-                </div>
-
-
-                <div>
-
-                  <h4>
-                    네트워크 설계·접근 통제
-                  </h4>
-
-                  <p>
-                    본사·지사·재택근무 환경을 기준으로 VLAN과 라우팅을 구성하고,
-                    ACL·VPN·NAT를 적용해 필요한 통신만 허용되도록 설계했습니다.
-                  </p>
-
-                </div>
-
-
-                <div>
-
-                  <h4>
-                    검증·문제 해결
-                  </h4>
-
-                  <p>
-                    WEB·DB·LOG 서버 간 연결과 허용·차단 정책을 직접 테스트하고,
-                    통합 과정에서 발생한 통신 오류를 분석해 정상화했습니다.
-                  </p>
-
-                </div>
-
-              </div>
-
-            </details>
-
-          </article>
-
-
-        </div>
-
-      </section>
-
-
-      <!-- ===================================================
-           SECURITY CHALLENGES
-      ==================================================== -->
-
-      <section
-        id="competitions"
-        class="section"
-      >
-
-        <div class="section-header">
-
-          <div>
-
-            <p class="section-kicker">
-              SECURITY CHALLENGES
-            </p>
-
-            <h2>
-              대회 및 워게임
-            </h2>
-
-          </div>
-
-          <p class="section-description">
-            보안 문제를 직접 제작하고 다른 팀의 문제를 분석했습니다.
-          </p>
-
-        </div>
-
-
-        <div class="challenge-grid">
-
-          <article class="challenge-card">
-
-            <div class="challenge-top">
-
-              <span class="project-type">
-                CTF
-              </span>
-
-              <span class="challenge-date">
-                준비 2026.05.15 – 05.26 · 대회 05.27
-              </span>
-
-            </div>
-
-
-            <strong class="challenge-number">
-              4 / 10
-            </strong>
-
-
-            <h3>
-              CTF 자체 제작 대회
-            </h3>
-
-
-            <p>
-              팀별 보안 문제와 Walkthrough를 제작하고,
-              본 대회에서 타 팀이 제작한 10문제 중
-              4문제를 개인 해결했습니다.
-            </p>
-
-          </article>
-
-
-          <article class="challenge-card">
-
-            <div class="challenge-top">
-
-              <span class="project-type">
-                WEB WARGAME · TEAM LEAD
-              </span>
-
-              <span class="challenge-date">
-                준비 2026.07.06 – 07.16 · 대회 07.16
-              </span>
-
-            </div>
-
-
-            <strong class="challenge-number">
-              38 / 100
-            </strong>
-
-
-            <h3>
-              EDU PORTAL 웹 워게임
-            </h3>
-
-
-            <p>
-              10개의 웹 보안 문제를 포함한 교육 포털을 팀장으로 완성하고,
-              본 대회에서 타 팀 100문제 중
-              38문제를 개인 해결했습니다.
-            </p>
-
-          </article>
-
-        </div>
-
-      </section>
-
-
-      <!-- ===================================================
-           PRACTICE
-      ==================================================== -->
-
-      <section
-        id="practice"
-        class="section compact-section"
-      >
-
-        <div class="section-header">
-
-          <div>
-
-            <p class="section-kicker">
-              ADDITIONAL PRACTICE
-            </p>
-
-            <h2>
-              추가 보안 실습
-            </h2>
-
-          </div>
-
-          <p class="section-description">
-            웹 취약점을 직접 분석하고 공격 과정을 반복적으로 재현했습니다.
-          </p>
-
-        </div>
-
-
-        <div class="practice-main">
-
-          <div class="practice-number">
-
-            <strong>
-              91
-            </strong>
-
-            <span>
-              OWASP Juice Shop 해결
+            <span class="hide-mobile">
+                SECURITY PORTFOLIO
             </span>
 
-          </div>
-
-
-          <div class="practice-main-content">
-
-            <p>
-              OWASP Juice Shop에서 91개 문제를 해결하며
-              다양한 웹 취약점의 공격 조건과 동작 방식을 직접 확인했습니다.
-            </p>
-
-
-            <div class="practice-tags">
-
-              <span>XSS</span>
-              <span>SQL Injection</span>
-              <span>IDOR</span>
-              <span>SSRF</span>
-              <span>XXE</span>
-              <span>인증·인가</span>
-
-            </div>
-
-          </div>
+            <a
+                href="https://github.com/bmkim0311"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub ↗
+            </a>
 
         </div>
 
+    </header>
 
-        <div class="practice-detail">
 
-          <div>
 
-            <h4>
-              DVWA
-            </h4>
+    <!-- =========================
+         PORTFOLIO
+    ========================== -->
 
-            <p>
-              SQL Injection, XSS, 파일 업로드 등
-              주요 웹 취약점을 직접 재현하며
-              입력값 처리와 서버 동작을 확인했습니다.
-            </p>
+    <main class="viewport">
 
-          </div>
-
-
-          <div>
-
-            <h4>
-              WebGoat
-            </h4>
-
-            <p>
-              웹 애플리케이션의 인증·인가와 입력 검증을 중심으로
-              취약점 발생 원인과 공격 흐름을 실습했습니다.
-            </p>
-
-          </div>
-
-
-          <div>
-
-            <h4>
-              Natas
-            </h4>
-
-            <p>
-              웹 요청·응답과 소스 코드, 서버 동작을 분석하며
-              단계별 웹 보안 문제를 해결했습니다.
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <!-- ===================================================
-           SKILLS
-      ==================================================== -->
-
-      <section
-        id="skills"
-        class="section compact-section"
-      >
-
-        <div class="section-header">
-
-          <div>
-
-            <p class="section-kicker">
-              SKILLS
-            </p>
-
-            <h2>
-              사용 기술
-            </h2>
-
-          </div>
-
-          <p class="section-description">
-            프로젝트와 보안 실습에서 직접 사용한 기술입니다.
-          </p>
-
-        </div>
-
-
-        <div class="skills-table">
-
-          <div class="skill-row">
-
-            <strong>
-              서버·운영체제
-            </strong>
-
-            <p>
-              Rocky Linux · Ubuntu · Kali Linux · Apache · Shell Script
-            </p>
-
-          </div>
-
-
-          <div class="skill-row">
-
-            <strong>
-              네트워크
-            </strong>
-
-            <p>
-              TCP/IP · VLAN · Routing · ACL · NAT · VPN · pfSense
-            </p>
-
-          </div>
-
-
-          <div class="skill-row">
-
-            <strong>
-              보안
-            </strong>
-
-            <p>
-              Wazuh · Snort · Suricata · ModSecurity · 웹 취약점 분석
-            </p>
-
-          </div>
-
-
-          <div class="skill-row">
-
-            <strong>
-              개발
-            </strong>
-
-            <p>
-              Python · Flask · C · HTML/CSS · JavaScript
-            </p>
-
-          </div>
-
-
-          <div class="skill-row">
-
-            <strong>
-              데이터베이스
-            </strong>
-
-            <p>
-              MariaDB · SQL
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <!-- ===================================================
-           BOOTCAMP LOG
-      ==================================================== -->
-
-      <section class="bootcamp-log-box">
-
-        <div>
-
-          <p class="section-kicker">
-            BOOTCAMP LOG
-          </p>
-
-          <h2>
-            부트캠프 학습·프로젝트 기록
-          </h2>
-
-          <p class="bootcamp-log-description">
-            교육 기간 동안 수행한 실습과 프로젝트 진행 과정을
-            Notion에 꾸준히 기록했습니다.
-          </p>
-
-        </div>
-
-
-        <a
-          class="button primary"
-          href="https://app.notion.com/p/10-3b9754f31bd780a9b329cbcb6b92c064?source=copy_link"
-          target="_blank"
-          rel="noopener noreferrer"
+        <div
+            class="portfolio-track"
+            id="portfolioTrack"
         >
-          Notion 기록 보기
-        </a>
-
-      </section>
 
 
-      <!-- ===================================================
-           GITHUB
-      ==================================================== -->
+            <!-- =====================
+                 PAGE 1
+            ====================== -->
 
-      <section class="contact-box">
+            <section
+                class="page"
+                data-title="Cover"
+            >
 
-        <div>
+                <article class="sheet cover-sheet">
 
-          <p class="section-kicker">
-            GITHUB
-          </p>
+                    <div>
 
-          <h2>
-            프로젝트 코드와 구현 자료를 확인할 수 있습니다.
-          </h2>
+                        <span class="eyebrow">
+                            Security Portfolio
+                        </span>
+
+                        <div class="cover-title">
+
+                            <h1>
+                                김보미
+                            </h1>
+
+                            <strong>
+                                만들고 · 파고들고 · 지키는 과정
+                            </strong>
+
+                        </div>
+
+                        <p class="lead">
+                            웹 서비스 구축부터
+                            취약점 확인,
+                            보안 장비 적용,
+                            로그 분석,
+                            탐지 및 재검증까지
+                            서비스의 전체 흐름을 경험했습니다.
+                        </p>
+
+                    </div>
+
+
+                    <div class="cover-bottom">
+
+                        <div class="cover-keywords">
+
+                            <span class="tag blue">
+                                Web Security
+                            </span>
+
+                            <span class="tag">
+                                Linux
+                            </span>
+
+                            <span class="tag">
+                                Wazuh
+                            </span>
+
+                            <span class="tag">
+                                Flask
+                            </span>
+
+                            <span class="tag">
+                                MariaDB
+                            </span>
+
+                            <span class="tag">
+                                Network Security
+                            </span>
+
+                        </div>
+
+                        <span class="muted">
+                            2026
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =====================
+                 PAGE 2
+            ====================== -->
+
+            <section
+                class="page"
+                data-title="Profile"
+            >
+
+                <article class="sheet">
+
+                    <div class="section-header">
+
+                        <div>
+                            <span class="eyebrow">
+                                01 · Profile
+                            </span>
+
+                            <h2>
+                                About Me
+                            </h2>
+                        </div>
+
+                        <span class="page-index">
+                            02
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-grid">
+
+                        <div>
+
+                            <p class="profile-large">
+                                서비스가 어떻게 만들어지고
+                                동작하는지 이해한 뒤,
+                                그 흐름에서 발생하는
+                                보안 문제를 찾아가는 과정을
+                                좋아합니다.
+                            </p>
+
+                            <p class="lead">
+                                단순히 보안 솔루션을 사용하는 데서
+                                그치지 않고 직접 서비스를 구축하고,
+                                공격하고, 방어한 뒤 다시 검증하는
+                                경험을 쌓았습니다.
+                            </p>
+
+                        </div>
+
+
+                        <div class="profile-list">
+
+                            <div class="profile-row">
+                                <strong>Major</strong>
+
+                                <span>
+                                    정보보호학과
+                                </span>
+                            </div>
+
+                            <div class="profile-row">
+                                <strong>Interest</strong>
+
+                                <span>
+                                    보안 엔지니어 ·
+                                    EDR/XDR ·
+                                    위협 탐지 및 분석
+                                </span>
+                            </div>
+
+                            <div class="profile-row">
+                                <strong>Strength</strong>
+
+                                <span>
+                                    문제 원인을 단계적으로
+                                    좁혀가는 과정과
+                                    시스템 흐름 추적
+                                </span>
+                            </div>
+
+                            <div class="profile-row">
+                                <strong>Experience</strong>
+
+                                <span>
+                                    웹 서비스 구축 ·
+                                    인프라 구성 ·
+                                    모의해킹 ·
+                                    로그 분석 ·
+                                    탐지 룰 작성
+                                </span>
+                            </div>
+
+                            <div class="profile-row">
+                                <strong>GitHub</strong>
+
+                                <a
+                                    href="https://github.com/bmkim0311"
+                                    target="_blank"
+                                >
+                                    github.com/bmkim0311 ↗
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =====================
+                 PAGE 3
+            ====================== -->
+
+            <section
+                class="page"
+                data-title="Ttorongi"
+            >
+
+                <article class="sheet">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                02 · Project 03
+                            </span>
+
+                            <h2>
+                                또롱이
+                            </h2>
+
+                            <div class="project-meta">
+
+                                <span class="tag blue">
+                                    Team Lead
+                                </span>
+
+                                <span class="tag">
+                                    Web Security
+                                </span>
+
+                                <span class="tag">
+                                    Infrastructure
+                                </span>
+
+                                <span class="tag">
+                                    Detection
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <span class="page-index">
+                            03
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-summary">
+
+                        <div>
+
+                            <h3>
+                                공공자전거 서비스
+                                보안 진단·탐지·대응 환경 구축
+                            </h3>
+
+                            <p class="description">
+                                공공자전거 웹 서비스를 직접 구축한 뒤,
+                                웹 취약점과 운영 환경의 문제를 확인하고
+                                pfSense, Snort, ModSecurity,
+                                Wazuh 등을 이용하여
+                                공격 탐지와 차단 환경을 구성했습니다.
+                                이후 동일한 공격을 다시 수행해
+                                보완 여부를 재검증했습니다.
+                            </p>
+
+
+                            <div class="buttons">
+
+                                <a
+                                    class="btn primary"
+                                    href="assets/reports/project3-report.pdf"
+                                    target="_blank"
+                                >
+                                    결과 보고서 보기
+                                </a>
+
+                                <a
+                                    class="btn"
+                                    href="https://github.com/bmkim0311"
+                                    target="_blank"
+                                >
+                                    GitHub ↗
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="mini-info">
+
+                            <div class="mini-info-item">
+                                <span>Role</span>
+                                <strong>
+                                    팀장 / Web / Infra / Security
+                                </strong>
+                            </div>
+
+                            <div class="mini-info-item">
+                                <span>Process</span>
+                                <strong>
+                                    구축 → 공격 → 탐지 →
+                                    보완 → 재검증
+                                </strong>
+                            </div>
+
+                            <div class="mini-info-item">
+                                <span>Stack</span>
+                                <strong>
+                                    Flask · MariaDB ·
+                                    pfSense · Snort ·
+                                    Wazuh · ModSecurity
+                                </strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flow">
+
+                        <div class="flow-item">
+                            External
+                            <span class="flow-arrow">
+                                ↓
+                            </span>
+                        </div>
+
+                        <div class="flow-item">
+                            pfSense
+                            <span class="flow-arrow">
+                                ↓
+                            </span>
+                        </div>
+
+                        <div class="flow-item">
+                            Snort / WAF
+                            <span class="flow-arrow">
+                                ↓
+                            </span>
+                        </div>
+
+                        <div class="flow-item">
+                            Flask / DB
+                            <span class="flow-arrow">
+                                ↓
+                            </span>
+                        </div>
+
+                        <div class="flow-item">
+                            Wazuh
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =====================
+                 PAGE 4
+            ====================== -->
+
+            <section
+                class="page"
+                data-title="Ttorongi Security"
+            >
+
+                <article class="sheet">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                Project 03 · Security
+                            </span>
+
+                            <h2>
+                                공격에서 재검증까지
+                            </h2>
+
+                        </div>
+
+                        <span class="page-index">
+                            04
+                        </span>
+
+                    </div>
+
+
+                    <div class="scenario">
+
+                        <span class="scenario-code">
+                            A01
+                        </span>
+
+                        <div>
+                            <strong>
+                                IDOR
+                            </strong>
+
+                            <p>
+                                다른 사용자의 대여 정보를
+                                조회하거나 강제 반납할 수 있는
+                                접근제어 문제를 확인했습니다.
+                            </p>
+                        </div>
+
+                        <div>
+                            <strong>
+                                대응
+                            </strong>
+
+                            <p>
+                                Flask에서 권한 검증을 강화하고,
+                                WAF와 Wazuh를 이용해
+                                관련 요청을 탐지하도록 구성했습니다.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="scenario">
+
+                        <span class="scenario-code">
+                            A02
+                        </span>
+
+                        <div>
+                            <strong>
+                                QR Token 변조
+                            </strong>
+
+                            <p>
+                                예측 가능한 QR 대여 토큰의
+                                변조 가능성을 검증했습니다.
+                            </p>
+                        </div>
+
+                        <div>
+                            <strong>
+                                대응
+                            </strong>
+
+                            <p>
+                                토큰 검증과 재사용 방지를 적용하고
+                                WAF · Snort · Wazuh에서
+                                이상 이벤트를 탐지했습니다.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="scenario">
+
+                        <span class="scenario-code">
+                            A04
+                        </span>
+
+                        <div>
+                            <strong>
+                                운영자료 노출
+                            </strong>
+
+                            <p>
+                                인증 없이 접근 가능한
+                                운영 자료 다운로드 경로를
+                                확인했습니다.
+                            </p>
+                        </div>
+
+                        <div>
+                            <strong>
+                                대응
+                            </strong>
+
+                            <p>
+                                접근 정책을 수정하고
+                                Snort · WAF · pfSense에서
+                                관련 접근을 제한했습니다.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="scenario">
+
+                        <span class="scenario-code">
+                            A05
+                        </span>
+
+                        <div>
+                            <strong>
+                                감사 로그 부족
+                            </strong>
+
+                            <p>
+                                운영정보 변경 과정에서
+                                필요한 감사 기록이 부족한
+                                부분을 확인했습니다.
+                            </p>
+                        </div>
+
+                        <div>
+                            <strong>
+                                대응
+                            </strong>
+
+                            <p>
+                                감사 로그를 설계하고
+                                Wazuh에서 로그 누락 및
+                                이상 이벤트를 확인하도록 구성했습니다.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="buttons">
+
+                        <span class="tag">
+                            핵심 메시지
+                        </span>
+
+                        <span class="tag blue">
+                            만들고 → 공격 → 막고 → 재검증
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =====================
+                 PAGE 5
+            ====================== -->
+
+            <section
+                class="page"
+                data-title="Project 02"
+            >
+
+                <article class="sheet">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                03 · Project 02
+                            </span>
+
+                            <h2>
+                                Web / DB / Log Integration
+                            </h2>
+
+                        </div>
+
+                        <span class="page-index">
+                            05
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-summary">
+
+                        <div>
+
+                            <h3>
+                                웹 서비스 구축 및
+                                보안 검증 프로젝트
+                            </h3>
+
+                            <p class="description">
+                                WEB 서버와 DB를 연동하고,
+                                서비스 운영에 필요한 로그 환경을 구성했습니다.
+                                이후 웹 취약점 검증을 수행하고
+                                침해 과정에서 발생한 로그를
+                                Wazuh에서 분석했습니다.
+                            </p>
+
+
+                            <div class="buttons">
+
+                                <a
+                                    class="btn primary"
+                                    href="assets/reports/project2-pentest-report.pdf"
+                                    target="_blank"
+                                >
+                                    모의해킹 보고서 보기
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="mini-info">
+
+                            <div class="mini-info-item">
+                                <span>Main Role</span>
+                                <strong>
+                                    WEB · DB · LOG 연동
+                                </strong>
+                            </div>
+
+                            <div class="mini-info-item">
+                                <span>Focus</span>
+                                <strong>
+                                    서비스 연결 구조 /
+                                    취약점 확인 /
+                                    로그 분석
+                                </strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="grid-3" style="margin-top: 42px;">
+
+                        <div class="card">
+                            <span class="card-number">
+                                01
+                            </span>
+
+                            <h3>
+                                Service
+                            </h3>
+
+                            <p>
+                                웹 서비스와 데이터베이스가
+                                정상적으로 동작하도록
+                                연결 구조를 구성했습니다.
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <span class="card-number">
+                                02
+                            </span>
+
+                            <h3>
+                                Pentest
+                            </h3>
+
+                            <p>
+                                구축된 서비스에서
+                                웹 취약점을 확인하고
+                                공격 가능 범위를 검증했습니다.
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <span class="card-number">
+                                03
+                            </span>
+
+                            <h3>
+                                Logging
+                            </h3>
+
+                            <p>
+                                공격 과정에서 발생하는
+                                이벤트와 서버 로그를
+                                수집하고 분석했습니다.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =====================
+                 PAGE 6
+            ====================== -->
+
+            <section
+                class="page"
+                data-title="Project 01"
+            >
+
+                <article class="sheet">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                04 · Project 01
+                            </span>
+
+                            <h2>
+                                Simmit Pay
+                            </h2>
+
+                        </div>
+
+                        <span class="page-index">
+                            06
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-summary">
+
+                        <div>
+
+                            <h3>
+                                결제 서비스 네트워크
+                                환경 구축
+                            </h3>
+
+                            <p class="description">
+                                첫 프로젝트에서는
+                                결제 서비스를 중심으로
+                                서버와 네트워크 환경을 설계하고
+                                각 시스템 간의 연결 구조를
+                                직접 구성했습니다.
+                                이후 프로젝트에서 웹과 보안을 다룰 수 있는
+                                기반이 된 경험입니다.
+                            </p>
+
+
+                            <div class="buttons">
+
+                                <a
+                                    class="btn primary"
+                                    href="assets/reports/project1-report.pdf"
+                                    target="_blank"
+                                >
+                                    결과 보고서 보기
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="mini-info">
+
+                            <div class="mini-info-item">
+                                <span>Focus</span>
+                                <strong>
+                                    Network Design
+                                </strong>
+                            </div>
+
+                            <div class="mini-info-item">
+                                <span>Experience</span>
+                                <strong>
+                                    서버 연결 /
+                                    서비스 통신 /
+                                    인프라 구성
+                                </strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="grid-2" style="margin-top: 45px;">
+
+                        <div class="card">
+                            <span class="card-number">
+                                NETWORK
+                            </span>
+
+                            <h3>
+                                시스템 흐름 이해
+                            </h3>
+
+                            <p>
+                                각각의 서버가 어떤 역할을 하고
+                                네트워크를 통해 어떻게 연결되는지
+                                직접 구성하며 이해했습니다.
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <span class="card-number">
+                                FOUNDATION
+                            </span>
+
+                            <h3>
+                                이후 프로젝트의 기반
+                            </h3>
+
+                            <p>
+                                1차 프로젝트의 인프라 경험을 바탕으로
+                                이후 WEB · DB · 보안 장비까지
+                                다루는 범위를 확장했습니다.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =====================
+                 PAGE 7
+            ====================== -->
+
+            <section
+                class="page"
+                data-title="Security Experience"
+            >
+
+                <article class="sheet">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                05 · Security Experience
+                            </span>
+
+                            <h2>
+                                CTF & Security Practice
+                            </h2>
+
+                        </div>
+
+                        <span class="page-index">
+                            07
+                        </span>
+
+                    </div>
+
+
+                    <div class="grid-2">
+
+                        <div class="card">
+
+                            <span class="card-number">
+                                CTF
+                            </span>
+
+                            <h3>
+                                제한된 시간 안에서
+                                문제 해결
+                            </h3>
+
+                            <p>
+                                처음 보는 문제에서
+                                필요한 정보를 찾아가며
+                                문제 유형을 파악하고
+                                해결 방법을 직접 시도했습니다.
+                            </p>
+
+                        </div>
+
+
+                        <div class="card">
+
+                            <span class="card-number">
+                                WARGAME
+                            </span>
+
+                            <h3>
+                                Linux / Web Practice
+                            </h3>
+
+                            <p>
+                                Bandit 등의 워게임을 통해
+                                Linux 명령어와
+                                권한, 파일, 서비스 구조를
+                                반복적으로 실습했습니다.
+                            </p>
+
+                        </div>
+
+
+                        <div class="card">
+
+                            <span class="card-number">
+                                WEB
+                            </span>
+
+                            <h3>
+                                Web Vulnerability
+                            </h3>
+
+                            <p>
+                                웹 취약점 실습 환경에서
+                                요청과 응답,
+                                인증 및 접근제어,
+                                입력값 처리 과정을 확인했습니다.
+                            </p>
+
+                        </div>
+
+
+                        <div class="card">
+
+                            <span class="card-number">
+                                LOG
+                            </span>
+
+                            <h3>
+                                Detection & Analysis
+                            </h3>
+
+                            <p>
+                                공격 자체뿐 아니라
+                                공격 과정에서 어떤 로그가 발생하고
+                                탐지 시스템에서 어떻게 보이는지까지
+                                함께 확인했습니다.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =====================
+                 PAGE 8
+            ====================== -->
+
+            <section
+                class="page"
+                data-title="Skills"
+            >
+
+                <article class="sheet">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                06 · Skills
+                            </span>
+
+                            <h2>
+                                Technical Stack
+                            </h2>
+
+                        </div>
+
+                        <span class="page-index">
+                            08
+                        </span>
+
+                    </div>
+
+
+                    <div class="grid-2">
+
+                        <div>
+
+                            <div class="skill-group">
+
+                                <h3>
+                                    Operating System
+                                </h3>
+
+                                <div class="skill-tags">
+
+                                    <span class="tag blue">
+                                        Linux
+                                    </span>
+
+                                    <span class="tag">
+                                        Ubuntu
+                                    </span>
+
+                                    <span class="tag">
+                                        Kali Linux
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="skill-group">
+
+                                <h3>
+                                    Web / Programming
+                                </h3>
+
+                                <div class="skill-tags">
+
+                                    <span class="tag blue">
+                                        Flask
+                                    </span>
+
+                                    <span class="tag">
+                                        Python
+                                    </span>
+
+                                    <span class="tag">
+                                        C
+                                    </span>
+
+                                    <span class="tag">
+                                        HTML / CSS
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="skill-group">
+
+                                <h3>
+                                    Database
+                                </h3>
+
+                                <div class="skill-tags">
+
+                                    <span class="tag blue">
+                                        MariaDB
+                                    </span>
+
+                                    <span class="tag">
+                                        SQL
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <div class="skill-group">
+
+                                <h3>
+                                    Security
+                                </h3>
+
+                                <div class="skill-tags">
+
+                                    <span class="tag blue">
+                                        Wazuh
+                                    </span>
+
+                                    <span class="tag">
+                                        Snort
+                                    </span>
+
+                                    <span class="tag">
+                                        ModSecurity
+                                    </span>
+
+                                    <span class="tag">
+                                        pfSense
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="skill-group">
+
+                                <h3>
+                                    Monitoring
+                                </h3>
+
+                                <div class="skill-tags">
+
+                                    <span class="tag">
+                                        Wazuh Dashboard
+                                    </span>
+
+                                    <span class="tag">
+                                        Log Analysis
+                                    </span>
+
+                                    <span class="tag">
+                                        Security Rule
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="skill-group">
+
+                                <h3>
+                                    Network
+                                </h3>
+
+                                <div class="skill-tags">
+
+                                    <span class="tag">
+                                        VLAN
+                                    </span>
+
+                                    <span class="tag">
+                                        DNS
+                                    </span>
+
+                                    <span class="tag">
+                                        Firewall
+                                    </span>
+
+                                    <span class="tag">
+                                        IDS / IPS
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =====================
+                 PAGE 9
+            ====================== -->
+
+            <section
+                class="page"
+                data-title="Problem Solving"
+            >
+
+                <article class="sheet">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                07 · Problem Solving
+                            </span>
+
+                            <h2>
+                                문제를 해결하는 방식
+                            </h2>
+
+                        </div>
+
+                        <span class="page-index">
+                            09
+                        </span>
+
+                    </div>
+
+
+                    <div class="grid-3">
+
+                        <div class="card">
+
+                            <span class="card-number">
+                                STEP 01
+                            </span>
+
+                            <h3>
+                                흐름부터 확인
+                            </h3>
+
+                            <p>
+                                문제가 발생하면
+                                시스템 전체 구조와
+                                데이터가 이동하는 경로부터
+                                확인합니다.
+                            </p>
+
+                        </div>
+
+
+                        <div class="card">
+
+                            <span class="card-number">
+                                STEP 02
+                            </span>
+
+                            <h3>
+                                원인 범위 축소
+                            </h3>
+
+                            <p>
+                                파일, 권한, 경로,
+                                서비스 설정,
+                                네트워크 연결 등을
+                                단계적으로 확인합니다.
+                            </p>
+
+                        </div>
+
+
+                        <div class="card">
+
+                            <span class="card-number">
+                                STEP 03
+                            </span>
+
+                            <h3>
+                                다시 검증
+                            </h3>
+
+                            <p>
+                                설정을 변경한 뒤에는
+                                동일한 조건에서 다시 테스트하여
+                                실제로 문제가 해결됐는지
+                                확인합니다.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="card"
+                        style="margin-top: 24px;"
+                    >
+
+                        <span class="card-number">
+                            EXPERIENCE
+                        </span>
+
+                        <h3>
+                            로그가 수집되지 않을 때
+                        </h3>
+
+                        <p>
+                            단순히 설정을 다시 적용하기보다
+                            로그 파일 생성 여부,
+                            파일 권한,
+                            실제 저장 경로,
+                            Agent 설정과 서버 연결 상태를
+                            순서대로 확인하며 원인을 좁혀갔습니다.
+                            이런 방식은 DB 권한 문제나
+                            서비스 연동 문제를 해결할 때도
+                            동일하게 적용했습니다.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =====================
+                 PAGE 10
+            ====================== -->
+
+            <section
+                class="page"
+                data-title="Contact"
+            >
+
+                <article class="sheet contact-sheet">
+
+                    <div class="contact-title">
+
+                        <span class="eyebrow">
+                            08 · Contact
+                        </span>
+
+                        <h1>
+                            Thank you.
+                        </h1>
+
+                        <p>
+                            직접 구축하고,
+                            문제를 확인하고,
+                            원인을 추적한 뒤
+                            다시 검증하는 경험을 계속 쌓고 있습니다.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <div class="contact-links">
+
+                            <a
+                                class="contact-link"
+                                href="https://github.com/bmkim0311"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <span>
+                                    GITHUB
+                                </span>
+
+                                <strong>
+                                    github.com/bmkim0311 ↗
+                                </strong>
+                            </a>
+
+
+                            <a
+                                class="contact-link"
+                                href="mailto:bmkim0311@gmail.com"
+                            >
+                                <span>
+                                    EMAIL
+                                </span>
+
+                                <strong>
+                                    bmkim0311@gmail.com
+                                </strong>
+                            </a>
+
+                        </div>
+
+                        <p
+                            class="muted"
+                            style="
+                                margin-top: 35px;
+                                font-size: 12px;
+                            "
+                        >
+                            김보미 · Security Portfolio
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </section>
+
 
         </div>
 
+    </main>
 
-        <a
-          class="button primary"
-          href="https://github.com/bmkim0311"
-          target="_blank"
-          rel="noopener noreferrer"
+
+
+    <!-- =========================
+         BOTTOM PAGE NAVIGATION
+    ========================== -->
+
+    <nav
+        class="pager"
+        aria-label="포트폴리오 페이지 이동"
+    >
+
+        <button
+            class="pager-arrow"
+            id="prevButton"
+            type="button"
+            aria-label="이전 페이지"
         >
-          GitHub 보기
-        </a>
-
-      </section>
+            ←
+        </button>
 
 
-      <footer>
-
-        <p>
-          © 2026 Bomi Kim
-        </p>
-
-        <p>
-          Last updated: 2026.08
-        </p>
-
-      </footer>
+        <div id="pageButtons"></div>
 
 
+        <button
+            class="pager-arrow"
+            id="nextButton"
+            type="button"
+            aria-label="다음 페이지"
+        >
+            →
+        </button>
+
+    </nav>
+
+
+    <div
+        class="page-count"
+        id="pageCount"
+    >
+        01 / 10
     </div>
 
-  </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        const track =
+            document.getElementById(
+                "portfolioTrack"
+            );
+
+        const pages =
+            Array.from(
+                document.querySelectorAll(
+                    ".page"
+                )
+            );
+
+        const prevButton =
+            document.getElementById(
+                "prevButton"
+            );
+
+        const nextButton =
+            document.getElementById(
+                "nextButton"
+            );
+
+        const pageButtonsContainer =
+            document.getElementById(
+                "pageButtons"
+            );
+
+        const pageCount =
+            document.getElementById(
+                "pageCount"
+            );
+
+        const homeButton =
+            document.getElementById(
+                "homeButton"
+            );
+
+
+        let currentPage = 0;
+
+
+
+        /* =========================
+           HASH에서 시작 페이지 읽기
+        ========================= */
+
+        function getInitialPage() {
+
+            const match =
+                window.location.hash.match(
+                    /page-(\d+)/
+                );
+
+            if (!match) {
+                return 0;
+            }
+
+            const page =
+                Number(match[1]) - 1;
+
+            if (
+                page >= 0 &&
+                page < pages.length
+            ) {
+                return page;
+            }
+
+            return 0;
+        }
+
+
+
+        /* =========================
+           PAGE BUTTON 생성
+        ========================= */
+
+        function createPageButtons() {
+
+            pages.forEach(
+                (page, index) => {
+
+                    const button =
+                        document.createElement(
+                            "button"
+                        );
+
+                    button.type =
+                        "button";
+
+                    button.className =
+                        "page-number";
+
+                    button.textContent =
+                        index + 1;
+
+                    button.setAttribute(
+                        "aria-label",
+                        `${
+                            index + 1
+                        }페이지로 이동`
+                    );
+
+                    button.addEventListener(
+                        "click",
+                        () => {
+                            goToPage(index);
+                        }
+                    );
+
+                    pageButtonsContainer
+                        .appendChild(
+                            button
+                        );
+                }
+            );
+
+        }
+
+
+
+        /* =========================
+           페이지 표시
+        ========================= */
+
+        function updatePage() {
+
+            track.style.transform =
+                `translate3d(
+                    -${
+                        currentPage * 100
+                    }vw,
+                    0,
+                    0
+                )`;
+
+
+            const buttons =
+                document.querySelectorAll(
+                    ".page-number"
+                );
+
+
+            buttons.forEach(
+                (button, index) => {
+
+                    button.classList.toggle(
+                        "active",
+                        index === currentPage
+                    );
+
+                    if (
+                        index === currentPage
+                    ) {
+                        button.scrollIntoView({
+                            behavior: "smooth",
+                            block: "nearest",
+                            inline: "center"
+                        });
+                    }
+
+                }
+            );
+
+
+            prevButton.disabled =
+                currentPage === 0;
+
+
+            nextButton.disabled =
+                currentPage ===
+                pages.length - 1;
+
+
+            pageCount.textContent =
+                `${String(
+                    currentPage + 1
+                ).padStart(
+                    2,
+                    "0"
+                )} / ${String(
+                    pages.length
+                ).padStart(
+                    2,
+                    "0"
+                )}`;
+
+
+            window.history.replaceState(
+                null,
+                "",
+                `#page-${
+                    currentPage + 1
+                }`
+            );
+
+
+            const title =
+                pages[currentPage]
+                    .dataset.title;
+
+            document.title =
+                `${title} | 김보미 Portfolio`;
+
+        }
+
+
+
+        /* =========================
+           특정 페이지 이동
+        ========================= */
+
+        function goToPage(index) {
+
+            if (
+                index < 0 ||
+                index >= pages.length
+            ) {
+                return;
+            }
+
+            currentPage = index;
+
+            updatePage();
+
+        }
+
+
+
+        /* =========================
+           이전 / 다음
+        ========================= */
+
+        prevButton.addEventListener(
+            "click",
+            () => {
+                goToPage(
+                    currentPage - 1
+                );
+            }
+        );
+
+
+        nextButton.addEventListener(
+            "click",
+            () => {
+                goToPage(
+                    currentPage + 1
+                );
+            }
+        );
+
+
+        homeButton.addEventListener(
+            "click",
+            () => {
+                goToPage(0);
+            }
+        );
+
+
+
+        /* =========================
+           키보드
+        ========================= */
+
+        document.addEventListener(
+            "keydown",
+            (event) => {
+
+                if (
+                    event.key ===
+                    "ArrowRight"
+                ) {
+
+                    goToPage(
+                        currentPage + 1
+                    );
+
+                }
+
+
+                if (
+                    event.key ===
+                    "ArrowLeft"
+                ) {
+
+                    goToPage(
+                        currentPage - 1
+                    );
+
+                }
+
+
+                if (
+                    event.key ===
+                    "Home"
+                ) {
+
+                    goToPage(0);
+
+                }
+
+
+                if (
+                    event.key ===
+                    "End"
+                ) {
+
+                    goToPage(
+                        pages.length - 1
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================
+           모바일 스와이프
+        ========================= */
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+
+        document.addEventListener(
+            "touchstart",
+            (event) => {
+
+                touchStartX =
+                    event.changedTouches[0]
+                        .screenX;
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+        document.addEventListener(
+            "touchend",
+            (event) => {
+
+                touchEndX =
+                    event.changedTouches[0]
+                        .screenX;
+
+                handleSwipe();
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+        function handleSwipe() {
+
+            const distance =
+                touchEndX -
+                touchStartX;
+
+
+            if (
+                Math.abs(distance) <
+                60
+            ) {
+                return;
+            }
+
+
+            if (
+                distance < 0
+            ) {
+
+                goToPage(
+                    currentPage + 1
+                );
+
+            } else {
+
+                goToPage(
+                    currentPage - 1
+                );
+
+            }
+
+        }
+
+
+
+        /* =========================
+           브라우저 크기 변경 시
+        ========================= */
+
+        window.addEventListener(
+            "resize",
+            updatePage
+        );
+
+
+
+        /* =========================
+           시작
+        ========================= */
+
+        createPageButtons();
+
+        currentPage =
+            getInitialPage();
+
+        updatePage();
+
+    </script>
+
 
 </body>
+
 </html>
