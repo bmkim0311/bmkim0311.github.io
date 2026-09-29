@@ -1376,3 +1376,136 @@ footer {
   }
 
 }
+
+/* =========================
+   SIDE PAGE NAVIGATION
+========================= */
+
+.side-nav {
+    position: fixed;
+    top: 62px;
+    bottom: 0;
+
+    width: 110px;
+
+    display: flex;
+    align-items: center;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    z-index: 1100;
+
+    transition: opacity 0.2s;
+}
+
+.side-nav-left {
+    left: 0;
+    justify-content: flex-start;
+    padding-left: 18px;
+}
+
+.side-nav-right {
+    right: 0;
+    justify-content: flex-end;
+    padding-right: 18px;
+}
+
+.side-nav-circle {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 8px 24px
+        rgba(17, 24, 39, 0.1);
+
+    color: var(--navy);
+
+    font-size: 36px;
+    font-weight: 400;
+
+    line-height: 1;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        color 0.2s,
+        border-color 0.2s;
+}
+
+.side-nav:hover:not(:disabled)
+.side-nav-circle {
+    transform: scale(1.07);
+
+    color: var(--blue);
+
+    border-color: #bfdbfe;
+
+    box-shadow:
+        0 10px 30px
+        rgba(17, 24, 39, 0.14);
+}
+
+.side-nav:active:not(:disabled)
+.side-nav-circle {
+    transform: scale(0.96);
+}
+
+.side-nav:disabled {
+    opacity: 0;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+/* 작은 화면에서는 좌우 영역 축소 */
+
+@media (max-width: 900px) {
+
+    .side-nav {
+        width: 72px;
+    }
+
+    .side-nav-left {
+        padding-left: 8px;
+    }
+
+    .side-nav-right {
+        padding-right: 8px;
+    }
+
+    .side-nav-circle {
+        width: 46px;
+        height: 46px;
+
+        font-size: 29px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .side-nav {
+        width: 55px;
+    }
+
+    .side-nav-circle {
+        width: 40px;
+        height: 40px;
+
+        font-size: 25px;
+    }
+
+}
