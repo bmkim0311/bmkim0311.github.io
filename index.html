@@ -12,13 +12,7 @@ content="김보미의 정보보안 포트폴리오"
 >
 <title>김보미 | Security Portfolio</title>
 
-
-<!-- =========================================================
-[수정] CSS를 index.html에서 완전히 분리
-- 앞으로 디자인 수정은 style.css에서만 하면 됨
-========================================================= -->
-
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="./style.css">
 
 </head>
 
@@ -281,7 +275,6 @@ GitHub
 <a
 href="https://github.com/bmkim0311"
 target="_blank"
-rel="noopener noreferrer"
 >
 github.com/bmkim0311 ↗
 </a>
@@ -300,7 +293,6 @@ github.com/bmkim0311 ↗
 
 <!-- =====================
 PAGE 3
-또롱이 프로젝트 소개
 ====================== -->
 
 <section
@@ -467,8 +459,7 @@ Wazuh 로그 수집 환경 구성 및 문제 원인 추적
 
 
 <div
-class="buttons"
-style="margin-top: 20px;"
+class="buttons role-buttons"
 >
 
 <a
@@ -597,7 +588,6 @@ Wazuh
 
 <!-- =====================
 PAGE 4
-또롱이 보안 검증
 ====================== -->
 
 <section
@@ -913,8 +903,7 @@ Focus
 
 
 <div
-class="grid-3"
-style="margin-top: 42px;"
+class="grid-3 project-cards project-cards-42"
 >
 
 <div class="card">
@@ -1083,8 +1072,7 @@ Experience
 
 
 <div
-class="grid-2"
-style="margin-top: 45px;"
+class="grid-2 project-cards project-cards-45"
 >
 
 <div class="card">
@@ -1558,8 +1546,7 @@ STEP 03
 
 
 <div
-class="card"
-style="margin-top: 24px;"
+class="card experience-card"
 >
 
 <span class="card-number">
@@ -1661,13 +1648,7 @@ bmkim0311@gmail.com
 </div>
 
 
-<p
-class="muted"
-style="
-margin-top: 35px;
-font-size: 12px;
-"
->
+<p class="muted contact-footnote">
 김보미 · Security Portfolio
 </p>
 
@@ -1819,9 +1800,7 @@ document.getElementById(
 "homeButton"
 );
 
-
 let currentPage = 0;
-
 
 
 /* =========================
@@ -1852,7 +1831,6 @@ return page;
 return 0;
 
 }
-
 
 
 /* =========================
@@ -1900,7 +1878,6 @@ button
 }
 
 
-
 /* =========================
 페이지 이동
 ========================= */
@@ -1929,7 +1906,6 @@ null,
 );
 
 }
-
 
 
 /* =========================
@@ -1993,7 +1969,6 @@ inline: "center"
 }
 
 
-
 /* =========================
 BUTTON EVENTS
 ========================= */
@@ -2034,7 +2009,6 @@ goToPage(0);
 );
 
 
-
 /* =========================
 KEYBOARD
 ========================= */
@@ -2072,13 +2046,8 @@ currentPage - 1
 
 /* =========================================================
 [수정 1] 모든 .sheet 내부 콘텐츠를 .sheet-content로 감싸기
-
-왜?
-기존에는 .sheet 자체에 overflow-y:auto가 있어서
-내용이 길면 내부 스크롤이 생겼음.
-
-이제는 sheet 자체를 스크롤하지 않고
-안의 실제 콘텐츠만 필요할 때 축소하기 위해 wrapper를 생성함.
+- HTML에 wrapper를 일일이 적지 않아도 됨
+- CSS는 style.css에만 두고, JS는 크기 계산만 담당
 ========================================================= */
 
 function prepareSheetContents() {
@@ -2128,15 +2097,11 @@ wrapper
 }
 
 
-
 /* =========================================================
-[수정 2] 모든 페이지를 현재 화면 높이에 자동 맞춤
-
-중요:
-- 무조건 페이지를 작게 만드는 게 아님
-- 화면 안에 원래 크기로 들어오면 scale(1)
-- 넘치는 페이지에만 필요한 만큼 축소
-- 따라서 페이지마다 불필요하게 글씨가 작아지는 걸 방지
+[수정 2] 각 페이지를 현재 sheet 높이에 자동 맞춤
+- 스크롤을 만들지 않음
+- 내용이 넘치는 페이지에만 축소 적용
+- 내용이 충분히 들어오면 scale(1) 유지
 ========================================================= */
 
 function fitPageToScreen(
@@ -2185,19 +2150,18 @@ style.paddingBottom
 ) || 0;
 
 
-/* sheet 안에서 실제 콘텐츠가 사용할 수 있는 높이 */
+/* sheet 안에서 실제 내용이 사용할 수 있는 높이 */
 const availableHeight =
 sheet.clientHeight -
 paddingTop -
 paddingBottom;
 
 
-/* 축소하지 않은 실제 콘텐츠 높이 */
+/* 축소하지 않은 원래 콘텐츠 높이 */
 const contentHeight =
 content.scrollHeight;
 
 
-/* 이미 화면에 들어오는 페이지는 그대로 */
 if (
 contentHeight <=
 availableHeight
@@ -2214,7 +2178,7 @@ return;
 }
 
 
-/* 필요한 만큼만 비율 계산 */
+/* 필요한 만큼만 자동 축소 */
 const scale =
 Math.min(
 1,
@@ -2224,12 +2188,8 @@ contentHeight
 
 
 /*
-transform은 실제 레이아웃 폭을 바꾸지 않으므로
-축소 비율만큼 원래 width를 보정한다.
-
-예:
-0.9배 축소라면 원래 폭을 약 111%로 잡아
-최종 시각 폭이 다시 100%가 되도록 함.
+transform은 레이아웃 폭을 줄이지 않으므로
+축소 비율만큼 원래 폭을 보정
 */
 content.style.width =
 `${100 / scale}%`;
@@ -2240,11 +2200,7 @@ content.style.transform =
 }
 
 
-
-/* =========================================================
-모든 페이지 계산
-========================================================= */
-
+/* 모든 페이지 계산 */
 function fitAllPagesToScreen() {
 
 pages.forEach(
@@ -2260,11 +2216,7 @@ page
 }
 
 
-
-/* =========================================================
-브라우저 크기 변경 시 다시 계산
-========================================================= */
-
+/* 브라우저 크기 변경 시 다시 계산 */
 let resizeTimer;
 
 window.addEventListener(
@@ -2289,11 +2241,7 @@ fitAllPagesToScreen();
 );
 
 
-
-/* =========================================================
-브라우저가 완전히 로드된 후 한 번 더 보정
-========================================================= */
-
+/* 모든 리소스 로딩 후 한 번 더 보정 */
 window.addEventListener(
 "load",
 () => {
@@ -2307,14 +2255,7 @@ fitAllPagesToScreen();
 
 /* =========================================================
 [수정 3] MOUSE WHEEL = 페이지 이동
-
-기존:
-sheet 안에 내용이 길면 먼저 세로 스크롤
-
-변경:
-한 화면 = 한 페이지이므로
-휠을 내리면 다음 페이지,
-휠을 올리면 이전 페이지.
+- sheet 내부 스크롤을 사용하지 않음
 ========================================================= */
 
 let wheelLocked =
@@ -2369,7 +2310,6 @@ false;
 passive: true
 }
 );
-
 
 
 /* =========================
@@ -2458,7 +2398,6 @@ passive: true
 );
 
 
-
 /* =========================
 WINDOW HASH
 ========================= */
@@ -2480,16 +2419,16 @@ goToPage(page);
 );
 
 
+/* =========================
+INITIALIZE
+========================= */
 
 /* =========================================================
-[수정 4] INITIALIZE
-
-순서가 중요함.
-
-1. 아래 페이지 번호 생성
-2. 각 sheet의 콘텐츠 wrapper 생성
-3. URL hash에 맞는 페이지로 이동
-4. 전체 페이지를 화면 크기에 맞게 계산
+[수정 4] 초기화 순서
+1. 페이지 버튼 생성
+2. sheet-content wrapper 생성
+3. 시작 페이지 이동
+4. 모든 페이지를 한 화면에 맞게 계산
 ========================================================= */
 
 createPageButtons();
