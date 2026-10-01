@@ -801,8 +801,6 @@ Snort · WAF · pfSense에서 관련 접근을 제한했습니다.
 
 </section>
 
-
-
 <!-- =====================
 PAGE 5
 ====================== -->
@@ -819,12 +817,32 @@ data-title="Project 02"
 <div>
 
 <span class="eyebrow">
-03 · Project 02
+03 · PROJECT 02
 </span>
 
 <h2>
-Web / DB / Log Integration
+CatQuest Online
 </h2>
+
+<div class="project-meta">
+
+<span class="tag blue">
+Attack Scenario
+</span>
+
+<span class="tag">
+Web Game Service
+</span>
+
+<span class="tag">
+Web Pentest
+</span>
+
+<span class="tag">
+Security Validation
+</span>
+
+</div>
 
 </div>
 
@@ -835,25 +853,129 @@ Web / DB / Log Integration
 </div>
 
 
-<div class="project-summary">
+<div class="ttorongi-overview">
 
-<div>
+<div class="ttorongi-intro">
 
 <h3>
-웹 서비스 구축 및
-보안 검증 프로젝트
+웹게임 서비스를 대상으로 공격 흐름을 설계하고,
+취약점과 내부 시스템 영향까지 검증한 프로젝트
 </h3>
 
-<p class="description">
-WEB 서버와 DB를 연동하고,
-서비스 운영에 필요한 로그 환경을 구성했습니다.
-이후 웹 취약점 검증을 수행하고
-침해 과정에서 발생한 로그를
-Wazuh에서 분석했습니다.
+<p>
+CatQuest Online은 가상 게임사 Nexan의 웹 기반 게임 서비스로,
+회원가입과 로그인부터 스테이지 진행, 상점 구매, 쿠폰 사용,
+친구 메시지, 공지사항, 파일 업로드, 관리자 기능까지
+실제 서비스 형태로 구성된 환경입니다.
+<br><br>
+단순히 개별 취약점을 확인하는 데서 끝내지 않고,
+외부 공격자가 인터넷 구간에서 서비스를 분석한 뒤
+웹 애플리케이션 취약점을 이용해 공격 범위를 확장할 수 있는지
+시나리오 형태로 검증했습니다.
+<br><br>
+공격 이후에는 DMZ 웹 서버에서 게임 DB와 개인정보 DB 등
+내부 서버로 접근이 가능한지 확인하고,
+공격 과정이 Wazuh · GoAccess · Zabbix · PMM · DB-Log에
+어떻게 기록되는지도 함께 확인했습니다.
 </p>
 
 
-<div class="buttons">
+<div class="service-points">
+
+<div class="service-point">
+
+<span>
+GAME
+</span>
+
+<strong>
+스테이지 진행 · 전투
+</strong>
+
+</div>
+
+
+<div class="service-point">
+
+<span>
+ECONOMY
+</span>
+
+<strong>
+상점 구매 · 쿠폰 사용
+</strong>
+
+</div>
+
+
+<div class="service-point">
+
+<span>
+SOCIAL
+</span>
+
+<strong>
+친구 메시지 · 링크 미리보기
+</strong>
+
+</div>
+
+
+<div class="service-point">
+
+<span>
+ADMIN
+</span>
+
+<strong>
+공지사항 · 파일 업로드 · 관리자 기능
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<aside class="my-role-box">
+
+<span class="role-label">
+MY ROLE
+</span>
+
+<h3>
+공격 시나리오 파트
+</h3>
+
+<ul class="my-role-list">
+
+<li>
+외부 공격자 관점의 전체 공격 흐름 설계
+</li>
+
+<li>
+Burp Suite 기반 요청값 및 파라미터 변조
+</li>
+
+<li>
+게임 기능별 웹 취약점 재현 및 영향 확인
+</li>
+
+<li>
+웹 서버에서 내부 DB 접근 가능성 검증
+</li>
+
+<li>
+공격 성공 증적 및 모의해킹 결과 정리
+</li>
+
+</ul>
+
+
+<div
+class="buttons role-buttons"
+>
 
 <a
 class="btn primary"
@@ -863,102 +985,111 @@ target="_blank"
 모의해킹 보고서 보기
 </a>
 
-</div>
-
-</div>
-
-
-<div class="mini-info">
-
-<div class="mini-info-item">
-
-<span>
-Main Role
-</span>
-
-<strong>
-WEB · DB · LOG 연동
-</strong>
-
-</div>
-
-
-<div class="mini-info-item">
-
-<span>
-Focus
-</span>
-
-<strong>
-서비스 연결 구조 /
-취약점 확인 /
-로그 분석
-</strong>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div
-class="grid-3 project-cards project-cards-42"
+<a
+class="btn"
+href="https://github.com/bmkim0311"
+target="_blank"
+rel="noopener noreferrer"
 >
+GitHub ↗
+</a>
 
-<div class="card">
+</div>
 
-<span class="card-number">
-01
-</span>
-
-<h3>
-Service
-</h3>
-
-<p>
-웹 서비스와 데이터베이스가
-정상적으로 동작하도록
-연결 구조를 구성했습니다.
-</p>
+</aside>
 
 </div>
 
 
-<div class="card">
+<div class="architecture-title">
 
-<span class="card-number">
-02
+<strong>
+공격 시나리오 흐름
+</strong>
+
+<span>
+외부 정보수집부터 내부 영향 및 탐지 확인까지 · 주요 취약점 7건
 </span>
-
-<h3>
-Pentest
-</h3>
-
-<p>
-구축된 서비스에서
-웹 취약점을 확인하고
-공격 가능 범위를 검증했습니다.
-</p>
 
 </div>
 
 
-<div class="card">
+<div class="ttorongi-flow">
 
-<span class="card-number">
-03
+<div class="ttorongi-flow-item">
+
+<strong>
+Recon
+</strong>
+
+<span>
+WEB · DNS 정보수집
 </span>
 
-<h3>
-Logging
-</h3>
+</div>
 
-<p>
-공격 과정에서 발생하는
-이벤트와 서버 로그를
-수집하고 분석했습니다.
-</p>
+
+<div class="ttorongi-flow-item">
+
+<strong>
+Analyze
+</strong>
+
+<span>
+기능 · 요청 구조 분석
+</span>
+
+</div>
+
+
+<div class="ttorongi-flow-item">
+
+<strong>
+Manipulate
+</strong>
+
+<span>
+상점 · 쿠폰 · 스테이지 변조
+</span>
+
+</div>
+
+
+<div class="ttorongi-flow-item">
+
+<strong>
+Exploit
+</strong>
+
+<span>
+XSS · Injection · IDOR
+</span>
+
+</div>
+
+
+<div class="ttorongi-flow-item">
+
+<strong>
+Internal
+</strong>
+
+<span>
+WEB → 내부 DB 접근 검증
+</span>
+
+</div>
+
+
+<div class="ttorongi-flow-item">
+
+<strong>
+Detection
+</strong>
+
+<span>
+Wazuh · 관제 로그 확인
+</span>
 
 </div>
 
@@ -967,8 +1098,6 @@ Logging
 </article>
 
 </section>
-
-
 
 <!-- =====================
 PAGE 6
