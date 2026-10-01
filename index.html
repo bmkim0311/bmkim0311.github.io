@@ -801,6 +801,7 @@ Snort · WAF · pfSense에서 관련 접근을 제한했습니다.
 
 </section>
 
+
 <!-- =====================
 PAGE 5
 ====================== -->
@@ -827,11 +828,11 @@ CatQuest Online
 <div class="project-meta">
 
 <span class="tag blue">
-Attack Scenario
+Web Development
 </span>
 
 <span class="tag">
-Web Game Service
+Attack Scenario
 </span>
 
 <span class="tag">
@@ -858,25 +859,24 @@ Security Validation
 <div class="ttorongi-intro">
 
 <h3>
-웹게임 서비스를 대상으로 공격 흐름을 설계하고,
-취약점과 내부 시스템 영향까지 검증한 프로젝트
+웹게임 서비스를 직접 구현하고,
+공격 시나리오로 취약점과 내부 시스템 영향까지 검증한 프로젝트
 </h3>
 
 <p>
 CatQuest Online은 가상 게임사 Nexan의 웹 기반 게임 서비스로,
-회원가입과 로그인부터 스테이지 진행, 상점 구매, 쿠폰 사용,
+회원가입·로그인, 스테이지 진행, 상점 구매, 쿠폰 사용,
 친구 메시지, 공지사항, 파일 업로드, 관리자 기능까지
-실제 서비스 형태로 구성된 환경입니다.
+실제 서비스 형태로 구성한 프로젝트입니다.
 <br><br>
-단순히 개별 취약점을 확인하는 데서 끝내지 않고,
-외부 공격자가 인터넷 구간에서 서비스를 분석한 뒤
-웹 애플리케이션 취약점을 이용해 공격 범위를 확장할 수 있는지
-시나리오 형태로 검증했습니다.
+Flask 기반 웹 서버의 주요 기능을 직접 구현하고 MariaDB와 연동해
+게임 기능이 동작하는 환경을 구성했습니다. 이후 외부 공격자 관점에서
+서비스 기능과 요청 구조를 분석하고, 요청값 변조와 웹 취약점 악용을 통해
+공격 범위를 확장할 수 있는지 시나리오 형태로 검증했습니다.
 <br><br>
-공격 이후에는 DMZ 웹 서버에서 게임 DB와 개인정보 DB 등
-내부 서버로 접근이 가능한지 확인하고,
-공격 과정이 Wazuh · GoAccess · Zabbix · PMM · DB-Log에
-어떻게 기록되는지도 함께 확인했습니다.
+공격 이후에는 DMZ 웹 서버에서 내부 DB 접근 가능성을 확인하고,
+Wazuh · GoAccess · Zabbix · PMM · DB-Log에서
+공격 흔적과 탐지 여부도 함께 점검했습니다.
 </p>
 
 
@@ -945,29 +945,32 @@ MY ROLE
 </span>
 
 <h3>
-공격 시나리오 파트
+웹 서버 구현 · 공격 시나리오
 </h3>
 
 <ul class="my-role-list">
+
+<li>
+Flask 웹 서버 주요 기능 구현
+<span class="role-detail">
+(전체 구현의 절반 이상 담당)
+</span>
+</li>
+
+<li>
+MariaDB 연동 및 게임 기능 동작 과정 구현
+</li>
 
 <li>
 외부 공격자 관점의 전체 공격 흐름 설계
 </li>
 
 <li>
-Burp Suite 기반 요청값 및 파라미터 변조
+Burp Suite 기반 요청값 변조 및 취약점 재현
 </li>
 
 <li>
-게임 기능별 웹 취약점 재현 및 영향 확인
-</li>
-
-<li>
-웹 서버에서 내부 DB 접근 가능성 검증
-</li>
-
-<li>
-공격 성공 증적 및 모의해킹 결과 정리
+취약점 영향도 · 내부 DB 접근 가능성 검증 및 결과 정리
 </li>
 
 </ul>
@@ -1099,8 +1102,221 @@ Wazuh · 관제 로그 확인
 
 </section>
 
+
 <!-- =====================
 PAGE 6
+====================== -->
+
+<section
+class="page"
+data-title="CatQuest Evidence"
+>
+
+<article class="sheet">
+
+<div class="section-header">
+
+<div>
+
+<span class="eyebrow">
+PROJECT 02 · ATTACK EVIDENCE
+</span>
+
+<h2>
+공격 결과를 증적으로 확인했습니다
+</h2>
+
+</div>
+
+<span class="page-index">
+06
+</span>
+
+</div>
+
+
+<p class="evidence-lead">
+요청을 변조한 화면, 공격 후 서비스 결과, 서버 측 영향을 함께 확인해
+공격 성공 여부를 판단했습니다. 아래에는 위험도와 공격 범위가 서로 다른 대표 사례 3건을 정리했습니다.
+</p>
+
+
+<div class="evidence-grid">
+
+<div class="evidence-card">
+
+<div class="evidence-image">
+
+<img
+src="assets/images/catquest/v02-price-manipulation.png"
+alt="CatQuest 상점 가격 조작 공격 증적"
+>
+
+</div>
+
+<div class="evidence-body">
+
+<div class="evidence-meta">
+
+<span class="case-code">
+V-02
+</span>
+
+<span class="severity high">
+HIGH
+</span>
+
+</div>
+
+<h3>
+상점 가격 조작
+</h3>
+
+<p>
+Burp Suite에서 구매 요청의 <code>price</code> 값을 변조한 뒤 전송해
+정상 가격과 다른 값으로 구매가 가능한지 확인했습니다.
+</p>
+
+<div class="evidence-result">
+
+<span>
+IMPACT
+</span>
+
+<strong>
+비정상 저가 구매 · 게임 재화 로직 악용
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="evidence-card">
+
+<div class="evidence-image">
+
+<img
+src="assets/images/catquest/v05-xss.png"
+alt="CatQuest 공지사항 XSS 공격 증적"
+>
+
+</div>
+
+<div class="evidence-body">
+
+<div class="evidence-meta">
+
+<span class="case-code">
+V-05
+</span>
+
+<span class="severity high">
+HIGH
+</span>
+
+</div>
+
+<h3>
+공지사항 XSS
+</h3>
+
+<p>
+공지사항 작성·수정 입력값에 스크립트를 삽입하고,
+공지 상세 화면에서 JavaScript가 실행되는지 확인했습니다.
+</p>
+
+<div class="evidence-result">
+
+<span>
+IMPACT
+</span>
+
+<strong>
+사용자 브라우저에서 스크립트 실행
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="evidence-card">
+
+<div class="evidence-image">
+
+<img
+src="assets/images/catquest/v07-command-injection.png"
+alt="CatQuest OS Command Injection 공격 증적"
+>
+
+</div>
+
+<div class="evidence-body">
+
+<div class="evidence-meta">
+
+<span class="case-code">
+V-07
+</span>
+
+<span class="severity critical">
+CRITICAL
+</span>
+
+</div>
+
+<h3>
+OS Command Injection
+</h3>
+
+<p>
+공지 첨부파일 업로드 과정의 파일명 입력값을 악용해
+웹 서버 권한으로 명령 실행이 가능한지 검증했습니다.
+</p>
+
+<div class="evidence-result">
+
+<span>
+IMPACT
+</span>
+
+<strong>
+웹 서버 권한 명령 실행 · 내부 침투 거점 가능성
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="proof-note">
+
+<p>
+주요 취약점 · Medium 1건 · High 4건 · Critical 2건
+</p>
+
+<span class="tag blue">
+요청 변조 → 결과 확인 → 영향도 검증
+</span>
+
+</div>
+
+</article>
+
+</section>
+
+
+<!-- =====================
+PAGE 7
 ====================== -->
 
 <section
@@ -1125,7 +1341,7 @@ Simmit Pay
 </div>
 
 <span class="page-index">
-06
+07
 </span>
 
 </div>
@@ -1250,7 +1466,7 @@ FOUNDATION
 
 
 <!-- =====================
-PAGE 7
+PAGE 8
 ====================== -->
 
 <section
@@ -1275,7 +1491,7 @@ CTF & Security Practice
 </div>
 
 <span class="page-index">
-07
+08
 </span>
 
 </div>
@@ -1372,7 +1588,7 @@ Detection & Analysis
 
 
 <!-- =====================
-PAGE 8
+PAGE 9
 ====================== -->
 
 <section
@@ -1397,7 +1613,7 @@ Technical Stack
 </div>
 
 <span class="page-index">
-08
+09
 </span>
 
 </div>
@@ -1579,7 +1795,7 @@ IDS / IPS
 
 
 <!-- =====================
-PAGE 9
+PAGE 10
 ====================== -->
 
 <section
@@ -1604,7 +1820,7 @@ data-title="Problem Solving"
 </div>
 
 <span class="page-index">
-09
+10
 </span>
 
 </div>
@@ -1707,7 +1923,7 @@ Agent 설정과 서버 연결 상태를
 
 
 <!-- =====================
-PAGE 10
+PAGE 11
 ====================== -->
 
 <section
@@ -1871,7 +2087,7 @@ aria-label="다음 페이지"
 class="page-count"
 id="pageCount"
 >
-01 / 10
+01 / 11
 </div>
 
 
@@ -2172,12 +2388,9 @@ currentPage - 1
 );
 
 
-
-/* =========================================================
-[수정 1] 모든 .sheet 내부 콘텐츠를 .sheet-content로 감싸기
-- HTML에 wrapper를 일일이 적지 않아도 됨
-- CSS는 style.css에만 두고, JS는 크기 계산만 담당
-========================================================= */
+/* =========================
+SHEET CONTENT WRAPPER
+========================= */
 
 function prepareSheetContents() {
 
@@ -2226,12 +2439,9 @@ wrapper
 }
 
 
-/* =========================================================
-[수정 2] 각 페이지를 현재 sheet 높이에 자동 맞춤
-- 스크롤을 만들지 않음
-- 내용이 넘치는 페이지에만 축소 적용
-- 내용이 충분히 들어오면 scale(1) 유지
-========================================================= */
+/* =========================
+페이지 높이에 맞게 자동 축소
+========================= */
 
 function fitPageToScreen(
 page
@@ -2254,14 +2464,11 @@ if (
 return;
 }
 
-
-/* 이전 계산값 초기화 */
 content.style.transform =
 "none";
 
 content.style.width =
 "100%";
-
 
 const style =
 window.getComputedStyle(
@@ -2278,18 +2485,13 @@ parseFloat(
 style.paddingBottom
 ) || 0;
 
-
-/* sheet 안에서 실제 내용이 사용할 수 있는 높이 */
 const availableHeight =
 sheet.clientHeight -
 paddingTop -
 paddingBottom;
 
-
-/* 축소하지 않은 원래 콘텐츠 높이 */
 const contentHeight =
 content.scrollHeight;
-
 
 if (
 contentHeight <=
@@ -2306,8 +2508,6 @@ return;
 
 }
 
-
-/* 필요한 만큼만 자동 축소 */
 const scale =
 Math.min(
 1,
@@ -2315,11 +2515,6 @@ availableHeight /
 contentHeight
 );
 
-
-/*
-transform은 레이아웃 폭을 줄이지 않으므로
-축소 비율만큼 원래 폭을 보정
-*/
 content.style.width =
 `${100 / scale}%`;
 
@@ -2329,7 +2524,6 @@ content.style.transform =
 }
 
 
-/* 모든 페이지 계산 */
 function fitAllPagesToScreen() {
 
 pages.forEach(
@@ -2345,7 +2539,10 @@ page
 }
 
 
-/* 브라우저 크기 변경 시 다시 계산 */
+/* =========================
+RESIZE
+========================= */
+
 let resizeTimer;
 
 window.addEventListener(
@@ -2370,7 +2567,6 @@ fitAllPagesToScreen();
 );
 
 
-/* 모든 리소스 로딩 후 한 번 더 보정 */
 window.addEventListener(
 "load",
 () => {
@@ -2381,11 +2577,9 @@ fitAllPagesToScreen();
 );
 
 
-
-/* =========================================================
-[수정 3] MOUSE WHEEL = 페이지 이동
-- sheet 내부 스크롤을 사용하지 않음
-========================================================= */
+/* =========================
+MOUSE WHEEL
+========================= */
 
 let wheelLocked =
 false;
@@ -2551,14 +2745,6 @@ goToPage(page);
 /* =========================
 INITIALIZE
 ========================= */
-
-/* =========================================================
-[수정 4] 초기화 순서
-1. 페이지 버튼 생성
-2. sheet-content wrapper 생성
-3. 시작 페이지 이동
-4. 모든 페이지를 한 화면에 맞게 계산
-========================================================= */
 
 createPageButtons();
 
