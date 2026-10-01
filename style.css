@@ -148,8 +148,8 @@ SLIDER / PAGE
     height: 100vh;
 
     padding:
-        78px 270px
-        82px 48px;
+        78px 48px
+        82px 270px;
 
     display: flex;
     align-items: center;
@@ -1175,7 +1175,6 @@ EVIDENCE PAGES
     display: block;
 
     object-fit: cover;
-
     object-position: center;
 }
 
@@ -1419,7 +1418,6 @@ SKILLS
 
 .skill-tags {
     display: flex;
-
     flex-wrap: wrap;
 
     gap: 8px;
@@ -1508,14 +1506,14 @@ CONTACT
 
 
 /* =========================================================
-RIGHT PAGE MENU
+LEFT PAGE MENU
 ========================================================= */
 
 .page-menu {
     position: fixed;
 
     top: 76px;
-    right: 18px;
+    left: 18px;
     bottom: 74px;
 
     width: 228px;
@@ -1720,7 +1718,7 @@ RIGHT PAGE MENU
 
 
 /* =========================================================
-RIGHT MENU COLLAPSED
+LEFT PAGE MENU · COLLAPSED
 ========================================================= */
 
 .page-menu.collapsed {
@@ -1765,23 +1763,13 @@ RIGHT MENU COLLAPSED
 
 
 /* =========================================================
-PAGE SPACE WHEN MENU OPENS / CLOSES
+PAGE SPACE WHEN LEFT MENU OPENS / CLOSES
 ========================================================= */
 
 body.menu-collapsed
 .page {
-    padding-right: 92px;
-    padding-left: 48px;
-}
-
-body:not(.menu-collapsed)
-.side-nav-right {
-    right: 246px;
-}
-
-body.menu-collapsed
-.side-nav-right {
-    right: 66px;
+    padding-left: 92px;
+    padding-right: 48px;
 }
 
 
@@ -1807,7 +1795,9 @@ SIDE NAVIGATION
     z-index: 1100;
 
     transition:
-        opacity 0.2s;
+        opacity 0.2s,
+        left 0.24s ease,
+        right 0.24s ease;
 }
 
 .side-nav-left {
@@ -1824,10 +1814,24 @@ SIDE NAVIGATION
     justify-content: flex-end;
 
     padding-right: 18px;
-
-    transition:
-        right 0.24s ease;
 }
+
+
+/* 펼쳐진 왼쪽 목차 옆에 이전 버튼 배치 */
+
+body:not(.menu-collapsed)
+.side-nav-left {
+    left: 246px;
+}
+
+
+/* 접힌 목차 옆에 이전 버튼 배치 */
+
+body.menu-collapsed
+.side-nav-left {
+    left: 66px;
+}
+
 
 .side-nav-circle {
     width: 58px;
@@ -2053,17 +2057,28 @@ DESKTOP WIDTH
     .page-menu {
         width: 205px;
 
-        right: 10px;
+        left: 10px;
     }
 
     .page {
-        padding-right: 232px;
-        padding-left: 30px;
+        padding-left: 232px;
+        padding-right: 30px;
+    }
+
+    body.menu-collapsed
+    .page {
+        padding-left: 82px;
+        padding-right: 30px;
     }
 
     body:not(.menu-collapsed)
-    .side-nav-right {
-        right: 216px;
+    .side-nav-left {
+        left: 216px;
+    }
+
+    body.menu-collapsed
+    .side-nav-left {
+        left: 58px;
     }
 
 }
@@ -2183,14 +2198,16 @@ TABLET
         width: 72px;
     }
 
+    .side-nav-left,
+    body:not(.menu-collapsed)
+    .side-nav-left,
+    body.menu-collapsed
     .side-nav-left {
+        left: 0;
+
         padding-left: 8px;
     }
 
-    .side-nav-right,
-    body:not(.menu-collapsed)
-    .side-nav-right,
-    body.menu-collapsed
     .side-nav-right {
         right: 0;
 
