@@ -2,14 +2,17 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+
 <meta
 name="viewport"
 content="width=device-width, initial-scale=1.0"
 >
+
 <meta
 name="description"
 content="김보미의 정보보안 포트폴리오"
 >
+
 <title>김보미 | Security Portfolio</title>
 
 <link rel="stylesheet" href="./style.css">
@@ -275,6 +278,7 @@ GitHub
 <a
 href="https://github.com/bmkim0311"
 target="_blank"
+rel="noopener noreferrer"
 >
 github.com/bmkim0311 ↗
 </a>
@@ -802,6 +806,7 @@ Snort · WAF · pfSense에서 관련 접근을 제한했습니다.
 </section>
 
 
+
 <!-- =====================
 PAGE 5
 ====================== -->
@@ -870,9 +875,10 @@ CatQuest Online은 가상 게임사 Nexan의 웹 기반 게임 서비스로,
 실제 서비스 형태로 구성한 프로젝트입니다.
 <br><br>
 Flask 기반 웹 서버의 주요 기능을 직접 구현하고 MariaDB와 연동해
-게임 기능이 동작하는 환경을 구성했습니다. 이후 외부 공격자 관점에서
-서비스 기능과 요청 구조를 분석하고, 요청값 변조와 웹 취약점 악용을 통해
-공격 범위를 확장할 수 있는지 시나리오 형태로 검증했습니다.
+게임 기능이 동작하는 환경을 구성했습니다.
+이후 외부 공격자 관점에서 서비스 기능과 요청 구조를 분석하고,
+요청값 변조와 웹 취약점 악용을 통해 공격 범위를 확장할 수 있는지
+시나리오 형태로 검증했습니다.
 <br><br>
 공격 이후에는 DMZ 웹 서버에서 내부 DB 접근 가능성을 확인하고,
 Wazuh · GoAccess · Zabbix · PMM · DB-Log에서
@@ -1103,6 +1109,7 @@ Wazuh · 관제 로그 확인
 </section>
 
 
+
 <!-- =====================
 PAGE 6
 ====================== -->
@@ -1137,11 +1144,13 @@ PROJECT 02 · ATTACK EVIDENCE
 
 <p class="evidence-lead">
 요청을 변조한 화면, 공격 후 서비스 결과, 서버 측 영향을 함께 확인해
-공격 성공 여부를 판단했습니다. 아래에는 위험도와 공격 범위가 서로 다른 대표 사례 3건을 정리했습니다.
+공격 성공 여부를 판단했습니다.
+아래에는 위험도와 공격 범위가 서로 다른 대표 사례 3건을 정리했습니다.
 </p>
 
 
 <div class="evidence-grid">
+
 
 <div class="evidence-card">
 
@@ -1153,6 +1162,7 @@ alt="CatQuest 상점 가격 조작 공격 증적"
 >
 
 </div>
+
 
 <div class="evidence-body">
 
@@ -1173,7 +1183,8 @@ HIGH
 </h3>
 
 <p>
-Burp Suite에서 구매 요청의 <code>price</code> 값을 변조한 뒤 전송해
+Burp Suite에서 구매 요청의
+<code>price</code> 값을 변조한 뒤 전송해
 정상 가격과 다른 값으로 구매가 가능한지 확인했습니다.
 </p>
 
@@ -1194,6 +1205,7 @@ IMPACT
 </div>
 
 
+
 <div class="evidence-card">
 
 <div class="evidence-image">
@@ -1204,6 +1216,7 @@ alt="CatQuest 공지사항 XSS 공격 증적"
 >
 
 </div>
+
 
 <div class="evidence-body">
 
@@ -1245,6 +1258,7 @@ IMPACT
 </div>
 
 
+
 <div class="evidence-card">
 
 <div class="evidence-image">
@@ -1255,6 +1269,7 @@ alt="CatQuest OS Command Injection 공격 증적"
 >
 
 </div>
+
 
 <div class="evidence-body">
 
@@ -1295,6 +1310,7 @@ IMPACT
 
 </div>
 
+
 </div>
 
 
@@ -1315,13 +1331,14 @@ IMPACT
 </section>
 
 
+
 <!-- =====================
 PAGE 7
 ====================== -->
 
 <section
 class="page"
-data-title="Project 01"
+data-title="Simmit Pay"
 >
 
 <article class="sheet">
@@ -1331,12 +1348,32 @@ data-title="Project 01"
 <div>
 
 <span class="eyebrow">
-04 · Project 01
+04 · PROJECT 01
 </span>
 
 <h2>
 Simmit Pay
 </h2>
+
+<div class="project-meta">
+
+<span class="tag blue">
+Network Design
+</span>
+
+<span class="tag">
+Enterprise Infrastructure
+</span>
+
+<span class="tag">
+Access Control
+</span>
+
+<span class="tag">
+Network Security
+</span>
+
+</div>
 
 </div>
 
@@ -1347,27 +1384,134 @@ Simmit Pay
 </div>
 
 
-<div class="project-summary">
+<div class="ttorongi-overview">
 
-<div>
+<div class="ttorongi-intro">
 
 <h3>
-결제 서비스 네트워크
-환경 구축
+본사·지사·재택근무 환경을 구성하고,
+업무별 접근권한과 안전한 통신 구조를 구현한
+금융회사 사내망 프로젝트
 </h3>
 
-<p class="description">
-첫 프로젝트에서는
-결제 서비스를 중심으로
-서버와 네트워크 환경을 설계하고
-각 시스템 간의 연결 구조를
-직접 구성했습니다.
-이후 프로젝트에서 웹과 보안을 다룰 수 있는
-기반이 된 경험입니다.
+<p>
+Simmit Pay는 가상의 금융회사를 대상으로
+본사, 지사, 재택근무자가 함께 사용하는
+기업 내부 네트워크 환경을 구성한 프로젝트입니다.
+<br><br>
+본사에는 인사관리·개발·영업·금융재무·인프라보안·서버 영역을
+6개의 VLAN으로 분리하고,
+지사는 인사관리·영업·서버 영역을
+3개의 VLAN으로 분리했습니다.
+<br><br>
+각 구간이 필요한 서비스에만 접근할 수 있도록 ACL을 적용하고,
+본사와 지사는 VPN을 통해 암호화된 통신 경로를 구성했습니다.
+외부 통신에는 NAT를 적용했으며,
+WEB · DB · DNS · LOG · SFTP 서비스가
+정해진 정책에 따라 통신하는지 최종 점검했습니다.
 </p>
 
 
-<div class="buttons">
+<div class="service-points">
+
+<div class="service-point">
+
+<span>
+HQ
+</span>
+
+<strong>
+6 VLAN · 부서/서버 구간 분리
+</strong>
+
+</div>
+
+
+<div class="service-point">
+
+<span>
+BRANCH
+</span>
+
+<strong>
+3 VLAN · 지사 업무망 구성
+</strong>
+
+</div>
+
+
+<div class="service-point">
+
+<span>
+REMOTE
+</span>
+
+<strong>
+재택근무자 사내망 접근
+</strong>
+
+</div>
+
+
+<div class="service-point">
+
+<span>
+SERVICE
+</span>
+
+<strong>
+WEB · DB · DNS · LOG · SFTP
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<aside class="my-role-box">
+
+<span class="role-label">
+MY ROLE
+</span>
+
+<h3>
+네트워크 설계 · 전체 구성 점검
+</h3>
+
+<ul class="my-role-list">
+
+<li>
+기업 업무환경에 맞는 네트워크 구조 설계
+</li>
+
+<li>
+부서별 서비스 접근을 위한 ACL 정책 구체화
+</li>
+
+<li>
+본사 ↔ 지사 VPN 암호화 통신 구성
+</li>
+
+<li>
+외부 통신을 위한 NAT 정책 구성
+</li>
+
+<li>
+서버 간 연결 상태와 전체 통신 흐름 점검
+</li>
+
+<li>
+구성 오류 확인 및 팀원과 수정·재검증
+</li>
+
+</ul>
+
+
+<div
+class="buttons role-buttons"
+>
 
 <a
 class="btn primary"
@@ -1377,83 +1521,111 @@ target="_blank"
 결과 보고서 보기
 </a>
 
-</div>
-
-</div>
-
-
-<div class="mini-info">
-
-<div class="mini-info-item">
-
-<span>
-Focus
-</span>
-
-<strong>
-Network Design
-</strong>
-
-</div>
-
-
-<div class="mini-info-item">
-
-<span>
-Experience
-</span>
-
-<strong>
-서버 연결 /
-서비스 통신 /
-인프라 구성
-</strong>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div
-class="grid-2 project-cards project-cards-45"
+<a
+class="btn"
+href="https://github.com/bmkim0311"
+target="_blank"
+rel="noopener noreferrer"
 >
+GitHub ↗
+</a>
 
-<div class="card">
+</div>
 
-<span class="card-number">
-NETWORK
-</span>
-
-<h3>
-시스템 흐름 이해
-</h3>
-
-<p>
-각각의 서버가 어떤 역할을 하고
-네트워크를 통해 어떻게 연결되는지
-직접 구성하며 이해했습니다.
-</p>
+</aside>
 
 </div>
 
 
-<div class="card">
+<div class="architecture-title">
 
-<span class="card-number">
-FOUNDATION
+<strong>
+네트워크 · 보안 구성
+</strong>
+
+<span>
+본사 6 VLAN · 지사 3 VLAN · ACL · VPN · NAT
 </span>
 
-<h3>
-이후 프로젝트의 기반
-</h3>
+</div>
 
-<p>
-1차 프로젝트의 인프라 경험을 바탕으로
-이후 WEB · DB · 보안 장비까지
-다루는 범위를 확장했습니다.
-</p>
+
+<div class="ttorongi-flow">
+
+<div class="ttorongi-flow-item">
+
+<strong>
+VLAN
+</strong>
+
+<span>
+업무 구간 분리
+</span>
+
+</div>
+
+
+<div class="ttorongi-flow-item">
+
+<strong>
+Routing
+</strong>
+
+<span>
+구간 간 통신 경로
+</span>
+
+</div>
+
+
+<div class="ttorongi-flow-item">
+
+<strong>
+ACL
+</strong>
+
+<span>
+부서별 접근통제
+</span>
+
+</div>
+
+
+<div class="ttorongi-flow-item">
+
+<strong>
+VPN
+</strong>
+
+<span>
+본사 ↔ 지사 암호화
+</span>
+
+</div>
+
+
+<div class="ttorongi-flow-item">
+
+<strong>
+NAT
+</strong>
+
+<span>
+내부 ↔ 외부 통신
+</span>
+
+</div>
+
+
+<div class="ttorongi-flow-item">
+
+<strong>
+Validation
+</strong>
+
+<span>
+서비스 통신 점검
+</span>
 
 </div>
 
@@ -1467,6 +1639,239 @@ FOUNDATION
 
 <!-- =====================
 PAGE 8
+====================== -->
+
+<section
+class="page"
+data-title="Simmit Pay Evidence"
+>
+
+<article class="sheet">
+
+<div class="section-header">
+
+<div>
+
+<span class="eyebrow">
+PROJECT 01 · NETWORK VALIDATION
+</span>
+
+<h2>
+설계한 네트워크 정책을 실제 통신으로 검증했습니다
+</h2>
+
+</div>
+
+<span class="page-index">
+08
+</span>
+
+</div>
+
+
+<p class="evidence-lead">
+Packet Tracer에서 토폴로지만 구성하는 데서 끝내지 않고,
+업무 구간별 접근권한과 본사·지사 간 통신,
+외부 통신이 설계한 정책대로 동작하는지 확인했습니다.
+</p>
+
+
+<div class="evidence-grid">
+
+
+<div class="evidence-card">
+
+<div class="evidence-image">
+
+<img
+src="assets/images/simmitpay/network-topology.png"
+alt="Simmit Pay 전체 네트워크 토폴로지"
+>
+
+</div>
+
+
+<div class="evidence-body">
+
+<div class="evidence-meta">
+
+<span class="case-code">
+NETWORK
+</span>
+
+<span class="evidence-badge">
+9 VLAN
+</span>
+
+</div>
+
+
+<h3>
+본사 · 지사 네트워크 분리
+</h3>
+
+<p>
+본사 6개, 지사 3개의 VLAN으로
+업무 구간과 서버 구간을 분리하고,
+라우팅을 통해 필요한 네트워크 사이의
+통신 경로를 구성했습니다.
+</p>
+
+
+<div class="evidence-result">
+
+<span>
+VALIDATION
+</span>
+
+<strong>
+부서망 · 서버망 분리 및 구간 간 통신 확인
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="evidence-card">
+
+<div class="evidence-image">
+
+<img
+src="assets/images/simmitpay/acl-validation.png"
+alt="Simmit Pay ACL 접근통제 검증"
+>
+
+</div>
+
+
+<div class="evidence-body">
+
+<div class="evidence-meta">
+
+<span class="case-code">
+ACCESS CONTROL
+</span>
+
+<span class="evidence-badge">
+ACL
+</span>
+
+</div>
+
+
+<h3>
+부서별 접근통제
+</h3>
+
+<p>
+업무에 필요한 서버만 접근할 수 있도록
+ACL 정책을 적용하고,
+허용된 구간과 비인가 구간에서 각각
+접속을 시도해 정책을 확인했습니다.
+</p>
+
+
+<div class="evidence-result">
+
+<span>
+VALIDATION
+</span>
+
+<strong>
+필요한 통신 허용 · 비인가 접근 차단
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="evidence-card">
+
+<div class="evidence-image">
+
+<img
+src="assets/images/simmitpay/vpn-nat-validation.png"
+alt="Simmit Pay VPN 및 NAT 통신 검증"
+>
+
+</div>
+
+
+<div class="evidence-body">
+
+<div class="evidence-meta">
+
+<span class="case-code">
+SECURE CONNECTION
+</span>
+
+<span class="evidence-badge">
+VPN · NAT
+</span>
+
+</div>
+
+
+<h3>
+본사 · 지사 · 외부 통신
+</h3>
+
+<p>
+본사와 지사 사이에는 VPN을 적용해
+암호화 통신 경로를 구성하고,
+외부 연결에는 NAT를 적용해
+내부망과 외부망의 통신을 확인했습니다.
+</p>
+
+
+<div class="evidence-result">
+
+<span>
+VALIDATION
+</span>
+
+<strong>
+VPN 터널링 · NAT 변환 · 서비스 연결 확인
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="proof-note">
+
+<p>
+설계 → 정책 적용 → 허용·차단 테스트 → 오류 수정 → 재검증
+</p>
+
+<span class="tag blue">
+Network Design → Validation
+</span>
+
+</div>
+
+</article>
+
+</section>
+
+
+
+<!-- =====================
+PAGE 9
 ====================== -->
 
 <section
@@ -1491,7 +1896,7 @@ CTF & Security Practice
 </div>
 
 <span class="page-index">
-08
+09
 </span>
 
 </div>
@@ -1588,7 +1993,7 @@ Detection & Analysis
 
 
 <!-- =====================
-PAGE 9
+PAGE 10
 ====================== -->
 
 <section
@@ -1613,7 +2018,7 @@ Technical Stack
 </div>
 
 <span class="page-index">
-09
+10
 </span>
 
 </div>
@@ -1795,7 +2200,7 @@ IDS / IPS
 
 
 <!-- =====================
-PAGE 10
+PAGE 11
 ====================== -->
 
 <section
@@ -1820,7 +2225,7 @@ data-title="Problem Solving"
 </div>
 
 <span class="page-index">
-10
+11
 </span>
 
 </div>
@@ -1890,9 +2295,7 @@ STEP 03
 </div>
 
 
-<div
-class="card experience-card"
->
+<div class="card experience-card">
 
 <span class="card-number">
 EXPERIENCE
@@ -1923,7 +2326,7 @@ Agent 설정과 서버 연결 상태를
 
 
 <!-- =====================
-PAGE 11
+PAGE 12
 ====================== -->
 
 <section
@@ -2087,7 +2490,7 @@ aria-label="다음 페이지"
 class="page-count"
 id="pageCount"
 >
-01 / 11
+01 / 12
 </div>
 
 
